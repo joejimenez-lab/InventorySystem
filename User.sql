@@ -1,0 +1,10 @@
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(30) NOT NULL UNIQUE,
+    email VARCHAR(50) NOT NULL UNIQUE,
+    user_pass VARCHAR(256) NOT NULL,
+    user_role VARCHAR(20) DEFAULT 'General',
+    created_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    phone_number VARCHAR(15) NOT NULL UNIQUE
+);
