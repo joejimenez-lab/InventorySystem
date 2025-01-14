@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two Input Fields</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .input-container {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <h1>Login</h1>
+  <form>
+    <div class="input-container">
+      <label for="Username">First Line:</label>
+      <input type="text" id="first-line" name="first-line" placeholder="Username">
+    </div>
+    <div class="input-container">
+      <label for="Password">Second Line:</label>
+      <input type="text" id="second-line" name="second-line" placeholder="Password">
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+  <p>Click here to  <a href="registration.html">register an account</a>.</p>
+</body>
+</html>
