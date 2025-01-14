@@ -16,3 +16,6 @@ find_package(Crow CONFIG REQUIRED)
 
 # Link Crow
 target_link_libraries(MyCrowProject PRIVATE Crow::Crow)
+if (WIN32)
+    target_link_libraries(MyCrowProject PRIVATE ws2_32 mswsock)
+endif()

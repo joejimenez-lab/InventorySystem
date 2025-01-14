@@ -1,0 +1,3 @@
+C:/Users/natea/InventorySystem/build/CMakeFiles/MyCrowProject.dir
+C:/Users/natea/InventorySystem/build/CMakeFiles/edit_cache.dir
+C:/Users/natea/InventorySystem/build/CMakeFiles/rebuild_cache.dir
