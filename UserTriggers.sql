@@ -1,0 +1,13 @@
+CREATE OR REPLACE FUNCTION update_time()
+RETURNS TRIGGER AS $$
+BEGIN 
+    NEW.updated_time = CURRENT_TIMESTAMP;
+    RETURN NEW;
+END;
+
+$$LANGUAGE plpgsql
+
+CREATE TRIGGER set_update_time
+BEFORE UPDATE ON users
+FOR EACH ROW
+EXECUTE FUNCTION update_updated_time();
