@@ -7,6 +7,7 @@
 #include <crow/query_string.h>
 #include <iomanip>
 #include <map>
+#include "user.h"
 
 std::string load_html(const std::string& file_path) {
     std::ifstream html_file(file_path);
