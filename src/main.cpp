@@ -3,9 +3,10 @@
 #include <sstream>
 #include <unordered_map>
 #include <iostream>
-#include <string>\
+#include <string>
 #include <crow/query_string.h>
-
+#include <iomanip>
+#include <map>
 
 std::string load_html(const std::string& file_path) {
     std::ifstream html_file(file_path);
@@ -32,6 +33,25 @@ std::unordered_map<std::string, std::string> parse_form_data(const std::string& 
 }
 
 //Need to create url decoder for @ and stuff
+std::string url_decode(const std::string& value) {
+    std::ostringstream decoded;
+    for(size_t i = 0; i < value.length(); i++){
+        if(value[i] == '%') {
+            if(i + 2 < value.length()) {
+                std::istringstream hex(value.substr(i + 1, 2));
+                int character;
+                hex >> std::hex >> character;
+                decoded << static_cast<char>(character);
+                i += 2;
+            }
+        } else if(value[i] == '+') {
+            decoded << ' ';
+        } else {
+            decoded << value[i];
+        }
+    }
+    return decoded.str();
+}
 
 std::map<std::string, std::string> parse_urlencoded(const std::string& body) {
     std::map<std::string, std::string> result;
@@ -42,8 +62,8 @@ std::map<std::string, std::string> parse_urlencoded(const std::string& body) {
         auto eq_pos = pair.find('=');
 
         if (eq_pos != std::string::npos) {
-            std::string key = pair.substr(0, eq_pos);
-            std::string value = pair.substr(eq_pos + 1);
+            std::string key = url_decode(pair.substr(0, eq_pos));
+            std::string value = url_decode(pair.substr(eq_pos + 1));
 
             
             result[key] = value;
@@ -57,8 +77,8 @@ std::map<std::string, std::string> parse_urlencoded(const std::string& body) {
     auto eq_pos = pair.find('=');
 
     if (eq_pos != std::string::npos) {
-        std::string key = pair.substr(0, eq_pos);
-        std::string value = pair.substr(eq_pos + 1);
+        std::string key = url_decode(pair.substr(0, eq_pos));
+        std::string value = url_decode(pair.substr(eq_pos + 1));
 
         result[key] = value;
     }
