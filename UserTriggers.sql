@@ -5,9 +5,9 @@ BEGIN
     RETURN NEW;
 END;
 
-$$LANGUAGE plpgsql
+$$ LANGUAGE plpgsql;
 
 CREATE TRIGGER set_update_time
 BEFORE UPDATE ON users
 FOR EACH ROW
-EXECUTE FUNCTION update_updated_time();
+EXECUTE FUNCTION update_time();

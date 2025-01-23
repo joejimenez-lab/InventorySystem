@@ -1,0 +1,8 @@
+[
+{
+  "directory": "C:/Users/natea/InventorySystem/build",
+  "command": "C:\\mingw64\\mingw64\\bin\\g++.exe  @CMakeFiles/MyCrowProject.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\MyCrowProject.dir\\src\\main.cpp.obj -c C:\\Users\\natea\\InventorySystem\\src\\main.cpp",
+  "file": "C:/Users/natea/InventorySystem/src/main.cpp",
+  "output": "CMakeFiles/MyCrowProject.dir/src/main.cpp.obj"
+}
+]

@@ -8,3 +8,4 @@ CREATE TABLE users (
     updated_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     phone_number VARCHAR(15) NOT NULL UNIQUE
 );
+
