@@ -8,6 +8,9 @@
 #include <iomanip>
 #include <map>
 #include "user.h"
+#include "sql.h"
+#include "sqlext.h"
+
 
 std::string load_html(const std::string& file_path) {
     std::ifstream html_file(file_path);
@@ -90,6 +93,16 @@ std::map<std::string, std::string> parse_urlencoded(const std::string& body) {
 
 int main() {
     crow::SimpleApp app;
+    
+    //connect to db
+    SQLHENV hEnv;
+    SQLHDBC hDbc;
+    SQLRETURN ret;
+
+    const std::string connectionString = "DSN=Project178;";
+
+    connectToDB(hEnv, connectionString);
+    std::cout << "Connected to DB" << std::endl;
 
     std::string login_username;
     std::string login_password;
@@ -135,4 +148,10 @@ int main() {
     });
 
     app.port(8080).multithreaded().run();
+
+    SQLDisconnect(hDbc);
+    SQLFreeHandle(SQL_HANDLE_DBC, hDbc);
+    SQLFreeHandle(SQL_HANDLE_ENV, hEnv);
+
+    return 0;
 }

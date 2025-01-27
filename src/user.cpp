@@ -1,8 +1,16 @@
 #define SQL_NOUNICODEMAP
 
+#include "user.h"
+#include <windows.h>  
+#include <sql.h>
+#include <sqltypes.h>
+#include <sqlext.h>
+#include <minwindef.h> 
+#include <sysinfoapi.h>
+#include <windef.h>
+#include <wtypesbase.h>
 #include <iostream>
-#include "sql.h"
-#include "sqlext.h"
+#include <sql.h>
 #include <vector>
 #include <string> 
 #include "argon2.h"
@@ -207,7 +215,7 @@ std::string generateRandomSalt(int length) {
     
     std::random_device seed;
     std::mt19937 gen{seed()};
-    std::uniform_int_distribution<> dist{0, charSet.size() - 1};
+    std::uniform_int_distribution<size_t> dist{0, charSet.size() - 1};
 
     std::string salt;
 

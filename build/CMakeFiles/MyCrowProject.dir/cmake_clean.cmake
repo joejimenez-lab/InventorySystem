@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/MyCrowProject.dir/src/main.cpp.obj"
   "CMakeFiles/MyCrowProject.dir/src/main.cpp.obj.d"
+  "CMakeFiles/MyCrowProject.dir/src/user.cpp.obj"
+  "CMakeFiles/MyCrowProject.dir/src/user.cpp.obj.d"
   "MyCrowProject.exe"
   "MyCrowProject.exe.manifest"
   "MyCrowProject.pdb"

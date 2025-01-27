@@ -152,6 +152,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyCrowProject.dir\build.make CMakeFiles/MyCrowProject.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/user.obj: src/user.cpp.obj
+.PHONY : src/user.obj
+
+# target to build an object file
+src/user.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyCrowProject.dir\build.make CMakeFiles/MyCrowProject.dir/src/user.cpp.obj
+.PHONY : src/user.cpp.obj
+
+src/user.i: src/user.cpp.i
+.PHONY : src/user.i
+
+# target to preprocess a source file
+src/user.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyCrowProject.dir\build.make CMakeFiles/MyCrowProject.dir/src/user.cpp.i
+.PHONY : src/user.cpp.i
+
+src/user.s: src/user.cpp.s
+.PHONY : src/user.s
+
+# target to generate assembly for a file
+src/user.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyCrowProject.dir\build.make CMakeFiles/MyCrowProject.dir/src/user.cpp.s
+.PHONY : src/user.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -164,6 +188,9 @@ help:
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/user.obj
+	@echo ... src/user.i
+	@echo ... src/user.s
 .PHONY : help
 
 
