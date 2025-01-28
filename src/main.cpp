@@ -12,6 +12,7 @@
 #include "sqlext.h"
 #include "argon2.h"
 #include <signal.h>
+#include <cstdlib>
 
 SQLHENV hEnv;
 SQLHDBC hDbc;
@@ -188,7 +189,22 @@ int main() {
 
     });
 
-    app.port(8080).multithreaded().run();
+    std::thread serverThread([&app]() {
+        app.port(8080).multithreaded().run();
+    });
+
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+
+#ifdef _WIN32
+    std::system("start http://localhost:8080");
+#elif __APPLE__
+    std::system("open http://localhost:8080");
+#elif __linux__
+    std::system("xdg-open http://localhost:8080");
+#endif
+
+
+    serverThread.join();
 
     SQLDisconnect(hDbc);
     SQLFreeHandle(SQL_HANDLE_DBC, hDbc);
