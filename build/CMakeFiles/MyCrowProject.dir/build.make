@@ -112,6 +112,7 @@ MyCrowProject_EXTERNAL_OBJECTS =
 MyCrowProject.exe: CMakeFiles/MyCrowProject.dir/src/main.cpp.obj
 MyCrowProject.exe: CMakeFiles/MyCrowProject.dir/src/user.cpp.obj
 MyCrowProject.exe: CMakeFiles/MyCrowProject.dir/build.make
+MyCrowProject.exe: C:/Users/natea/InventorySystem/phc-winner-argon2/libargon2.a
 MyCrowProject.exe: CMakeFiles/MyCrowProject.dir/linkLibs.rsp
 MyCrowProject.exe: CMakeFiles/MyCrowProject.dir/objects1.rsp
 MyCrowProject.exe: CMakeFiles/MyCrowProject.dir/link.txt

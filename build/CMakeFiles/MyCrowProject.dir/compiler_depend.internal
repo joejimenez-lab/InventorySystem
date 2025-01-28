@@ -3,6 +3,7 @@
 
 CMakeFiles/MyCrowProject.dir/src/main.cpp.obj
  C:/Users/natea/InventorySystem/src/main.cpp
+ C:/Users/natea/InventorySystem/phc-winner-argon2/include/argon2.h
  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio.hpp
  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/any_completion_executor.hpp
  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/any_completion_handler.hpp

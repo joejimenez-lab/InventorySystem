@@ -73,7 +73,7 @@ void checkReturnCode(SQLRETURN retcode, const std::string& message){
     }
 }
 
-//connect to db
+//connect to db legacy code
 SQLHDBC connectToDB(SQLHENV& hEnv, const std::string& connectionString) {
     SQLHDBC hDbc = NULL;
     
@@ -100,23 +100,21 @@ void disconnectDatabase(SQLHENV hEnv, SQLHDBC hDbc) {
     SQLFreeHandle(SQL_HANDLE_ENV, hEnv);
 }
 
-//print query
+// //print query
 void executeQuery(SQLHDBC hDbc, const std::string& query) {
-    SQLHSTMT stmt = NULL;
+    SQLHSTMT hStmt;
+    SQLAllocHandle(SQL_HANDLE_STMT, hDbc, &hStmt);
+    SQLRETURN ret = SQLExecDirect(hStmt, (SQLCHAR*)query.c_str(), SQL_NTS);
 
-    SQLRETURN retcode = SQLAllocHandle(SQL_HANDLE_STMT, hDbc, &stmt);
-    checkReturnCode(retcode, "Executing SQL query");
-
-    SQLCHAR colData[256];
-    while(SQLFetch(stmt) == SQL_SUCCESS) {
-        SQLGetData(stmt, 1, SQL_C_CHAR, colData, sizeof(colData), NULL);
-        std::cout << "Data: " << colData << std::endl;
+    if (ret != SQL_SUCCESS && ret != SQL_SUCCESS_WITH_INFO) {
+        SQLFreeHandle(SQL_HANDLE_STMT, hStmt);
+        throw std::runtime_error("Query execution failed!");
     }
 
-    SQLFreeHandle(SQL_HANDLE_STMT, stmt);
+    SQLFreeHandle(SQL_HANDLE_STMT, hStmt);
 }
 
-//returns string
+// //returns string
 std::string executeQueryReturnString(SQLHDBC hDbc, const std::string& query) {
     SQLHSTMT stmt = NULL;
 
@@ -149,12 +147,12 @@ std::string executeQueryReturnString(SQLHDBC hDbc, const std::string& query) {
 
 }
 
-//verification for registration info
+// //verification for registration info
 std::string registration(SQLHDBC hDbc, std::string username, std::string password, std::string email, std::string phone_number){
     std::string query;
 
     //username - verify if there is no other username like that
-    query = "SELECT * FROM users WHERE username = " + username + ";";
+    query = "SELECT * FROM users WHERE username = \'" + username + "\';";
     std::string result = executeQueryReturnString(hDbc, query);
 
     if(result.length() != 0){
@@ -162,7 +160,7 @@ std::string registration(SQLHDBC hDbc, std::string username, std::string passwor
     }
 
     //email - no other accs using same email
-    query = "SELECT * FROM users WHERE email LIKE " + email + ";";
+    query = "SELECT * FROM users WHERE email LIKE \'" + email + "\';";
     result = executeQueryReturnString(hDbc, query);
     if(result.length() != 0){
         return "Email already used for registered account";
@@ -172,14 +170,16 @@ std::string registration(SQLHDBC hDbc, std::string username, std::string passwor
     std::string hashed_password = generateEncryption(password, 16);
     //no checks for phone number ? 
 
-    //update table here ? 
+    //update table here 
     //insertion query
-    query = "INSERT INTO users (username, user_pass, email, phone_number) VALUES(\"" + username + "\", \""  + hashed_password + "\", \"" + email + "\", \"" + phone_number + "\")";
+    query = "INSERT INTO users (username, user_pass, email, phone_number) VALUES(\'" + username + "\', \'"  + hashed_password + "\', \'" + email + "\', \'" + phone_number + "\');";
+    std::cout << query << std::endl;
     executeQuery(hDbc, query);
+    SQLExecDirect(hDbc, (SQLCHAR*)"COMMIT", SQL_NTS);
     return "Registration Success";
 }
 
-//password encryption
+// //password encryption
 std::string generateEncryption(std::string password, int saltLength){
     const char* charpass = password.c_str();
     const char* salt = generateRandomSalt(saltLength).c_str();
@@ -199,7 +199,7 @@ std::string generateEncryption(std::string password, int saltLength){
     return std::string(encoded);
 }
 
-//verify password with hash
+// //verify password with hash
 bool verifyPassword(std::string password, std::string &hash){
     const char *charpass = password.c_str();
     const char *charHash = hash.c_str();
@@ -209,7 +209,7 @@ bool verifyPassword(std::string password, std::string &hash){
     return result == ARGON2_OK;
 }
 
-//for encryption
+// //for encryption
 std::string generateRandomSalt(int length) {
     const std::string charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     
@@ -226,22 +226,22 @@ std::string generateRandomSalt(int length) {
     return salt;
 }
 
-//  //creates new user in user table
-// void insertIntoUserDB(SQLHDBC hDbc, std::vector<std::string> inputs){
-//     std::string query = "INSERT INTO users (username, user_pass, email, phone_number) VALUES(";
-//     query += "'" + inputs.at(0) + "', "
-//             + "'" + inputs.at(1) + "', "
-//             + "'" + inputs.at(2) + "', "
-//             + "'" + inputs.at(3) + "'";
-//     executeQuery(hDbc, query);
-// }
+// //  //creates new user in user table
+void insertIntoUserDB(SQLHDBC hDbc, std::vector<std::string> inputs){
+    std::string query = "INSERT INTO users (username, user_pass, email, phone_number) VALUES(";
+    query += "'" + inputs.at(0) + "', "
+            + "'" + inputs.at(1) + "', "
+            + "'" + inputs.at(2) + "', "
+            + "'" + inputs.at(3) + "'";
+    executeQuery(hDbc, query);
+}
 
 
-//-1 == no username exists
-//-2 == password is not correct
-//0 == password verified 
+// //-1 == no username exists
+// //-2 == password is not correct
+// //0 == password verified 
 int verifyLogin(SQLHDBC hDbc, std::string username, std::string password){
-    std::string query = "SELECT u.passwords FROM user AS u WHERE u.username LIKE " + username + ";";
+    std::string query = "SELECT user_pass FROM users WHERE username = \'" + username + "\';";
     std::string hashedpassword = executeQueryReturnString(hDbc, query);
     if(hashedpassword.length() == 0) {
         return -1;

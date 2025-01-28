@@ -14,6 +14,9 @@
 # EXTERNAL cache entries
 ########################
 
+//Path to a library.
+ARGON2_LIBRARY:FILEPATH=C:/Users/natea/InventorySystem/phc-winner-argon2/libargon2.dll.a
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=C:/mingw64/mingw64/bin/addr2line.exe
 

@@ -72,6 +72,8 @@ bool verifyPassword(std::string password, std::string &hash);
 
 std::string generateRandomSalt(int length);
 
+void insertIntoUserDB(SQLHDBC hDbc, std::vector<std::string> inputs);
+
 int verifyLogin(SQLHDBC hDbc, std::string username, std::string password);
 
 #endif
