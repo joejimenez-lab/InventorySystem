@@ -1058,4 +1058,36 @@ CMakeFiles/MyCrowProject.dir/src/main.cpp.obj: \
  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/version.h \
  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/app.h \
  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/thread \
- C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/this_thread_sleep.h
+ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/this_thread_sleep.h \
+ C:\Users\natea\InventorySystem\src\user.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/sql.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/sqltypes.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/sqlext.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/sqlucode.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/wtypesbase.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/rpc.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/rpcdce.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/rpcdcep.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/rpcnsi.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/rpcnterr.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/rpcasync.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/rpcndr.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/rpcnsip.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/rpcsal.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/ole2.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/objbase.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/combaseapi.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/unknwnbase.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/objidlbase.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/cguid.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/objidl.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/unknwn.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/wtypes.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/urlmon.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/oleidl.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/servprov.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/msxml.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/oaidl.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/propidl.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/oleauto.h \
+ C:/Users/natea/InventorySystem/phc-winner-argon2/include/argon2.h

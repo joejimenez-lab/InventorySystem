@@ -1,14 +1,22 @@
 #ifndef USER_H
 #define USER_H
 
+#include <windows.h>  
+#include <sql.h>
+#include <sqltypes.h>
+#include <sqlext.h>
+#include <minwindef.h> 
+#include <sysinfoapi.h>
+#include <windef.h>
+#include <wtypesbase.h>
 #include <iostream>
-#include "sql.h"
-#include "sqlext.h"
+#include <sql.h>
 #include <vector>
 #include <string> 
 #include <cstring>
 #include <random>
 #include <string>
+
 
 class User {
     private:
@@ -63,6 +71,8 @@ std::string generateEncryption(std::string password, int saltLength);
 bool verifyPassword(std::string password, std::string &hash);
 
 std::string generateRandomSalt(int length);
+
+void insertIntoUserDB(SQLHDBC hDbc, std::vector<std::string> inputs);
 
 int verifyLogin(SQLHDBC hDbc, std::string username, std::string password);
 

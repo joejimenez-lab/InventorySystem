@@ -8,6 +8,18 @@
 #include <iomanip>
 #include <map>
 #include "user.h"
+#include "sql.h"
+#include "sqlext.h"
+#include "argon2.h"
+#include <signal.h>
+#include <cstdlib>
+
+SQLHENV hEnv;
+SQLHDBC hDbc;
+SQLRETURN ret;
+
+
+void signalHandler(int signal);
 
 std::string load_html(const std::string& file_path) {
     std::ifstream html_file(file_path);
@@ -89,6 +101,48 @@ std::map<std::string, std::string> parse_urlencoded(const std::string& body) {
 
 
 int main() {
+    SQLCHAR* datasource = (SQLCHAR*)"PostgreSQL30";  // DSN name
+    SQLCHAR* user = (SQLCHAR*)"postgres";  // Database username
+    SQLCHAR* pass = (SQLCHAR*)"Project";  // Database password
+    
+    //connect to db
+
+
+    ret = SQLAllocHandle(SQL_HANDLE_ENV, SQL_NULL_HANDLE, &hEnv);
+    if (ret != SQL_SUCCESS && ret != SQL_SUCCESS_WITH_INFO) {
+        std::cerr << "Failed to allocate environment handle." << std::endl;
+        return 1;
+    }
+
+    // Set the ODBC version environment attribute
+    ret = SQLSetEnvAttr(hEnv, SQL_ATTR_ODBC_VERSION, (SQLPOINTER)SQL_OV_ODBC3, 0);
+    if (ret != SQL_SUCCESS && ret != SQL_SUCCESS_WITH_INFO) {
+        std::cerr << "Failed to set ODBC version." << std::endl;
+        return 1;
+    }
+
+    // Allocate connection handle
+    ret = SQLAllocHandle(SQL_HANDLE_DBC, hEnv, &hDbc);
+    if (ret != SQL_SUCCESS && ret != SQL_SUCCESS_WITH_INFO) {
+        std::cerr << "Failed to allocate connection handle." << std::endl;
+        return 1;
+    }
+
+
+    ret = SQLConnect(hDbc, (SQLCHAR*)datasource, SQL_NTS, 
+                     (SQLCHAR*)user, SQL_NTS, 
+                     (SQLCHAR*)pass, SQL_NTS);
+
+    if (ret == SQL_SUCCESS || ret == SQL_SUCCESS_WITH_INFO) {
+        std::cout << "Connection successful!" << std::endl;
+    } else {
+        std::cerr << "Connection failed!" << std::endl;
+    }
+    SQLSetConnectAttr(hDbc, SQL_ATTR_AUTOCOMMIT, (SQLPOINTER)SQL_AUTOCOMMIT_ON, 0);
+
+    signal(SIGINT, signalHandler);
+    signal(SIGTERM, signalHandler);
+
     crow::SimpleApp app;
 
     std::string login_username;
@@ -107,10 +161,8 @@ int main() {
         login_username = form_data["username"];
         login_password = form_data["password"];
 
-        
-        std::cout << "Username: " << login_username << std::endl;
-        std::cout << "Password: " << login_password << std::endl;
-
+        std::cout << verifyLogin(hDbc, login_username, login_password) << std::endl;
+        //do something with verify login
         return crow::response(200, "Form submitted successfully");
     });
 
@@ -130,9 +182,42 @@ int main() {
         for(int i = 0; i < registration_info.size(); i++){
             std::cout << registration_info.at(i) << std::endl;
         }
+        std::cout << "Adding into Database" << std::endl;
+        std::cout << registration(hDbc, registration_info.at(0), registration_info.at(1), registration_info.at(2), registration_info.at(3)) << std::endl;
+
         return crow::response(200, "Form submitted successfully");
 
     });
 
-    app.port(8080).multithreaded().run();
+    std::thread serverThread([&app]() {
+        app.port(8080).multithreaded().run();
+    });
+
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+
+#ifdef _WIN32
+    std::system("start http://localhost:8080");
+#elif __APPLE__
+    std::system("open http://localhost:8080");
+#elif __linux__
+    std::system("xdg-open http://localhost:8080");
+#endif
+
+
+    serverThread.join();
+
+    SQLDisconnect(hDbc);
+    SQLFreeHandle(SQL_HANDLE_DBC, hDbc);
+    SQLFreeHandle(SQL_HANDLE_ENV, hEnv);
+    std::cout << "Database disconnected and resources freed." << std::endl;
+
+    return 0;
+}
+
+
+void signalHandler(int signal){
+    SQLDisconnect(hDbc);
+    SQLFreeHandle(SQL_HANDLE_DBC, hDbc);
+    SQLFreeHandle(SQL_HANDLE_ENV, hEnv);
+    exit(signal);
 }

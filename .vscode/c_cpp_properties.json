@@ -5,7 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/Crow/include",
-                "${workspaceFolder}/asio/asio/include" 
+                "${workspaceFolder}/asio/asio/include",
+                "${workspaceFolder}/phc-winner-argon2/include"
             ],
             "defines": [
                 "_DEBUG",

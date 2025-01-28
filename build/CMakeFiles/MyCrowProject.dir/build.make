@@ -86,19 +86,37 @@ CMakeFiles/MyCrowProject.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyCrowProject.dir/src/main.cpp.s"
 	C:\mingw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\natea\InventorySystem\src\main.cpp -o CMakeFiles\MyCrowProject.dir\src\main.cpp.s
 
+CMakeFiles/MyCrowProject.dir/src/user.cpp.obj: CMakeFiles/MyCrowProject.dir/flags.make
+CMakeFiles/MyCrowProject.dir/src/user.cpp.obj: CMakeFiles/MyCrowProject.dir/includes_CXX.rsp
+CMakeFiles/MyCrowProject.dir/src/user.cpp.obj: C:/Users/natea/InventorySystem/src/user.cpp
+CMakeFiles/MyCrowProject.dir/src/user.cpp.obj: CMakeFiles/MyCrowProject.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\natea\InventorySystem\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MyCrowProject.dir/src/user.cpp.obj"
+	C:\mingw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MyCrowProject.dir/src/user.cpp.obj -MF CMakeFiles\MyCrowProject.dir\src\user.cpp.obj.d -o CMakeFiles\MyCrowProject.dir\src\user.cpp.obj -c C:\Users\natea\InventorySystem\src\user.cpp
+
+CMakeFiles/MyCrowProject.dir/src/user.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MyCrowProject.dir/src/user.cpp.i"
+	C:\mingw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\natea\InventorySystem\src\user.cpp > CMakeFiles\MyCrowProject.dir\src\user.cpp.i
+
+CMakeFiles/MyCrowProject.dir/src/user.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MyCrowProject.dir/src/user.cpp.s"
+	C:\mingw64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\natea\InventorySystem\src\user.cpp -o CMakeFiles\MyCrowProject.dir\src\user.cpp.s
+
 # Object files for target MyCrowProject
 MyCrowProject_OBJECTS = \
-"CMakeFiles/MyCrowProject.dir/src/main.cpp.obj"
+"CMakeFiles/MyCrowProject.dir/src/main.cpp.obj" \
+"CMakeFiles/MyCrowProject.dir/src/user.cpp.obj"
 
 # External object files for target MyCrowProject
 MyCrowProject_EXTERNAL_OBJECTS =
 
 MyCrowProject.exe: CMakeFiles/MyCrowProject.dir/src/main.cpp.obj
+MyCrowProject.exe: CMakeFiles/MyCrowProject.dir/src/user.cpp.obj
 MyCrowProject.exe: CMakeFiles/MyCrowProject.dir/build.make
+MyCrowProject.exe: C:/Users/natea/InventorySystem/phc-winner-argon2/libargon2.a
 MyCrowProject.exe: CMakeFiles/MyCrowProject.dir/linkLibs.rsp
 MyCrowProject.exe: CMakeFiles/MyCrowProject.dir/objects1.rsp
 MyCrowProject.exe: CMakeFiles/MyCrowProject.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\natea\InventorySystem\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable MyCrowProject.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\natea\InventorySystem\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable MyCrowProject.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\MyCrowProject.dir\link.txt --verbose=$(VERBOSE)
 	C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy Bypass -file C:/Users/natea/InventorySystem/vcpkg/scripts/buildsystems/msbuild/applocal.ps1 -targetBinary C:/Users/natea/InventorySystem/build/MyCrowProject.exe -installedDir C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/debug/bin -OutVariable out
 
