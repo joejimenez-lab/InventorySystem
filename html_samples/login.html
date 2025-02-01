@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Management System - Login</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      background: #e0e0e0; 
+      margin: 0; 
+      padding: 0; 
+    }
+    .container { 
+      max-width: 400px; 
+      margin: 50px auto; 
+      padding: 20px; 
+      background: #fff; 
+      border-radius: 8px; 
+      box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+    }
+    h2 { 
+      text-align: center; 
+      color: #333; 
+    }
+    form { 
+      display: flex; 
+      flex-direction: column; 
+    }
+    input[type="text"],
+    input[type="password"] { 
+      padding: 10px; 
+      margin: 8px 0; 
+      border: 1px solid #ccc; 
+      border-radius: 4px; 
+    }
+    button { 
+      padding: 10px; 
+      margin-top: 10px; 
+      background-color: #5cb85c; 
+      border: none; 
+      color: white; 
+      border-radius: 4px; 
+      cursor: pointer; 
+    }
+    button:hover { 
+      background-color: #4cae4c; 
+    }
+    .link { 
+      text-align: center; 
+      margin-top: 15px; 
+    }
+    .link a { 
+      color: #5cb85c; 
+      text-decoration: none; 
+    }
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form method="post">
+      <input type="text" name="username" placeholder="Username or Email" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <div class="button-group">
+        <!-- Using HTML5's formaction to direct to different pages based on role -->
+        <button type="submit" formaction="library_homepage.html">Login as User</button>
+        <button type="submit" formaction="admin_dashboard.html">Login as Admin</button>
+      </div>
+    </form>
+    <div class="link">
+      <a href="forgot_password.html">Forgot Password?</a> | <a href="sign-up.html">Sign Up</a>
+    </div>
+  </div>
+</body>
+</html>
