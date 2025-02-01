@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Management System - Delete Book</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+    .header { background-color: #d9534f; color: white; padding: 15px; text-align: center; }
+    .container { max-width: 400px; margin: 20px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center; }
+    button { padding: 10px 20px; margin: 10px; background-color: #d9534f; border: none; color: white; border-radius: 4px; cursor: pointer; }
+    button:hover { background-color: #c9302c; }
+    a { color: #d9534f; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Delete Book</h1>
+  </div>
+  <div class="container">
+    <p>Are you sure you want to delete "The Great Gatsby"?</p>
+    <form action="library_database_management.html" method="post">
+      <button type="submit" name="confirm" value="yes">Yes, Delete</button>
+      <button type="button" onclick="window.location.href='library_database_management.html'">Cancel</button>
+    </form>
+  </div>
+</body>
+</html>

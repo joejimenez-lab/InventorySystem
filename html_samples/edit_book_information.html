@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Management System - Edit Book Information</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+    .header { background-color: #d9534f; color: white; padding: 15px; text-align: center; }
+    .container { max-width: 500px; margin: 20px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    form { display: flex; flex-direction: column; }
+    input, textarea, button { padding: 10px; margin: 10px 0; border-radius: 4px; border: 1px solid #ccc; }
+    button { background-color: #d9534f; color: white; border: none; cursor: pointer; }
+    button:hover { background-color: #c9302c; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Edit Book Information</h1>
+  </div>
+  <div class="container">
+    <form action="library_database_management.html" method="post">
+      <input type="text" name="title" value="The Great Gatsby" required>
+      <input type="text" name="author" value="F. Scott Fitzgerald" required>
+      <input type="number" name="year" value="1925" required>
+      <textarea name="description" rows="4" required>A classic novel set in the Roaring Twenties...</textarea>
+      <button type="submit">Update Book</button>
+    </form>
+    <p><a href="library_database_management.html">Back to Database Management</a></p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Management System - Book Reservation</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+    .header { background-color: #5cb85c; color: white; padding: 15px; text-align: center; }
+    .container { max-width: 500px; margin: 20px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    form { display: flex; flex-direction: column; }
+    input, button { padding: 10px; margin: 10px 0; border-radius: 4px; border: 1px solid #ccc; }
+    button { background-color: #5cb85c; color: white; border: none; cursor: pointer; }
+    button:hover { background-color: #4cae4c; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Book Reservation</h1>
+  </div>
+  <div class="container">
+    <h2>Reserve "The Great Gatsby"</h2>
+    <form action="my_borrowed_books.html" method="post">
+      <label for="reservation_date">Reservation Date:</label>
+      <input type="date" id="reservation_date" name="reservation_date" required>
+      <button type="submit">Reserve</button>
+    </form>
+    <p><a href="book_details.html?id=Gatsby">Back to Book Details</a></p>
+  </div>
+</body>
+</html>

@@ -4,33 +4,15 @@
   <meta charset="UTF-8">
   <title>Library Management System - Homepage</title>
   <style>
-    body { 
-      font-family: Arial, sans-serif; 
-      background: #f4f4f4; 
-      margin: 0; 
-      padding: 0; 
-    }
-    .header { 
-      background-color: #5cb85c; 
-      color: white; 
-      padding: 15px; 
-      text-align: center; 
-    }
-    .container { 
-      max-width: 800px; 
-      margin: 20px auto; 
-      padding: 20px; 
-      background: #fff; 
-      border-radius: 8px; 
-      box-shadow: 0 0 10px rgba(0,0,0,0.1); 
-    }
-    a { 
-      color: #5cb85c; 
-      text-decoration: none; 
-    }
-    .nav { 
-      margin-top: 10px; 
-    }
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+    .header { background-color: #5cb85c; color: white; padding: 15px; text-align: center; }
+    .container { max-width: 800px; margin: 20px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    .nav { margin-top: 15px; display: flex; flex-wrap: wrap; gap: 10px; }
+    .nav a { color: #5cb85c; text-decoration: none; background: #e0e0e0; padding: 8px 12px; border-radius: 4px; }
+    .search-bar { margin-top: 20px; }
+    .search-bar input[type="text"] { width: calc(100% - 100px); padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+    .search-bar button { padding: 10px; background-color: #5cb85c; border: none; color: white; border-radius: 4px; cursor: pointer; }
+    .search-bar button:hover { background-color: #4cae4c; }
   </style>
 </head>
 <body>
@@ -38,10 +20,17 @@
     <h1>Welcome to the Library</h1>
   </div>
   <div class="container">
-    <p>This is the library homepage for regular users. Browse books, search the catalog, and manage your loans.</p>
+    <div class="search-bar">
+      <form action="search_results.html" method="get">
+        <input type="text" name="query" placeholder="Search for books...">
+        <button type="submit">Search</button>
+      </form>
+    </div>
     <div class="nav">
-      <a href="user_profile.html">My Profile</a> | 
-      <a href="login.html">Logout</a>
+      <a href="search_results.html">Search Results</a>
+      <a href="book_details.html">Book Details</a>
+      <a href="recommendations.html">Recommendations</a>
+      <a href="my_borrowed_books.html">My Borrowed Books</a>
     </div>
   </div>
 </body>

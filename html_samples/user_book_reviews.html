@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Management System - User Book Reviews</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+    .header { background-color: #5cb85c; color: white; padding: 15px; text-align: center; }
+    .container { max-width: 700px; margin: 20px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+    button { padding: 10px; margin-top: 10px; background-color: #5cb85c; border: none; color: white; border-radius: 4px; cursor: pointer; }
+    button:hover { background-color: #4cae4c; }
+    .review { margin: 15px 0; padding: 10px; border-bottom: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>User Book Reviews</h1>
+  </div>
+  <div class="container">
+    <h2>"The Great Gatsby" Reviews</h2>
+    <div class="review">
+      <p><strong>Jane:</strong> A timeless classic with vivid imagery!</p>
+    </div>
+    <div class="review">
+      <p><strong>John:</strong> Truly enjoyed the narrative and characters.</p>
+    </div>
+    <form action="user_book_reviews.html" method="post">
+      <textarea name="review" rows="4" placeholder="Write your review here..." required></textarea>
+      <button type="submit">Submit Review</button>
+    </form>
+    <p><a href="book_details.html?id=Gatsby">Back to Book Details</a></p>
+  </div>
+</body>
+</html>
