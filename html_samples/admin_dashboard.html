@@ -29,7 +29,13 @@
       text-decoration: none; 
     }
     .nav { 
-      margin-top: 10px; 
+      margin-top: 15px; 
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .nav a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -38,8 +44,11 @@
     <h1>Admin Dashboard</h1>
   </div>
   <div class="container">
-    <p>Welcome, Admin! Manage books, users, and system settings from here.</p>
+    <p>Welcome, Admin! Manage users and the library system using the links below.</p>
     <div class="nav">
+      <a href="user_management.html">User Management</a>
+      <a href="library_database_management.html">Library Database Management</a>
+      <a href="data_visualization_dashboard.html">Data Visualization Dashboard</a>
       <a href="login.html">Logout</a>
     </div>
   </div>

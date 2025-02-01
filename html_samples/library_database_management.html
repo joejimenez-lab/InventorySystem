@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Management System - Library Database Management</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      background-color: #d9534f;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    a {
+      color: #d9534f;
+      text-decoration: none;
+    }
+    .nav {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .nav a:hover {
+      text-decoration: underline;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Library Database Management</h1>
+  </div>
+  <div class="container">
+    <p>Manage the library's collection and inventory.</p>
+    <!-- Dummy table for books -->
+    <table>
+      <thead>
+        <tr>
+          <th>Book ID</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Availability</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>B001</td>
+          <td>The Great Gatsby</td>
+          <td>F. Scott Fitzgerald</td>
+          <td>Available</td>
+          <td>
+            <a href="#">Edit</a> | <a href="#">Remove</a>
+          </td>
+        </tr>
+        <tr>
+          <td>B002</td>
+          <td>1984</td>
+          <td>George Orwell</td>
+          <td>Checked Out</td>
+          <td>
+            <a href="#">Edit</a> | <a href="#">Remove</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="nav">
+      <a href="admin_dashboard.html">Back to Dashboard</a>
+    </div>
+  </div>
+</body>
+</html>
