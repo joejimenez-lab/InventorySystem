@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Library Management System - My Borrowed Books</title>
+  <title>Library Management System - Library Database</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -17,7 +17,7 @@
       text-align: center;
     }
     .container {
-      max-width: 700px;
+      max-width: 800px;
       margin: 20px auto;
       padding: 20px;
       background: #fff;
@@ -31,52 +31,54 @@
     }
     th, td {
       padding: 10px;
-      border-bottom: 1px solid #ccc;
+      border: 1px solid #ccc;
       text-align: left;
     }
-    .nav {
-      margin-top: 15px;
-      text-align: center;
-    }
-    .nav a {
-      text-decoration: none;
-      background: #e0e0e0;
+    a {
       color: #5cb85c;
-      padding: 10px 20px;
-      border-radius: 4px;
-      margin: 0 5px;
-    }
-    .nav a:hover {
-      background: #d4d4d4;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
   <div class="header">
-    <h1>My Borrowed Books</h1>
+    <h1>Library Database</h1>
   </div>
   <div class="container">
-    <p>Below is a list of books you have borrowed:</p>
+    <p>Updated library inventory after the latest check-in:</p>
     <table>
       <thead>
         <tr>
+          <th>Book ID</th>
           <th>Title</th>
-          <th>Borrow Date</th>
-          <th>Due Date</th>
+          <th>Author</th>
+          <th>Availability</th>
         </tr>
       </thead>
       <tbody>
         <tr>
+          <td>B001</td>
           <td>The Great Gatsby</td>
-          <td>2025-01-20</td>
-          <td>2025-02-20</td>
+          <td>F. Scott Fitzgerald</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>B002</td>
+          <td>1984</td>
+          <td>George Orwell</td>
+          <td>Checked Out</td>
+        </tr>
+        <tr>
+          <td>B003</td>
+          <td>To Kill a Mockingbird</td>
+          <td>Harper Lee</td>
+          <td>Available</td>
         </tr>
       </tbody>
     </table>
-    <div class="nav">
-      <a href="return_books.html">Return Books</a>
-      <a href="user_library_interaction.html">Back to Interaction</a>
-    </div>
+    <p style="text-align: center; margin-top: 20px;">
+      <a href="barcode_scanner.html">Back to Scanner</a>
+    </p>
   </div>
 </body>
 </html>

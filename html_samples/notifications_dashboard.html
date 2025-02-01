@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Management System - Notifications Dashboard</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      background: #f4f4f4; 
+      margin: 0; 
+      padding: 0; 
+    }
+    .header {
+      background-color: #5cb85c;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .container {
+      max-width: 700px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .nav {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+    }
+    .nav a {
+      text-decoration: none;
+      background: #e0e0e0;
+      color: #5cb85c;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    .nav a:hover {
+      background: #d4d4d4;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Notifications Dashboard</h1>
+  </div>
+  <div class="container">
+    <p>Welcome to the Notifications Dashboard. Choose an alert type to view details:</p>
+    <div class="nav">
+      <a href="due_date_reminder.html">Due Date Reminders</a>
+      <a href="book_available_alert.html">Book Available Alerts</a>
+      <a href="librarian_stock_alert.html">Librarian Stock Alerts</a>
+    </div>
+    <p style="text-align: center; margin-top: 20px;"><a href="library_homepage.html">Back to Homepage</a></p>
+  </div>
+</body>
+</html>

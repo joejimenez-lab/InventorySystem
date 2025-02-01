@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Library Management System - Book Reservation</title>
+  <title>Library Management System - Stock Update</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -11,7 +11,7 @@
       padding: 0;
     }
     .header {
-      background-color: #5cb85c;
+      background-color: #d9534f;
       color: white;
       padding: 15px;
       text-align: center;
@@ -31,14 +31,15 @@
     label, input {
       margin: 10px 0;
     }
-    input[type="date"] {
+    input[type="text"],
+    input[type="number"] {
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 4px;
     }
     button {
       padding: 10px;
-      background-color: #5cb85c;
+      background-color: #d9534f;
       border: none;
       color: white;
       border-radius: 4px;
@@ -46,7 +47,7 @@
       margin-top: 10px;
     }
     button:hover {
-      background-color: #4cae4c;
+      background-color: #c9302c;
     }
     .nav {
       margin-top: 15px;
@@ -54,23 +55,25 @@
     }
     .nav a {
       text-decoration: none;
-      color: #5cb85c;
+      color: #d9534f;
     }
   </style>
 </head>
 <body>
   <div class="header">
-    <h1>Book Reservation</h1>
+    <h1>Stock Update (Admin)</h1>
   </div>
   <div class="container">
-    <h2>Reserve a Book</h2>
-    <form action="my_borrowed_books.html" method="post">
-      <label for="reservation_date">Select Reservation Date:</label>
-      <input type="date" id="reservation_date" name="reservation_date" required>
-      <button type="submit">Reserve Book</button>
+    <h2>Update Library Database Stock</h2>
+    <form action="library_database_management.html" method="post">
+      <label for="book_id">Book ID:</label>
+      <input type="text" id="book_id" name="book_id" placeholder="Enter Book ID" required>
+      <label for="new_stock">New Stock Quantity:</label>
+      <input type="number" id="new_stock" name="new_stock" placeholder="Enter new stock quantity" required>
+      <button type="submit">Update Stock</button>
     </form>
     <div class="nav">
-      <a href="user_library_interaction.html">Back to Interaction Page</a>
+      <a href="admin_dashboard.html">Back to Admin Dashboard</a>
     </div>
   </div>
 </body>
