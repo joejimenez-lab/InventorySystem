@@ -200,7 +200,7 @@ std::string generateEncryption(std::string password, int saltLength){
 }
 
 // //verify password with hash
-bool verifyPassword(std::string password, std::string &hash){
+bool verifyPassword(std::string password, std::string& hash){
     const char *charpass = password.c_str();
     const char *charHash = hash.c_str();
 
@@ -246,6 +246,7 @@ int verifyLogin(SQLHDBC hDbc, std::string username, std::string password){
     if(hashedpassword.length() == 0) {
         return -1;
     }
+    std::cout << hashedpassword << std::endl;
     if(verifyPassword(password, hashedpassword) == false) {
         return -2;
     } else {

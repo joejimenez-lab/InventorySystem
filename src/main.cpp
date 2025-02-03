@@ -13,11 +13,14 @@
 #include "argon2.h"
 #include <signal.h>
 #include <cstdlib>
+#include <random>
+
 
 SQLHENV hEnv;
 SQLHDBC hDbc;
 SQLRETURN ret;
 
+std::unordered_map<std::string, std::string> sessions;
 
 void signalHandler(int signal);
 
@@ -99,15 +102,23 @@ std::map<std::string, std::string> parse_urlencoded(const std::string& body) {
     return result;
 }
 
+//session token generation
+std::string generateSessionToken() {
+    static const char alphanum[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    std::string token;
+    for(int i = 0; i < 16; i++){
+        token += alphanum[rand() % (sizeof(alphanum) - 1)];
+    }
+    return token;
+}
 
 int main() {
+    std::cout << "Current working directory: " << std::filesystem::current_path() << std::endl;
     SQLCHAR* datasource = (SQLCHAR*)"PostgreSQL30";  // DSN name
     SQLCHAR* user = (SQLCHAR*)"postgres";  // Database username
     SQLCHAR* pass = (SQLCHAR*)"Project";  // Database password
     
     //connect to db
-
-
     ret = SQLAllocHandle(SQL_HANDLE_ENV, SQL_NULL_HANDLE, &hEnv);
     if (ret != SQL_SUCCESS && ret != SQL_SUCCESS_WITH_INFO) {
         std::cerr << "Failed to allocate environment handle." << std::endl;
@@ -140,20 +151,32 @@ int main() {
     }
     SQLSetConnectAttr(hDbc, SQL_ATTR_AUTOCOMMIT, (SQLPOINTER)SQL_AUTOCOMMIT_ON, 0);
 
+    //for starting up immediately
     signal(SIGINT, signalHandler);
     signal(SIGTERM, signalHandler);
 
     crow::SimpleApp app;
 
+    crow::mustache::set_global_base("../html_pages");
+    // crow::mustache::set_base("../html_pages");
+
     std::string login_username;
     std::string login_password;
-    std::vector<std::string> registration_info;
 
+
+    //default login page
     CROW_ROUTE(app, "/")([](){
-        std::string html_content = load_html("../html_pages/login.html");
-        return html_content;
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("login.html").render(ctx));
     });
 
+    //login page
+    CROW_ROUTE(app, "/login.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("login.html").render(ctx));
+    });
+
+    //login handler
     CROW_ROUTE(app, "/login").methods("POST"_method)([&login_username, &login_password](const crow::request& req) {
         auto form_data = parse_urlencoded(req.body);
 
@@ -161,19 +184,41 @@ int main() {
         login_username = form_data["username"];
         login_password = form_data["password"];
 
-        std::cout << verifyLogin(hDbc, login_username, login_password) << std::endl;
-        //do something with verify login
-        return crow::response(200, "Form submitted successfully");
+        crow::mustache::context ctx;
+
+        if(login_username.empty() || login_password.empty()) {
+            
+            ctx["error"] = "Username and Password cannot be empty.";
+            return crow::response(crow::mustache::load("login.html").render(ctx));
+        }
+
+        int login_val = verifyLogin(hDbc, login_username, login_password);
+        std::cout << login_val << std::endl;
+        if(login_val == -1 || login_val == -2) {
+            ctx["error"] = "Invalid Username or Password";
+            return crow::response(crow::mustache::load("login.html").render(ctx));
+        } 
+
+        std::string token = generateSessionToken();
+        sessions[token] = login_username;
+
+        crow::response res_redirect;
+        res_redirect.code = 302;
+        res_redirect.set_header("Location", "/main.html");
+        return res_redirect;
+         
     });
 
+    //needs fixing
     CROW_ROUTE(app, "/registration.html")([](){
         std::string html_content = load_html("../html_pages/registration.html");
         return html_content;
     });
     
-    CROW_ROUTE(app, "/registration").methods("POST"_method)([&registration_info](const crow::request& req) {
+    //needs fixing
+    CROW_ROUTE(app, "/registration").methods("POST"_method)([](const crow::request& req) {
         auto form_data = parse_urlencoded(req.body);
-
+        std::vector<std::string> registration_info;
         registration_info.push_back(form_data["username"]);
         registration_info.push_back(form_data["password"]);
         registration_info.push_back(form_data["email"]);
@@ -187,6 +232,11 @@ int main() {
 
         return crow::response(200, "Form submitted successfully");
 
+    });
+
+    CROW_ROUTE(app, "/main.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("main.html").render(ctx));
     });
 
     std::thread serverThread([&app]() {

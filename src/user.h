@@ -68,7 +68,7 @@ std::string registration(SQLHDBC hDbc, std::string username, std::string passwor
 
 std::string generateEncryption(std::string password, int saltLength);
 
-bool verifyPassword(std::string password, std::string &hash);
+bool verifyPassword(std::string password, std::string& hash);
 
 std::string generateRandomSalt(int length);
 
