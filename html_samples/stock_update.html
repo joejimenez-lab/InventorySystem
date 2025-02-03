@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Management System - Stock Update</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      background-color: #d9534f;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .container {
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label, input {
+      margin: 10px 0;
+    }
+    input[type="text"],
+    input[type="number"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px;
+      background-color: #d9534f;
+      border: none;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #c9302c;
+    }
+    .nav {
+      margin-top: 15px;
+      text-align: center;
+    }
+    .nav a {
+      text-decoration: none;
+      color: #d9534f;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Stock Update (Admin)</h1>
+  </div>
+  <div class="container">
+    <h2>Update Library Database Stock</h2>
+    <form action="library_database_management.html" method="post">
+      <label for="book_id">Book ID:</label>
+      <input type="text" id="book_id" name="book_id" placeholder="Enter Book ID" required>
+      <label for="new_stock">New Stock Quantity:</label>
+      <input type="number" id="new_stock" name="new_stock" placeholder="Enter new stock quantity" required>
+      <button type="submit">Update Stock</button>
+    </form>
+    <div class="nav">
+      <a href="admin_dashboard.html">Back to Admin Dashboard</a>
+    </div>
+  </div>
+</body>
+</html>

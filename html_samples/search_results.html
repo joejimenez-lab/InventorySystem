@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Management System - Search Results</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+    .header { background-color: #5cb85c; color: white; padding: 15px; text-align: center; }
+    .container { max-width: 800px; margin: 20px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { padding: 10px; border-bottom: 1px solid #ccc; text-align: left; }
+    a { color: #5cb85c; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Search Results</h1>
+  </div>
+  <div class="container">
+    <p>Results for your query:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Year</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>The Great Gatsby</td>
+          <td>F. Scott Fitzgerald</td>
+          <td>1925</td>
+          <td><a href="book_details.html?id=Gatsby">View Details</a></td>
+        </tr>
+        <tr>
+          <td>1984</td>
+          <td>George Orwell</td>
+          <td>1949</td>
+          <td><a href="book_details.html?id=1984">View Details</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <p><a href="library_homepage.html">Back to Homepage</a></p>
+  </div>
+</body>
+</html>

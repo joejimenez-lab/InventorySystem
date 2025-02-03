@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Management System - Library Database</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      background-color: #5cb85c;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    a {
+      color: #5cb85c;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Library Database</h1>
+  </div>
+  <div class="container">
+    <p>Updated library inventory after the latest check-in:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Book ID</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Availability</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>B001</td>
+          <td>The Great Gatsby</td>
+          <td>F. Scott Fitzgerald</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+          <td>B002</td>
+          <td>1984</td>
+          <td>George Orwell</td>
+          <td>Checked Out</td>
+        </tr>
+        <tr>
+          <td>B003</td>
+          <td>To Kill a Mockingbird</td>
+          <td>Harper Lee</td>
+          <td>Available</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="text-align: center; margin-top: 20px;">
+      <a href="barcode_scanner.html">Back to Scanner</a>
+    </p>
+  </div>
+</body>
+</html>

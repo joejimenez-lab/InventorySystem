@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to the Library Management System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google Fonts for a modern look -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:400,700&display=swap" rel="stylesheet">
+  <!-- Particles.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <!-- Canvas Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+  <style>
+    /* Reset and basic styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Montserrat', sans-serif;
+      /* Animated background gradient */
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      animation: gradientShift 15s ease infinite;
+    }
+    @keyframes gradientShift {
+      0% { background: linear-gradient(135deg, #1e3c72, #2a5298); }
+      50% { background: linear-gradient(135deg, #2a5298, #1e3c72); }
+      100% { background: linear-gradient(135deg, #1e3c72, #2a5298); }
+    }
+    /* Particles background container */
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+    /* Main content container */
+    .container {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      text-align: center;
+      padding: 20px;
+    }
+    /* Fancy heading with glitch effect */
+    h1 {
+      font-size: 5em;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      animation: fadeInDown 1.5s ease-out forwards, glitch 2s infinite;
+      opacity: 0;
+      position: relative;
+      text-shadow: 0 0 15px rgba(255,255,255,0.7);
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes glitch {
+      0% { clip: rect(42px, 9999px, 44px, 0); transform: translate(0); }
+      10% { clip: rect(12px, 9999px, 86px, 0); transform: translate(-2px, -2px); }
+      20% { clip: rect(85px, 9999px, 96px, 0); transform: translate(2px, 2px); }
+      30% { clip: rect(15px, 9999px, 65px, 0); transform: translate(-2px, 0); }
+      40% { clip: rect(30px, 9999px, 80px, 0); transform: translate(2px, -2px); }
+      50% { clip: rect(42px, 9999px, 44px, 0); transform: translate(0); }
+      100% { clip: rect(42px, 9999px, 44px, 0); transform: translate(0); }
+    }
+    /* Subheading styling */
+    p {
+      font-size: 1.5em;
+      margin: 20px 0 40px;
+      animation: fadeInUp 1.5s ease-out forwards;
+      opacity: 0;
+      animation-delay: 0.5s;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Ultra-fancy neon button */
+    .btn {
+      font-size: 1.2em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 15px 40px;
+      border: 2px solid #fff;
+      border-radius: 50px;
+      background: transparent;
+      color: #fff;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s ease, transform 0.3s ease;
+      opacity: 0;
+      animation: fadeInUp 1.5s ease-out forwards;
+      animation-delay: 1s;
+    }
+    .btn:hover {
+      background: rgba(255,255,255,0.2);
+      transform: scale(1.05);
+    }
+    .btn::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50px;
+      box-shadow: 0 0 20px 5px rgba(255,255,255,0.3);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .btn:hover::after { opacity: 1; }
+    /* Additional animated floating shapes */
+    .floating-shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: float 10s ease-in-out infinite;
+      z-index: 1;
+    }
+    .shape1 {
+      width: 150px;
+      height: 150px;
+      background: rgba(255,255,255,0.2);
+      top: 10%;
+      left: 15%;
+      animation-duration: 12s;
+    }
+    .shape2 {
+      width: 200px;
+      height: 200px;
+      background: rgba(255,255,255,0.15);
+      top: 60%;
+      left: 70%;
+      animation-duration: 15s;
+    }
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-30px) rotate(180deg); }
+      100% { transform: translateY(0) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Particle background container -->
+  <div id="particles-js"></div>
+  <!-- Floating shapes for extra flair -->
+  <div class="floating-shape shape1"></div>
+  <div class="floating-shape shape2"></div>
+  
+  <!-- Main content container -->
+  <div class="container">
+    <h1>Welcome</h1>
+    <p>to the Library Management System</p>
+    <a href="login.html" class="btn" id="continueBtn">Continue</a>
+  </div>
+  
+  <script>
+    // Initialize particles.js
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 120, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ffffff" },
+        "shape": {
+          "type": "circle",
+          "stroke": { "width": 0, "color": "#000000" }
+        },
+        "opacity": { "value": 0.5, "random": false },
+        "size": { "value": 3, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 4, "direction": "none", "random": false, "straight": false, "out_mode": "out" }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" },
+          "resize": true
+        },
+        "modes": {
+          "repulse": { "distance": 100, "duration": 0.4 },
+          "push": { "particles_nb": 4 }
+        }
+      },
+      "retina_detect": true
+    });
+    
+    // Add confetti effect on button click
+    document.getElementById('continueBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      confetti({
+        particleCount: 150,
+        spread: 100,
+        origin: { y: 0.6 }
+      });
+      setTimeout(function() {
+        window.location.href = "login.html";
+      }, 1500);
+    });
+  </script>
+</body>
+</html>

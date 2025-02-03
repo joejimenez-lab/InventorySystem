@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Management System - Book Reviews</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      background: #f4f4f4; 
+      margin: 0; 
+      padding: 0; 
+    }
+    .header {
+      background-color: #5cb85c;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .container {
+      max-width: 700px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .review {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+    .review:last-child {
+      border-bottom: none;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+    button {
+      padding: 10px;
+      background-color: #5cb85c;
+      border: none;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .nav {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .nav a {
+      text-decoration: none;
+      color: #5cb85c;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Book Reviews for "The Great Gatsby"</h1>
+  </div>
+  <div class="container">
+    <div class="review">
+      <p><strong>Anna:</strong> A compelling narrative that captures the spirit of the Jazz Age!</p>
+    </div>
+    <div class="review">
+      <p><strong>Mark:</strong> The characters are unforgettable and the story is timeless.</p>
+    </div>
+    <form action="user_book_reviews.html" method="post">
+      <textarea name="review" rows="4" placeholder="Share your thoughts..." required></textarea>
+      <button type="submit">Submit Review</button>
+    </form>
+    <div class="nav">
+      <a href="book_details.html">Back to Book Details</a>
+    </div>
+  </div>
+</body>
+</html>

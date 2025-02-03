@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\MyCrowProject.dir/objects.a
-C:\mingw64\mingw64\bin\ar.exe qc CMakeFiles\MyCrowProject.dir/objects.a @CMakeFiles\MyCrowProject.dir\objects1.rsp
-C:\mingw64\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\MyCrowProject.dir/objects.a -Wl,--no-whole-archive -o MyCrowProject.exe -Wl,--out-implib,libMyCrowProject.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\MyCrowProject.dir\linkLibs.rsp

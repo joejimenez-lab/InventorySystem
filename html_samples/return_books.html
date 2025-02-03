@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Management System - Return Books</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      background-color: #5cb85c;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .container {
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    select, button {
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #5cb85c;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #4cae4c;
+    }
+    .nav {
+      margin-top: 15px;
+      text-align: center;
+    }
+    .nav a {
+      text-decoration: none;
+      color: #5cb85c;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Return Books</h1>
+  </div>
+  <div class="container">
+    <p>Select a book to return:</p>
+    <form action="my_borrowed_books.html" method="post">
+      <select name="book_id" required>
+        <option value="">Select Book</option>
+        <option value="Gatsby">The Great Gatsby</option>
+      </select>
+      <button type="submit">Return Book</button>
+    </form>
+    <div class="nav">
+      <a href="my_borrowed_books.html">Back to My Borrowed Books</a>
+    </div>
+  </div>
+</body>
+</html>

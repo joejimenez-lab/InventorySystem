@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Management System - User Management</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      background-color: #d9534f;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    a {
+      color: #d9534f;
+      text-decoration: none;
+    }
+    .nav {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .nav a:hover {
+      text-decoration: underline;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>User Management</h1>
+  </div>
+  <div class="container">
+    <p>Manage the registered users in the library system.</p>
+    <!-- Dummy table for user data -->
+    <table>
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>Username</th>
+          <th>Role</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>001</td>
+          <td>john_doe</td>
+          <td>User</td>
+          <td>
+            <a href="edit_user_role.html?id=001">Edit Role</a> | 
+            <a href="user_restrictions.html?id=001">Restrictions</a>
+          </td>
+        </tr>
+        <tr>
+          <td>002</td>
+          <td>jane_admin</td>
+          <td>Admin</td>
+          <td>
+            <a href="edit_user_role.html?id=002">Edit Role</a> | 
+            <a href="user_restrictions.html?id=002">Restrictions</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="nav">
+      <a href="admin_dashboard.html">Back to Dashboard</a>
+    </div>
+  </div>
+</body>
+</html>

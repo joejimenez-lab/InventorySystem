@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Chatbot</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      background: #f4f4f4; 
+      margin: 0; 
+      padding: 0; 
+    }
+    .header {
+      background-color: #5cb85c;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    .container {
+      max-width: 700px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    #chat-window {
+      border: 1px solid #ccc;
+      padding: 10px;
+      height: 300px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+    }
+    input[type="text"] {
+      width: 80%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #5cb85c;
+      border: none;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .nav {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .nav a {
+      text-decoration: none;
+      color: #5cb85c;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Library Chatbot</h1>
+  </div>
+  <div class="container">
+    <p>Ask me anything about the library or navigate to a specific section.</p>
+    <div id="chat-window">
+      <!-- Chat messages will appear here -->
+    </div>
+    <form id="chat-form">
+      <input type="text" id="chat-input" placeholder="Type your question here..." required>
+      <button type="submit">Send</button>
+    </form>
+    <div class="nav">
+      <a href="library_homepage.html">Home</a>
+      <a href="user_profile.html">Profile</a>
+      <a href="notifications_dashboard.html">Notifications</a>
+    </div>
+  </div>
+  <script>
+    // Simple script to simulate chatbot responses (dummy behavior)
+    document.getElementById('chat-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var input = document.getElementById('chat-input');
+      var message = input.value.trim();
+      if (message !== '') {
+        var chatWindow = document.getElementById('chat-window');
+        var userMessage = document.createElement('div');
+        userMessage.textContent = 'You: ' + message;
+        chatWindow.appendChild(userMessage);
+        input.value = '';
+        // Simulated bot response after a delay
+        setTimeout(function() {
+          var botMessage = document.createElement('div');
+          botMessage.innerHTML = 'Bot: I am here to help! You can check out our <a href="library_homepage.html">Homepage</a> or view your <a href="user_profile.html">Profile</a>.';
+          chatWindow.appendChild(botMessage);
+          chatWindow.scrollTop = chatWindow.scrollHeight;
+        }, 1000);
+      }
+    });
+  </script>
+</body>
+</html>

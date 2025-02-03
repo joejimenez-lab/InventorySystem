@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Management System - Discussion Forum</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      background:#f4f4f4; 
+      margin:0; 
+      padding:0; 
+    }
+    .header {
+      background-color: #5cb85c;
+      color: white;
+      padding:15px;
+      text-align:center;
+    }
+    .container {
+      max-width: 800px;
+      margin:20px auto;
+      padding:20px;
+      background:#fff;
+      border-radius:8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .post {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+    .post:last-child {
+      border-bottom: none;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+    button {
+      padding: 10px;
+      background-color: #5cb85c;
+      border: none;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .nav {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .nav a {
+      text-decoration: none;
+      color: #5cb85c;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Discussion Forum - "The Great Gatsby"</h1>
+  </div>
+  <div class="container">
+    <div class="post">
+      <p><strong>Emily:</strong> I love how the novel captures the essence of the Roaring Twenties!</p>
+    </div>
+    <div class="post">
+      <p><strong>David:</strong> The symbolism and character development are really impressive.</p>
+    </div>
+    <form action="discussion_forum.html" method="post">
+      <textarea name="comment" rows="3" placeholder="Join the discussion..." required></textarea>
+      <button type="submit">Post Comment</button>
+    </form>
+    <div class="nav">
+      <a href="group_forum_homepage.html">Back to Group Forum</a>
+    </div>
+  </div>
+</body>
+</html>

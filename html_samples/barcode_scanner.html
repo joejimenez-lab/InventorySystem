@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Management System - Barcode Scanner</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .header {
+      background-color: #5cb85c;
+      color: white;
+      padding: 15px;
+    }
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="text"] {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .nav {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-around;
+    }
+    .nav a {
+      text-decoration: none;
+      background: #e0e0e0;
+      color: #5cb85c;
+      padding: 10px 20px;
+      border-radius: 4px;
+    }
+    .nav a:hover {
+      background: #d4d4d4;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Barcode Scanner</h1>
+  </div>
+  <div class="container">
+    <p>Please scan the barcode of the book.</p>
+    <!-- Simulated scanner input -->
+    <input type="text" placeholder="Barcode input..." />
+    <div class="nav">
+      <a href="check_out.html">Check-Out Book</a>
+      <a href="check_in.html">Check-In Book</a>
+    </div>
+    <p style="margin-top:20px;"><a href="device_setup.html" style="color:#5cb85c; text-decoration:none;">Reconfigure Scanner</a></p>
+  </div>
+</body>
+</html>

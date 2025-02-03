@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library Management System - Account Security Settings</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      background: #f4f4f4; 
+      margin: 0; 
+      padding: 0; 
+    }
+    .header { 
+      background-color: #5cb85c; 
+      color: white; 
+      padding: 15px; 
+      text-align: center; 
+    }
+    .container { 
+      max-width: 600px; 
+      margin: 20px auto; 
+      padding: 20px; 
+      background: #fff; 
+      border-radius: 8px; 
+      box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+    }
+    form { 
+      display: flex; 
+      flex-direction: column; 
+    }
+    input[type="password"] { 
+      padding: 10px; 
+      margin: 8px 0; 
+      border: 1px solid #ccc; 
+      border-radius: 4px; 
+    }
+    button { 
+      padding: 10px; 
+      margin-top: 10px; 
+      background-color: #5cb85c; 
+      border: none; 
+      color: white; 
+      border-radius: 4px; 
+      cursor: pointer; 
+    }
+    button:hover { 
+      background-color: #4cae4c; 
+    }
+    .nav {
+      margin-top: 15px;
+    }
+    .nav a {
+      color: #5cb85c;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Account Security Settings</h1>
+  </div>
+  <div class="container">
+    <form action="user_profile.html" method="post">
+      <input type="password" name="current_password" placeholder="Current Password" required>
+      <input type="password" name="new_password" placeholder="New Password" required>
+      <input type="password" name="confirm_new_password" placeholder="Confirm New Password" required>
+      <button type="submit">Change Password</button>
+    </form>
+    <div class="nav">
+      <a href="user_profile.html">Back to Profile</a>
+    </div>
+  </div>
+</body>
+</html>
