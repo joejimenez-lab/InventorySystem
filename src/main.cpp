@@ -157,7 +157,7 @@ int main() {
 
     crow::SimpleApp app;
 
-    crow::mustache::set_global_base("../html_pages");
+    crow::mustache::set_global_base("../html_samples");
     // crow::mustache::set_base("../html_pages");
 
     std::string login_username;
@@ -167,22 +167,29 @@ int main() {
     //default login page
     CROW_ROUTE(app, "/")([](){
         crow::mustache::context ctx;
-        return crow::response(crow::mustache::load("login.html").render(ctx));
+        return crow::response(crow::mustache::load("welcome.html").render(ctx));
     });
 
-    //login page
+    //welcome page
+    CROW_ROUTE(app, "/welcome.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("welcome.html").render(ctx));
+    });
+
+    // //login page
     CROW_ROUTE(app, "/login.html")([](){
         crow::mustache::context ctx;
         return crow::response(crow::mustache::load("login.html").render(ctx));
     });
 
-    //login handler
+    // //login handler
     CROW_ROUTE(app, "/login").methods("POST"_method)([&login_username, &login_password](const crow::request& req) {
         auto form_data = parse_urlencoded(req.body);
 
-        
         login_username = form_data["username"];
         login_password = form_data["password"];
+
+
 
         crow::mustache::context ctx;
 
@@ -191,28 +198,43 @@ int main() {
             ctx["error"] = "Username and Password cannot be empty.";
             return crow::response(crow::mustache::load("login.html").render(ctx));
         }
-
+        
+        std::string stored_pass = getPassword(hDbc, login_username);
         int login_val = verifyLogin(hDbc, login_username, login_password);
-        std::cout << login_val << std::endl;
-        if(login_val == -1 || login_val == -2) {
+        std::cout << getPassword(hDbc, login_username) << std::endl;
+        if((stored_pass != login_password && login_val == -1) || (stored_pass != login_password && login_val == -2)) {
             ctx["error"] = "Invalid Username or Password";
             return crow::response(crow::mustache::load("login.html").render(ctx));
         } 
 
+        
+        //wip
         std::string token = generateSessionToken();
         sessions[token] = login_username;
+        
+
+        std::string role = getRole(hDbc, login_username);
+        std::cout << role << std::endl;
+
 
         crow::response res_redirect;
         res_redirect.code = 302;
-        res_redirect.set_header("Location", "/main.html");
+        if(role == "General"){
+            res_redirect.set_header("Location", "/library_homepage.html");
+        } 
+
+        if(role == "Librarian"){
+            res_redirect.set_header("Location", "/admin_dashboard.html");
+        }
+        
         return res_redirect;
          
     });
 
     //needs fixing
-    CROW_ROUTE(app, "/registration.html")([](){
-        std::string html_content = load_html("../html_pages/registration.html");
-        return html_content;
+    CROW_ROUTE(app, "/sign-up.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("sign-up.html").render(ctx));        
     });
     
     //needs fixing
@@ -234,11 +256,40 @@ int main() {
 
     });
 
-    CROW_ROUTE(app, "/main.html")([](){
+    CROW_ROUTE(app, "/forgot_password.html")([](){
         crow::mustache::context ctx;
-        return crow::response(crow::mustache::load("main.html").render(ctx));
+        return crow::response(crow::mustache::load("forgot_password.html").render(ctx));
     });
 
+    CROW_ROUTE(app, "/library_homepage.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("library_homepage.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/admin_dashboard.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("admin_dashboard.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/403.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("error_pages/403.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/404.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("error_pages/404.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/500.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("error_pages/500.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/503.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("error_pages/503.html").render(ctx));
+    });
     std::thread serverThread([&app]() {
         app.port(8080).multithreaded().run();
     });

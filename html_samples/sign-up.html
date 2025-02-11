@@ -41,7 +41,8 @@
     }
     input[type="text"],
     input[type="email"],
-    input[type="password"] { 
+    input[type="password"],
+    input[type="phone"]{ 
       padding: 12px; 
       margin: 10px 0; 
       border: 1px solid #ccc; 
@@ -51,7 +52,8 @@
     }
     input[type="text"]:focus,
     input[type="email"]:focus,
-    input[type="password"]:focus {
+    input[type="password"]:focus,
+    input[type="phone"]:focus {
       border-color: #5cb85c;
       box-shadow: 0 0 5px rgba(92,184,92,0.5);
       outline: none;
@@ -99,6 +101,7 @@
       <input type="email" id="email" name="email" placeholder="Email" required>
       <input type="password" id="password" name="password" placeholder="Password" required>
       <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+      <input type="phone" id="phone" name="phone" placeholder="Phone Number" required>
       <div id="errorMessages" class="error"></div>
       <button type="submit">Sign Up</button>
     </form>
@@ -118,6 +121,7 @@
       const email = document.getElementById('email').value.trim();
       const password = document.getElementById('password').value;
       const confirmPassword = document.getElementById('confirmPassword').value;
+      const phone_number = document.getElementById('phone').value.trim();
       let errors = [];
 
       // Validate username length
@@ -136,6 +140,10 @@
       // Check if passwords match
       if (password !== confirmPassword) {
         errors.push("Passwords do not match.");
+      }
+      const phoneRegex = /^\d{10}$/;
+      if (!phoneRegex.test(phone)) {
+        errors.push("Please enter a valid 10-digit phone number.");
       }
 
       // If there are errors, prevent form submission and display errors

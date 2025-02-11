@@ -76,4 +76,8 @@ void insertIntoUserDB(SQLHDBC hDbc, std::vector<std::string> inputs);
 
 int verifyLogin(SQLHDBC hDbc, std::string username, std::string password);
 
+std::string getRole(SQLHDBC, std::string username);
+
+std::string getPassword(SQLHDBC hDbc, std::string username);
+
 #endif

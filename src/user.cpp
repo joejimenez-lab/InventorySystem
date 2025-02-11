@@ -241,8 +241,7 @@ void insertIntoUserDB(SQLHDBC hDbc, std::vector<std::string> inputs){
 // //-2 == password is not correct
 // //0 == password verified 
 int verifyLogin(SQLHDBC hDbc, std::string username, std::string password){
-    std::string query = "SELECT user_pass FROM users WHERE username = \'" + username + "\';";
-    std::string hashedpassword = executeQueryReturnString(hDbc, query);
+    std::string hashedpassword = getPassword(hDbc, username);
     if(hashedpassword.length() == 0) {
         return -1;
     }
@@ -254,3 +253,12 @@ int verifyLogin(SQLHDBC hDbc, std::string username, std::string password){
     }
 }
 
+std::string getRole(SQLHDBC hDbc, std::string username){
+    std::string query = "SELECT user_role FROM users WHERE username = \'" + username + "\';";
+    return executeQueryReturnString(hDbc, query);
+}
+
+std::string getPassword(SQLHDBC hDbc, std::string username){
+    std::string query = "SELECT user_pass FROM users WHERE username = \'" + username + "\';";
+    return executeQueryReturnString(hDbc, query);
+}
