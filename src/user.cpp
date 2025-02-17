@@ -262,3 +262,12 @@ std::string getPassword(SQLHDBC hDbc, std::string username){
     std::string query = "SELECT user_pass FROM users WHERE username = \'" + username + "\';";
     return executeQueryReturnString(hDbc, query);
 }
+
+bool changePassword(SQLHDBC hDbc, std::string username, std::string currpass, std::string newpass){
+    if(verifyLogin(hDbc, username, currpass) == 0 || getPassword(hDbc, username) == currpass){
+        std::string query = "UPDATE users SET user_pass = '" + newpass + "' WHERE username = '" + username + "';";
+        executeQuery(hDbc, query);
+        return true;
+    }
+    return false;
+}
