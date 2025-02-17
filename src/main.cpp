@@ -256,11 +256,183 @@ int main() {
 
     });
 
+    CROW_ROUTE(app, "/user_restrictions.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("user_restrictions.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/user_profile.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("user_profile.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/user_management.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("user_management.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/user_library_interaction.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("user_library_interaction.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/user_book_reviews.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("user_book_reviews.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/stock_update.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("stock_update.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/search_results.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("search_results.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/return_books.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("return_books.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/reset_password.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("reset_password.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/recommendations.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("recommendations.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/reading_challenge.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("reading_challenge.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/notifications_dashboard.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("notifications_dashboard.html").render(ctx));
+    });
+    
+    CROW_ROUTE(app, "/my_borrowed_books.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("my_borrowed_books.html").render(ctx));
+    });
+    
+    CROW_ROUTE(app, "/library_database.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("library_database.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/library_database_management.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("library_database_management.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/librarian_stock_alert.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("librarian_stock_alert.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/group_forum_homepage.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("group_forum_homepage.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/edit_user_role.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("edit_user_role.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/edit_book_information.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("edit_book_information.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/due_date_reminder.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("due_date_reminder.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/discussion_forum.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("discussion_forum.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/device_setup.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("device_setup.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/delete_book.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("delete_book.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/data_visualization_dashboard.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("data_visualization_dashboard.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/check_out.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("check_out.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/check_in.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("check_in.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/chatbot.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("chatbot.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/book_reservation.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("book_reservation.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/book_details.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("book_details.html").render(ctx));
+    });   
+
+    CROW_ROUTE(app, "/book_available_alert.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("book_available_alert.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/barcode_scanner.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("barcode_scanner.html").render(ctx));
+    });
+    
+    CROW_ROUTE(app, "/add_new_book.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("add_new_book.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/activity_logs.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("activity_logs.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/account_security_settings")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("account_security_settings").render(ctx));
+    });
+
     CROW_ROUTE(app, "/forgot_password.html")([](){
         crow::mustache::context ctx;
         return crow::response(crow::mustache::load("forgot_password.html").render(ctx));
     });
 
+
+    //homepages
     CROW_ROUTE(app, "/library_homepage.html")([](){
         crow::mustache::context ctx;
         return crow::response(crow::mustache::load("library_homepage.html").render(ctx));
@@ -271,6 +443,8 @@ int main() {
         return crow::response(crow::mustache::load("admin_dashboard.html").render(ctx));
     });
 
+
+    //Error pages
     CROW_ROUTE(app, "/403.html")([](){
         crow::mustache::context ctx;
         return crow::response(crow::mustache::load("error_pages/403.html").render(ctx));

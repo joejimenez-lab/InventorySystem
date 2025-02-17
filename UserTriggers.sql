@@ -12,6 +12,8 @@ BEGIN
     RETURN NEW;
 END;
 
+$$ LANGUAGE plpgsql;
+
 CREATE OR REPLACE FUNCTION create_user_genre()
 RETURNS TRIGGER AS $$
 BEGIN

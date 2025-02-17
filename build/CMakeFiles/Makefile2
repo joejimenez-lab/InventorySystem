@@ -62,11 +62,11 @@ CMAKE_BINARY_DIR = C:\Users\natea\InventorySystem\build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/MyCrowProject.dir/all
+all: CMakeFiles/Project.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/MyCrowProject.dir/codegen
+codegen: CMakeFiles/Project.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -74,40 +74,40 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/MyCrowProject.dir/clean
+clean: CMakeFiles/Project.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/MyCrowProject.dir
+# Target rules for target CMakeFiles/Project.dir
 
 # All Build rule for target.
-CMakeFiles/MyCrowProject.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyCrowProject.dir\build.make CMakeFiles/MyCrowProject.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyCrowProject.dir\build.make CMakeFiles/MyCrowProject.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\natea\InventorySystem\build\CMakeFiles --progress-num=1,2,3 "Built target MyCrowProject"
-.PHONY : CMakeFiles/MyCrowProject.dir/all
+CMakeFiles/Project.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\natea\InventorySystem\build\CMakeFiles --progress-num=1,2,3 "Built target Project"
+.PHONY : CMakeFiles/Project.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/MyCrowProject.dir/rule: cmake_check_build_system
+CMakeFiles/Project.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\natea\InventorySystem\build\CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/MyCrowProject.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/Project.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\natea\InventorySystem\build\CMakeFiles 0
-.PHONY : CMakeFiles/MyCrowProject.dir/rule
+.PHONY : CMakeFiles/Project.dir/rule
 
 # Convenience name for target.
-MyCrowProject: CMakeFiles/MyCrowProject.dir/rule
-.PHONY : MyCrowProject
+Project: CMakeFiles/Project.dir/rule
+.PHONY : Project
 
 # codegen rule for target.
-CMakeFiles/MyCrowProject.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyCrowProject.dir\build.make CMakeFiles/MyCrowProject.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\natea\InventorySystem\build\CMakeFiles --progress-num=1,2,3 "Finished codegen for target MyCrowProject"
-.PHONY : CMakeFiles/MyCrowProject.dir/codegen
+CMakeFiles/Project.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\natea\InventorySystem\build\CMakeFiles --progress-num=1,2,3 "Finished codegen for target Project"
+.PHONY : CMakeFiles/Project.dir/codegen
 
 # clean rule for target.
-CMakeFiles/MyCrowProject.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyCrowProject.dir\build.make CMakeFiles/MyCrowProject.dir/clean
-.PHONY : CMakeFiles/MyCrowProject.dir/clean
+CMakeFiles/Project.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/clean
+.PHONY : CMakeFiles/Project.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

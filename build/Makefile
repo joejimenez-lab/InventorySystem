@@ -116,24 +116,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named MyCrowProject
+# Target rules for targets named Project
 
 # Build rule for target.
-MyCrowProject: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 MyCrowProject
-.PHONY : MyCrowProject
+Project: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Project
+.PHONY : Project
 
 # fast build rule for target.
-MyCrowProject/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyCrowProject.dir\build.make CMakeFiles/MyCrowProject.dir/build
-.PHONY : MyCrowProject/fast
+Project/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/build
+.PHONY : Project/fast
 
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
 # target to build an object file
 src/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyCrowProject.dir\build.make CMakeFiles/MyCrowProject.dir/src/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/main.cpp.obj
 .PHONY : src/main.cpp.obj
 
 src/main.i: src/main.cpp.i
@@ -141,7 +141,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyCrowProject.dir\build.make CMakeFiles/MyCrowProject.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -149,7 +149,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyCrowProject.dir\build.make CMakeFiles/MyCrowProject.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/user.obj: src/user.cpp.obj
@@ -157,7 +157,7 @@ src/user.obj: src/user.cpp.obj
 
 # target to build an object file
 src/user.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyCrowProject.dir\build.make CMakeFiles/MyCrowProject.dir/src/user.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/user.cpp.obj
 .PHONY : src/user.cpp.obj
 
 src/user.i: src/user.cpp.i
@@ -165,7 +165,7 @@ src/user.i: src/user.cpp.i
 
 # target to preprocess a source file
 src/user.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyCrowProject.dir\build.make CMakeFiles/MyCrowProject.dir/src/user.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/user.cpp.i
 .PHONY : src/user.cpp.i
 
 src/user.s: src/user.cpp.s
@@ -173,7 +173,7 @@ src/user.s: src/user.cpp.s
 
 # target to generate assembly for a file
 src/user.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\MyCrowProject.dir\build.make CMakeFiles/MyCrowProject.dir/src/user.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/user.cpp.s
 .PHONY : src/user.cpp.s
 
 # Help Target
@@ -184,7 +184,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... MyCrowProject
+	@echo ... Project
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
