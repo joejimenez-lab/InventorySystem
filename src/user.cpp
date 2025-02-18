@@ -263,6 +263,7 @@ std::string getPassword(SQLHDBC hDbc, std::string username){
     return executeQueryReturnString(hDbc, query);
 }
 
+//needs update. check if executequery was successful
 bool changePassword(SQLHDBC hDbc, std::string username, std::string currpass, std::string newpass){
     if(verifyLogin(hDbc, username, currpass) == 0 || getPassword(hDbc, username) == currpass){
         std::string query = "UPDATE users SET user_pass = '" + newpass + "' WHERE username = '" + username + "';";

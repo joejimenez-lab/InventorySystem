@@ -14,6 +14,7 @@
 #include <signal.h>
 #include <cstdlib>
 #include <random>
+#include "books.h"
 
 
 SQLHENV hEnv;
