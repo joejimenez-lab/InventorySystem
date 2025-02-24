@@ -96,15 +96,17 @@
 <body>
   <div class="container">
     <h2>Sign Up</h2>
-    <form id="signupForm" action="login.html" method="post">
-      <input type="text" id="username" name="username" placeholder="Username" required>
-      <input type="email" id="email" name="email" placeholder="Email" required>
+    <p class="error">{{error}}</p>
+    <form id="signupForm" action="/registration" method="POST">
+      <input type="text" id="username" name="username" placeholder="Username" value="{{username}}" required>
+      <input type="email" id="email" name="email" placeholder="Email" value="{{email}}" required>
       <input type="password" id="password" name="password" placeholder="Password" required>
       <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
-      <input type="phone" id="phone" name="phone" placeholder="Phone Number" required>
+      <input type="text" id="phone" name="phone" placeholder="Phone Number" value="{{phone}}" required>
       <div id="errorMessages" class="error"></div>
       <button type="submit">Sign Up</button>
     </form>
+    
     <div class="link">
       Already have an account? <a href="login.html">Login</a>
     </div>
@@ -142,7 +144,7 @@
         errors.push("Passwords do not match.");
       }
       const phoneRegex = /^\d{10}$/;
-      if (!phoneRegex.test(phone)) {
+      if (!phoneRegex.test(phone.trim())) {
         errors.push("Please enter a valid 10-digit phone number.");
       }
 

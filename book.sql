@@ -1,7 +1,7 @@
 CREATE TABLE books (
     book_id SERIAL PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
-    author VARCHAR(255) NOT NULL,
+    title VARCHAR(500) NOT NULL,
+    author VARCHAR(500) NOT NULL,
     genre VARCHAR(100),
     publication_year INT,
     isbn VARCHAR(20) UNIQUE,

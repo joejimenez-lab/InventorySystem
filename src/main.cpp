@@ -116,6 +116,16 @@ std::string generateSessionToken() {
     return session_id;
 }
 
+std::string extractSessionID(const std::string& cookie) {
+    size_t pos = cookie.find("session_id=");
+    if (pos != std::string::npos) {
+        size_t end = cookie.find(";", pos);
+        return cookie.substr(pos + 11, end - pos - 11); 
+    }
+    return "";
+}
+
+
 int main() {
     std::cout << "Current working directory: " << std::filesystem::current_path() << std::endl;
     SQLCHAR* datasource = (SQLCHAR*)"PostgreSQL30";  // DSN name
@@ -214,7 +224,7 @@ int main() {
         //wip
         std::string token = generateSessionToken();
         sessions[token] = login_username;
-        
+        user_data[token]["username"] = login_username;
 
         std::string role = getRole(hDbc, login_username);
 
@@ -247,16 +257,31 @@ int main() {
         registration_info.push_back(form_data["password"]);
         registration_info.push_back(form_data["email"]);
         registration_info.push_back(form_data["phone"]);
-
-        for(int i = 0; i < registration_info.size(); i++){
-            std::cout << registration_info.at(i) << std::endl;
+    
+        for (const auto& info : registration_info) {
+            std::cout << info << std::endl;
         }
+    
         std::cout << "Adding into Database" << std::endl;
-        std::cout << registration(hDbc, registration_info.at(0), registration_info.at(1), registration_info.at(2), registration_info.at(3)) << std::endl;
-
-        return crow::response(200, "Form submitted successfully");
-
+    
+        // Check registration result
+        if (registration(hDbc, registration_info[0], registration_info[1], registration_info[2], registration_info[3]) != "Registration Success") {
+            crow::mustache::context ctx;
+            ctx["error"] = "Invalid Username or Email Taken";
+            ctx["username"] = registration_info[0];  // Preserve username
+            ctx["email"] = registration_info[2];     // Preserve email
+            ctx["phone"] = registration_info[3];     // Preserve phone
+    
+            return crow::response(crow::mustache::load("sign-up.html").render(ctx));
+        }
+    
+        // Redirect to login page if successful
+        crow::response res;
+        res.set_header("Location", "/login.html");
+        res.code = 303;
+        return res;
     });
+    
 
     CROW_ROUTE(app, "/user_restrictions.html")([](){
         crow::mustache::context ctx;
@@ -440,12 +465,32 @@ int main() {
 
 
     //homepages
-    CROW_ROUTE(app, "/library_homepage.html")([](){
+    CROW_ROUTE(app, "/library_homepage.html")([](const crow::request& req){
+        std::string session_cookie = req.get_header_value("Cookie");
+        std::string token = extractSessionID(session_cookie);
+
+        if(sessions.find(token) == sessions.end()) {
+            crow::response res;
+            res.code = 302;
+            res.set_header("Location", "/403.html");
+            return res;
+        }
+
         crow::mustache::context ctx;
         return crow::response(crow::mustache::load("library_homepage.html").render(ctx));
     });
 
-    CROW_ROUTE(app, "/admin_dashboard.html")([](){
+    CROW_ROUTE(app, "/admin_dashboard.html")([](const crow::request& req){
+        std::string session_cookie = req.get_header_value("Cookie");
+        std::string token = extractSessionID(session_cookie);
+
+        if(sessions.find(token) == sessions.end()) {
+            crow::response res;
+            res.code = 302;
+            res.set_header("Location", "/403.html");
+            return res;
+        }
+
         crow::mustache::context ctx;
         return crow::response(crow::mustache::load("admin_dashboard.html").render(ctx));
     });
