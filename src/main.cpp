@@ -22,6 +22,7 @@ SQLHDBC hDbc;
 SQLRETURN ret;
 
 std::unordered_map<std::string, std::string> sessions;
+std::unordered_map<std::string, std::unordered_map<std::string, std::string>> user_data;
 
 void signalHandler(int signal);
 
@@ -105,12 +106,14 @@ std::map<std::string, std::string> parse_urlencoded(const std::string& body) {
 
 //session token generation
 std::string generateSessionToken() {
-    static const char alphanum[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-    std::string token;
-    for(int i = 0; i < 16; i++){
-        token += alphanum[rand() % (sizeof(alphanum) - 1)];
-    }
-    return token;
+    static std::mt19937 rng{std::random_device{}()};
+    static std::uniform_int_distribution<int> dist(0, 15);
+    static const char* hex_chars = "0123456789abcdef";
+
+    std::string session_id;
+    for (int i = 0; i < 32; ++i)
+        session_id += hex_chars[dist(rng)];
+    return session_id;
 }
 
 int main() {
@@ -202,7 +205,6 @@ int main() {
         
         std::string stored_pass = getPassword(hDbc, login_username);
         int login_val = verifyLogin(hDbc, login_username, login_password);
-        std::cout << getPassword(hDbc, login_username) << std::endl;
         if((stored_pass != login_password && login_val == -1) || (stored_pass != login_password && login_val == -2)) {
             ctx["error"] = "Invalid Username or Password";
             return crow::response(crow::mustache::load("login.html").render(ctx));
@@ -215,11 +217,10 @@ int main() {
         
 
         std::string role = getRole(hDbc, login_username);
-        std::cout << role << std::endl;
-
 
         crow::response res_redirect;
         res_redirect.code = 302;
+
         if(role == "General"){
             res_redirect.set_header("Location", "/library_homepage.html");
         } 
@@ -228,8 +229,8 @@ int main() {
             res_redirect.set_header("Location", "/admin_dashboard.html");
         }
         
+        res_redirect.set_header("Set-Cookie", "session_id=" + token + "; Path=/; HttpOnly");
         return res_redirect;
-         
     });
 
     //needs fixing
@@ -430,6 +431,11 @@ int main() {
     CROW_ROUTE(app, "/forgot_password.html")([](){
         crow::mustache::context ctx;
         return crow::response(crow::mustache::load("forgot_password.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/genre.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("genre.html").render(ctx));
     });
 
 

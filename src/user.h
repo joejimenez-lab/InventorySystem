@@ -80,6 +80,6 @@ std::string getRole(SQLHDBC, std::string username);
 
 std::string getPassword(SQLHDBC hDbc, std::string username);
 
-std::string changePassword(SQLHDBC hDbc, std::string username, std::string currpass, std::string newpass);
+bool changePassword(SQLHDBC hDbc, std::string username, std::string currpass, std::string newpass);
 
 #endif
