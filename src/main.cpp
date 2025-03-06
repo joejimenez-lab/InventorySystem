@@ -15,6 +15,7 @@
 #include <cstdlib>
 #include <random>
 #include "books.h"
+#include "admin.h"
 
 
 SQLHENV hEnv;

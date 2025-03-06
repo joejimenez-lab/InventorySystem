@@ -50,3 +50,5 @@ void insertBook(SQLHDBC hDbc, std::string book_author, std::string book_title, s
     query = oss.str();
     executeQuery(hDbc, query);
 }
+
+

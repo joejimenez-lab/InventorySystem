@@ -1,0 +1,80 @@
+import requests
+import pandas as pd
+import re
+import time
+
+# Open Library API URL
+API_URL = "https://openlibrary.org/search.json"
+
+# Function to fetch books from Open Library
+def fetch_books(query, max_books=2500, max_pages=50):
+    books = []
+    seen_isbns = set()
+    page = 1
+
+    while len(books) < max_books and page <= max_pages:
+        print(f"Fetching page {page} for query: {query}...")
+        response = requests.get(API_URL, params={"q": query, "page": page, "limit": 100})
+        
+        if response.status_code != 200:
+            print(f"Error fetching data: {response.status_code}")
+            break
+
+        data = response.json()
+        docs = data.get("docs", [])
+
+        if not docs:
+            break  # Stop if no more results
+
+        for doc in docs:
+            title = doc.get("title", "").strip()
+            author = ", ".join(doc.get("author_name", ["Unknown"])).strip()
+            genre = doc.get("subject", ["Unknown"])[0] if "subject" in doc else "Unknown"
+            year = doc.get("first_publish_year", "Unknown")
+            isbn_list = doc.get("isbn", [])
+
+            # Ensure books have a valid ISBN
+            for isbn in isbn_list:
+                if isbn not in seen_isbns and is_valid_text(title) and is_valid_text(author):
+                    books.append([title, author, genre, year, isbn])
+                    seen_isbns.add(isbn)  # Track unique books
+                    break  # Only take the first valid ISBN
+
+        page += 1
+        time.sleep(0.5)  # Short delay to avoid rate limits
+
+        if len(books) >= max_books:
+            break
+
+    return books
+
+# Function to validate English-only text
+def is_valid_text(text):
+    return bool(re.match(r'^[A-Za-z0-9\s,.\'-]*$', text))
+
+# Fetch books from different genres
+queries = [
+    "fiction", "mystery", "science fiction", "fantasy", "romance",
+    "history", "biography", "technology", "self-help", "horror",
+    "adventure", "philosophy", "psychology", "cooking", "health"
+]
+
+all_books = []
+seen_isbns = set()  # Global set to track unique books across queries
+
+for query in queries:
+    books = fetch_books(query, max_books=2500, max_pages=100)
+    for book in books:
+        if book[4] not in seen_isbns:  # Check ISBN again
+            all_books.append(book)
+            seen_isbns.add(book[4])
+
+# Convert to DataFrame
+df = pd.DataFrame(all_books, columns=["title", "author", "genre", "publication_year", "isbn"])
+
+# Ensure at least 10,000 books
+df = df.sample(n=10000, random_state=42) if len(df) > 10000 else df
+
+# Save to CSV
+df.to_csv("books_utf8_unique.csv", encoding="utf-8", index=False)
+print(f"✅ Scraped and saved {len(df)} unique books to 'books_utf8_unique.csv'")
