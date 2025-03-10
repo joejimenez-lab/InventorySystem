@@ -1091,4 +1091,5 @@ CMakeFiles/Project.dir/src/main.cpp.obj: \
  C:/mingw64/mingw64/x86_64-w64-mingw32/include/propidl.h \
  C:/mingw64/mingw64/x86_64-w64-mingw32/include/oleauto.h \
  C:/Users/natea/InventorySystem/phc-winner-argon2/include/argon2.h \
- C:\Users\natea\InventorySystem\src\books.h
+ C:\Users\natea\InventorySystem\src\books.h \
+ C:\Users\natea\InventorySystem\src\admin.h
