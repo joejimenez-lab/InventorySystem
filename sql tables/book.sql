@@ -23,3 +23,12 @@ CREATE TABLE reserved_books (
     reserve_date DATE DEFAULT CURRENT_DATE,
     status VARCHAR(20) DEFAULT 'Pending' CHECK (status IN ('Pending', 'Cancelled', 'Completed'))
 );
+
+CREATE TABLE book_content (
+    id SERIAL PRIMARY KEY,
+    book_id INT REFERENCES books(id) ON DELETE CASCADE,
+    source TEXT NOT NULL,  
+    content_type TEXT NOT NULL, 
+    content TEXT NOT NULL,
+    scraped_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
