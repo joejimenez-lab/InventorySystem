@@ -16,6 +16,8 @@
 #include <random>
 #include "books.h"
 #include "admin.h"
+#include <cpr/cpr.h>
+#include "json/json.h"
 
 
 SQLHENV hEnv;
@@ -32,6 +34,21 @@ std::string load_html(const std::string& file_path) {
     std::stringstream buffer;
     buffer << html_file.rdbuf();
     return buffer.str();
+}
+
+std::string html_escape(const std::string& input) {
+    std::ostringstream escaped;
+    for (char c : input) {
+        switch (c) {
+            case '&':  escaped << "&amp;"; break;
+            case '<':  escaped << "&lt;"; break;
+            case '>':  escaped << "&gt;"; break;
+            case '"':  escaped << "&quot;"; break;
+            case '\'': escaped << "&#39;"; break;
+            default:   escaped << c; break;
+        }
+    }
+    return escaped.str();
 }
 
 std::unordered_map<std::string, std::string> parse_form_data(const std::string& body) {
@@ -128,7 +145,17 @@ std::string extractSessionID(const std::string& cookie) {
 
 
 int main() {
-    std::cout << "Current working directory: " << std::filesystem::current_path() << std::endl;
+    cpr::Response r = cpr::Get(cpr::Url{"https://jsonplaceholder.typicode.com/todos/1"});
+
+    // Check if the request was successful
+    if (r.status_code == 200) {
+        std::cout << "Response Code: " << r.status_code << std::endl;
+        std::cout << "Response Body:\n" << r.text << std::endl;
+    } else {
+        std::cerr << "Request failed with status code: " << r.status_code << std::endl;
+    }
+        
+
     SQLCHAR* datasource = (SQLCHAR*)"PostgreSQL30";  // DSN name
     SQLCHAR* user = (SQLCHAR*)"postgres";  // Database username
     SQLCHAR* pass = (SQLCHAR*)"Project";  // Database password
@@ -479,6 +506,23 @@ int main() {
 
         crow::mustache::context ctx;
         return crow::response(crow::mustache::load("library_homepage.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/search_results")([](const crow::request& req) {
+        auto query = req.url_params.get("query"); // Get search query
+
+        if (!query) {
+            return crow::response(400, "No query provided.");
+        }
+        
+        std::string search_result = html_escape(query);
+        std::ostringstream response_html;
+
+        // testing
+        // std::cout << search_result << std::endl;
+        // std::cout << query << std::endl;
+        
+        return crow::response{response_html.str()};
     });
 
     CROW_ROUTE(app, "/admin_dashboard.html")([](const crow::request& req){

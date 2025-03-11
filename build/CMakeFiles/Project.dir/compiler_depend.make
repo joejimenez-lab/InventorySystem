@@ -447,12 +447,63 @@ CMakeFiles/Project.dir/src/main.cpp.obj: C:/Users/natea/InventorySystem/src/main
   C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/writable_pipe.hpp \
   C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/write.hpp \
   C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/write_at.hpp \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/accept_encoding.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/api.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/async.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/async_wrapper.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/auth.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/bearer.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/body.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/buffer.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/callback.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/cert_info.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/connect_timeout.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/cookies.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/cpr.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/cprtypes.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/cprver.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/curl_container.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/curlholder.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/curlmultiholder.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/error.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/file.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/filesystem.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/http_version.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/interceptor.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/interface.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/limit_rate.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/local_port.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/local_port_range.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/low_speed.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/multipart.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/multiperform.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/parameters.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/payload.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/proxies.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/proxyauth.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/range.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/redirect.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/reserve_size.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/resolve.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/response.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/session.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/singleton.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/ssl_ctx.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/ssl_options.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/status_codes.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/threadpool.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/timeout.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/unix_socket.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/user_agent.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/util.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/verbose.h \
   C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow.h \
   C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/TinySHA1.hpp \
   C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/app.h \
   C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/ci_map.h \
   C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/common.h \
   C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/compression.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/exceptions.h \
   C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/http_connection.h \
   C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/http_parser_merged.h \
   C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/http_request.h \
@@ -464,6 +515,7 @@ CMakeFiles/Project.dir/src/main.cpp.obj: C:/Users/natea/InventorySystem/src/main
   C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/middleware_context.h \
   C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/mime_types.h \
   C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/multipart.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/multipart_view.h \
   C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/mustache.h \
   C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/parser.h \
   C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/query_string.h \
@@ -475,6 +527,25 @@ CMakeFiles/Project.dir/src/main.cpp.obj: C:/Users/natea/InventorySystem/src/main
   C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/utility.h \
   C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/version.h \
   C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/websocket.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/curl.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/curlver.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/easy.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/header.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/mprintf.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/multi.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/options.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/system.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/urlapi.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/websockets.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/allocator.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/config.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/forwards.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/json.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/json_features.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/reader.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/value.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/version.h \
+  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/writer.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/adxintrin.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/ammintrin.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/amxbf16intrin.h \
@@ -547,6 +618,7 @@ CMakeFiles/Project.dir/src/main.cpp.obj: C:/Users/natea/InventorySystem/src/main
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/cpp_type_traits.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/cxxabi_forced.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/cxxabi_init_exception.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/deque.tcc \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/enable_special_members.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/erase_if.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/exception.h \
@@ -605,6 +677,7 @@ CMakeFiles/Project.dir/src/main.cpp.obj: C:/Users/natea/InventorySystem/src/main
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_algobase.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_bvector.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_construct.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_deque.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_function.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_heap.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_iterator.h \
@@ -613,10 +686,14 @@ CMakeFiles/Project.dir/src/main.cpp.obj: C:/Users/natea/InventorySystem/src/main
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_list.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_map.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_multimap.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_multiset.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_numeric.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_pair.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_queue.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_raw_storage_iter.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_relops.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_set.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_stack.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_tempbuf.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_tree.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_uninitialized.h \
@@ -631,6 +708,7 @@ CMakeFiles/Project.dir/src/main.cpp.obj: C:/Users/natea/InventorySystem/src/main
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/unique_lock.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/unique_ptr.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/unordered_map.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/unordered_set.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/uses_allocator.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/uses_allocator_args.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/utility.h \
@@ -640,6 +718,7 @@ CMakeFiles/Project.dir/src/main.cpp.obj: C:/Users/natea/InventorySystem/src/main
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cctype \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cerrno \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cfloat \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/charconv \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/chrono \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/climits \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/clocale \
@@ -658,6 +737,7 @@ CMakeFiles/Project.dir/src/main.cpp.obj: C:/Users/natea/InventorySystem/src/main
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cwctype \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/debug/assertions.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/debug/debug.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/deque \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/exception \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/aligned_buffer.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/alloc_traits.h \
@@ -685,15 +765,19 @@ CMakeFiles/Project.dir/src/main.cpp.obj: C:/Users/natea/InventorySystem/src/main
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/mutex \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/new \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/numeric \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/optional \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ostream \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/pstl/execution_defs.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/pstl/glue_algorithm_defs.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/pstl/glue_memory_defs.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/pstl/glue_numeric_defs.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/pstl/pstl_config.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/queue \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/random \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ratio \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/set \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/sstream \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/stack \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/stdexcept \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/stdlib.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/streambuf \
@@ -717,6 +801,7 @@ CMakeFiles/Project.dir/src/main.cpp.obj: C:/Users/natea/InventorySystem/src/main
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/type_traits \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/typeinfo \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/unordered_map \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/unordered_set \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/utility \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/variant \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/vector \
@@ -844,6 +929,7 @@ CMakeFiles/Project.dir/src/main.cpp.obj: C:/Users/natea/InventorySystem/src/main
   C:/mingw64/mingw64/x86_64-w64-mingw32/include/in6addr.h \
   C:/mingw64/mingw64/x86_64-w64-mingw32/include/inaddr.h \
   C:/mingw64/mingw64/x86_64-w64-mingw32/include/interlockedapi.h \
+  C:/mingw64/mingw64/x86_64-w64-mingw32/include/inttypes.h \
   C:/mingw64/mingw64/x86_64-w64-mingw32/include/io.h \
   C:/mingw64/mingw64/x86_64-w64-mingw32/include/ioapiset.h \
   C:/mingw64/mingw64/x86_64-w64-mingw32/include/jobapi.h \
@@ -1412,19 +1498,15 @@ CMakeFiles/Project.dir/src/user.cpp.obj: C:/Users/natea/InventorySystem/src/user
   C:/Users/natea/InventorySystem/src/user.h
 
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/any_io_executor.hpp:
+
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/random:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/basic_stream_socket.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/any_io_executor.hpp:
-
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/rpc.h:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bit:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/adxintrin.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/basic_deadline_timer.hpp:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/buffer.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/execution/any_executor.hpp:
 
@@ -1432,9 +1514,11 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/basic_se
 
 C:/Users/natea/InventorySystem/src/main.cpp:
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/awaitable.hpp:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/buffered_stream_fwd.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/awaitable.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/interface.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/basic_socket_acceptor.hpp:
 
@@ -1448,11 +1532,11 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/immintrin.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/any_completion_executor.hpp:
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio.hpp:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/connect_pipe.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/basic_io_object.hpp:
-
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/buffered_write_stream_fwd.hpp:
 
@@ -1460,29 +1544,33 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/any_comp
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/basic_streambuf_fwd.hpp:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/guiddef.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/basic_stream_file.hpp:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/guiddef.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/impl/address.ipp:
 
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/unordered_set.h:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/completion_condition.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mwaitintrin.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/strand.hpp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mwaitintrin.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xsavesintrin.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/buffered_stream.hpp:
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/settings.h:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/associated_immediate_executor.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/settings.h:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/address_v4_iterator.hpp:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_algo.h:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/address_v4_iterator.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/curlmultiholder.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/append.hpp:
 
@@ -1490,9 +1578,13 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/as_tuple
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/tcp.hpp:
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/filesystem.h:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/associated_allocator.hpp:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vldqintrin.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/async.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/associated_cancellation_slot.hpp:
 
@@ -1500,21 +1592,21 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/default_
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/associated_executor.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/serial_port.hpp:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/serial_port_base.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/buffers_iterator.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/serial_port.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detached.hpp:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/buffers_iterator.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/win_iocp_socket_service_base.hpp:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512ifmavlintrin.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/enable_special_members.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/associator.hpp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/enable_special_members.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/composed.hpp:
 
@@ -1524,53 +1616,55 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/windows/
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/async_result.hpp:
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/response.h:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/cancellation_type.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/basic_datagram_socket.hpp:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/minwinbase.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/bind_executor.hpp:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/minwinbase.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/basic_raw_socket.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/wbnoinvdintrin.h:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512fintrin.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/future:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/basic_file.hpp:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/wbnoinvdintrin.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512fintrin.h:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/basic_file.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/basic_random_access_file.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xmmintrin.h:
-
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/predefined_ops.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xmmintrin.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/traits/execute_member.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/buffered_write_stream.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/prfchiintrin.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/basic_streambuf.hpp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/prfchiintrin.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/wrapped_handler.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/win_mutex.hpp:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h:
-
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/sgxintrin.h:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/basic_readable_pipe.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/concurrence.h:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/system_timer.hpp:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/hashtable.h:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/system_timer.hpp:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/concurrence.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/memoryapi.h:
 
@@ -1578,15 +1672,15 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/basic_se
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/basic_signal_set.hpp:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/stdlib.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/coroutine.hpp:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/stdlib.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/executor.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/pstl/glue_algorithm_defs.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/impl/strand_service.ipp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/pstl/glue_algorithm_defs.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/co_spawn.hpp:
 
@@ -1598,25 +1692,31 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/buffer_r
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/buffer.hpp:
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/dispatch.hpp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/std_mutex.h:
+
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/thread:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/basic_socket.hpp:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vnnivlintrin.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/std_mutex.h:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/emmintrin.h:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/dispatch.hpp:
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/minwindef.h:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/mswsock.h:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/error.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/iomanip:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/allocated_ptr.h:
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/mswsock.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/read.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/basic_socket_iostream.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/read.hpp:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/allocated_ptr.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/psdk_inc/_ip_types.h:
 
@@ -1628,43 +1728,43 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/basic_so
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/ci_map.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cctype:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/basic_waitable_timer.hpp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cctype:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/ncrypt.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/io_context.ipp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/enqcmdintrin.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/basic_writable_pipe.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/consign.hpp:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/enqcmdintrin.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/http_response.h:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/bind_allocator.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/consign.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/execution/occupancy.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/bind_allocator.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/consign.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/bind_cancellation_slot.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/execution/occupancy.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/returnable.h:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/bind_cancellation_slot.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/bind_immediate_executor.hpp:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_algobase.h:
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/session.h:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/cstdint.hpp:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/wmmintrin.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/legendre_function.tcc:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/buffered_read_stream.hpp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/legendre_function.tcc:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/buffered_read_stream_fwd.hpp:
 
@@ -1674,17 +1774,21 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/i
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/connect.hpp:
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/cpr.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/system_context.hpp:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/cancel_at.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/impl/timer_queue_set.ipp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/system_context.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/impl/address_v6.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/iterator:
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/inttypes.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/cancellation_signal.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/impl/address_v6.hpp:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/iterator:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/winsock.h:
 
@@ -1696,9 +1800,11 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/cancella
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/execution_context.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/lzcntintrin.h:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/low_speed.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/co_composed.hpp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/lzcntintrin.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/psdk_inc/_wsadata.h:
 
@@ -1716,13 +1822,13 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/amxbf16intrin.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/array.hpp:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/playsoundapi.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/socket_types.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/array_fwd.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/atomic_count.hpp:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/singleton.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/base_from_cancellation_state.hpp:
 
@@ -1736,17 +1842,17 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-ming
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/bind_handler.hpp:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/psdk_inc/_xmitfile.h:
-
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/blocking_executor_op.hpp:
-
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/impl/select_reactor.ipp:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx2intrin.h:
-
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/poly_hermite.tcc:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/impl/win_iocp_file_service.ipp:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/impl/select_reactor.ipp:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/blocking_executor_op.hpp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx2intrin.h:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/psdk_inc/_xmitfile.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/buffer_resize_guard.hpp:
 
@@ -1760,17 +1866,19 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/map:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/buffer_sequence_adapter.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/buffered_stream_storage.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/prepend.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/win_iocp_thread_info.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/prepend.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/buffered_stream_storage.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/io_context.hpp:
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/read_at.hpp:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/call_stack.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/read_at.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/ssl_ctx.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/chrono.hpp:
 
@@ -1780,15 +1888,13 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/memory:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/chrono_time_traits.hpp:
 
-C:/Users/natea/InventorySystem/src/user.cpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/generic/seq_packet_protocol.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/completion_handler.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/generic/seq_packet_protocol.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/completion_message.hpp:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cstdio:
-
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/completion_message.hpp:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/psdk_inc/_ip_mreq1.h:
 
@@ -1820,47 +1926,49 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/list.tcc:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/consuming_buffers.hpp:
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/thread_pool.hpp:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/functional.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/thread_pool.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/unicast.hpp:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/exception:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/cstddef.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/unicast.hpp:
-
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/winefs.h:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xsavecintrin.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h:
 
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xsavecintrin.h:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/date_time_fwd.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/deadline_timer_service.hpp:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/execution/prefer_only.hpp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_multiset.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/deadline_timer_service.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/dependent_type.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/impl/handler_tracking.ipp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/event.hpp:
-
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512fp16vlintrin.h:
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/event.hpp:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/executor_function.hpp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/movdirintrin.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/win_static_mutex.hpp:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/executor_op.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/select_reactor.hpp:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vbmi2intrin.h:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/movdirintrin.h:
-
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/executor_op.hpp:
-
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/win_static_mutex.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/fd_set_adapter.hpp:
 
@@ -1868,19 +1976,19 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/f
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/future.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xopintrin.h:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/win_object_handle_service.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/global.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/win_object_handle_service.hpp:
-
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/apiset.h:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xopintrin.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/impl/win_mutex.ipp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/locale_classes.tcc:
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/apiset.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/handler_alloc_helpers.hpp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/locale_classes.tcc:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/handler_cont_helpers.hpp:
 
@@ -1890,33 +1998,33 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/h
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/scoped_lock.hpp:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/mcx.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/handler_work.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/hash_map.hpp:
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/mcx.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/write.hpp:
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/hash_map.hpp:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/impl/win_iocp_handle_service.ipp:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/locale_classes.h:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/cxxabi_forced.h:
-
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/bad_address_cast.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/query.hpp:
 
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/cxxabi_forced.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/locale_classes.h:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow.h:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/impl/null_event.ipp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/bad_address_cast.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/null_event.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/version.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/resolver_base.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/version.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/null_event.hpp:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/impl/null_event.ipp:
 
 C:/Users/natea/InventorySystem/src/user.h:
 
@@ -1928,15 +2036,17 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/r
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/impl/resolver_service_base.ipp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/win_iocp_file_service.hpp:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/hresetintrin.h:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/threadpool.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/impl/scheduler.ipp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/vector.tcc:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/hresetintrin.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/win_iocp_file_service.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/posix/stream_descriptor.hpp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/vector.tcc:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h:
 
@@ -1946,13 +2056,15 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/pkuintrin.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/impl/service_registry.hpp:
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/buffered_write_stream.hpp:
+
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/numeric:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/timer_queue_ptime.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/buffered_write_stream.hpp:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/impl/service_registry.ipp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/unordered_set:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/impl/signal_set_service.ipp:
 
@@ -1964,19 +2076,25 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/traits/s
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/impl/socket_select_interrupter.ipp:
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/cprver.h:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/impl/strand_executor_service.hpp:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/parameters.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/impl/strand_executor_service.ipp:
 
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/amxtileintrin.h:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/resolver_service_base.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/amxtileintrin.h:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/detail/endpoint.hpp:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/atomic_futex.h:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/executor.ipp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/api.h:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/detail/endpoint.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/executor.ipp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/impl/strand_service.hpp:
 
@@ -2008,15 +2126,13 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/unordered_map:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/impl/win_object_handle_service.ipp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/mime_types.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/impl/win_static_mutex.ipp:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/sm4intrin.h:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/impl/win_tss_ptr.ipp:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/buffered_read_stream.hpp:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/impl/win_tss_ptr.ipp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/connect.hpp:
 
@@ -2028,11 +2144,11 @@ C:/mingw64/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/execution/blocking_adaptation.hpp:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/initiate_dispatch.hpp:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/unique_lock.h:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/initiate_dispatch.hpp:
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/pthread_unistd.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/execution/invocable_archetype.hpp:
 
@@ -2052,65 +2168,61 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/i
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/limits.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/x86gprintrin.h:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/basic_resolver.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/local_free_on_block_exit.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/basic_resolver.hpp:
-
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/nb30.h:
-
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/sys/types.h:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/x86gprintrin.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/memory.hpp:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/reader.h:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/sys/types.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/mutex.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/impl/basic_endpoint.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/rtmintrin.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/non_const_lvalue.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/localefwd.h:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/rtmintrin.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/noncopyable.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/uses_executor.hpp:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/localefwd.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/gfniintrin.h:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/uses_executor.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/null_reactor.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/null_signal_blocker.hpp:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/gfniintrin.h:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/op_queue.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/null_signal_blocker.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/write_at.hpp:
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/op_queue.hpp:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/executor.hpp:
-
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/mmiscapi2.h:
-
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/mustache.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/operation.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/pop_options.hpp:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/resolve_op.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/beta_function.tcc:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/pop_options.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/posix_fd_set_adapter.hpp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/beta_function.tcc:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/posix_thread.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/push_options.hpp:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/pshpack4.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/reactor.hpp:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/pshpack4.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/reactor_op.hpp:
 
@@ -2120,35 +2232,35 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/r
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/resolve_query_op.hpp:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/processthreadsapi.h:
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/cderr.h:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/resolver_service.hpp:
-
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/local/datagram_protocol.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/http_version.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/traits/require_free.hpp:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/windows.h:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/local/datagram_protocol.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/multipart.h:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/resolver_service.hpp:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/msxml.h:
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/processthreadsapi.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/algorithmfwd.h:
 
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/msxml.h:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/scheduler.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/scheduler_operation.hpp:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/http_server.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/scheduler_operation.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/scheduler_task.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/signal_blocker.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/hypergeometric.tcc:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/scoped_ptr.hpp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/hypergeometric.tcc:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/wtypesbase.h:
 
@@ -2172,13 +2284,17 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/s
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/execution/context.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/windows/basic_random_access_handle.hpp:
-
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/stdint.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/status_codes.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/socket_ops.hpp:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/socket_ops.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/forwards.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/windows/basic_random_access_handle.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/impl/address_v4.ipp:
 
@@ -2188,19 +2304,19 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/s
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/multicast.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avxvnniint16intrin.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/static_mutex.hpp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avxvnniint16intrin.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/hash_bytes.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/std_fenced_block.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/time_members.h:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/strand_executor_service.hpp:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/istream.tcc:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/strand_executor_service.hpp:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/time_members.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512cdintrin.h:
 
@@ -2212,21 +2328,25 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/t
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/address.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/error_code.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/version.h:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/winnt.h:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/error_code.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/thread_context.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/thread_group.hpp:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/deque:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/thread_info_base.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/thread_group.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/any_completion_executor.ipp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cstddef:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/thread_info_base.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/throw_error.hpp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cstddef:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/config.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/ostream.tcc:
 
@@ -2236,19 +2356,19 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/t
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/timer_queue_base.hpp:
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/connect_pipe.ipp:
+
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/securitybaseapi.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/timer_scheduler_fwd.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/connect_pipe.ipp:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/tss_ptr.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/this_thread_sleep.h:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/error.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/utility.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/error.hpp:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/this_thread_sleep.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/generic/datagram_protocol.hpp:
 
@@ -2262,27 +2382,29 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/w
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/win_iocp_handle_read_op.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/traits/query_static_constexpr_member.hpp:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/windows/basic_object_handle.hpp:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/traits/query_static_constexpr_member.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/win_iocp_handle_service.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/fs_ops.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/win_iocp_handle_write_op.hpp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/fs_ops.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/prepend.hpp:
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/win_iocp_null_buffers_op.hpp:
+
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/ctype_base.h:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/win_iocp_null_buffers_op.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/options.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/win_iocp_operation.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xsaveintrin.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/win_iocp_overlapped_op.hpp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xsaveintrin.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/basetsd.h:
 
@@ -2290,23 +2412,27 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/w
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/win_iocp_serial_port_service.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx5124vnniwintrin.h:
-
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/memoryfwd.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/win_iocp_socket_accept_op.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/win_iocp_socket_connect_op.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/functional:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/verbose.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/atomicity.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/win_iocp_socket_recv_op.hpp:
 
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/functional:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/win_iocp_socket_recvfrom_op.hpp:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/win_iocp_socket_recvmsg_op.hpp:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/in6addr.h:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/win_iocp_socket_recvmsg_op.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/user_agent.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/win_iocp_socket_send_op.hpp:
 
@@ -2316,11 +2442,13 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/w
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/winsock_init.hpp:
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/auth.h:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/routing.h:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/profileapi.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/detail/work_dispatcher.hpp:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/profileapi.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/execution.hpp:
 
@@ -2328,33 +2456,33 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/executio
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/cguid.h:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/execution/bad_executor.hpp:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/write_at.hpp:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/sdkddkver.h:
-
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/poppack.h:
-
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/execution/blocking.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/execution/bad_executor.hpp:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vlbwintrin.h:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/execution/context_as.hpp:
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/poppack.h:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/sdkddkver.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/execution/blocking.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/generic/stream_protocol.hpp:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/execution/context_as.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/execution/executor.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/execution/impl/bad_executor.ipp:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/mmiscapi.h:
-
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/winuser.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/execution/mapping.hpp:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm3dnow.h:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/execution/mapping.hpp:
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/mmiscapi.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/amxint8intrin.h:
 
@@ -2378,19 +2506,21 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/rdseedintrin.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/immediate.hpp:
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/any_io_executor.ipp:
+
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/jobapi.h:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/any_io_executor.ipp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/cancel_at.hpp:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/utility.h:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/cancel_at.hpp:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/append.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/basic_resolver_results.hpp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/stack:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/libloaderapi.h:
 
@@ -2414,17 +2544,19 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/exe
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/websocket.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/shared_ptr_atomic.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/registered_buffer.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/shared_ptr_atomic.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/io_context.hpp:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/apisetcconv.h:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/multiple_exceptions.ipp:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/apisetcconv.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/proxies.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/wincon.h:
 
@@ -2438,19 +2570,19 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/ser
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/is_read_buffered.hpp:
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/write.hpp:
+
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/cetintrin.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/serial_port_base.ipp:
-
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/write.hpp:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/winbase.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/fxsrintrin.h:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/system_context.ipp:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/traits/query_free.hpp:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/system_context.ipp:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/refwrap.h:
 
@@ -2458,23 +2590,23 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/sys
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/thread_pool.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/thread_pool.ipp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/traits/require_concept_free.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/network_v6.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/traits/require_concept_free.hpp:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/locale_facets_nonio.h:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/thread_pool.ipp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/windows/basic_overlapped_handle.hpp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/locale_facets_nonio.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/impl/use_future.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/io_context_strand.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_construct.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/io_service.hpp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_construct.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/io_service_strand.hpp:
 
@@ -2484,35 +2616,41 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/addre
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/address_v6.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/system_error:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/address_v6_iterator.hpp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/system_error:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/address_v6_range.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/basic_endpoint.hpp:
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/basic_resolver_iterator.hpp:
+
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/basic_resolver_iterator.hpp:
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/float.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/range.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/stdlib.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/basic_resolver_query.hpp:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/unknwn.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/detail/impl/endpoint.ipp:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/proxyauth.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/concepts:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/unix_socket.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/std_thread.h:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/traits/prefer_member.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/detail/socket_option.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/traits/prefer_member.hpp:
-
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/wingdi.h:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/std_thread.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/host_name.hpp:
 
@@ -2520,13 +2658,15 @@ C:/mingw64/mingw64/x86_64-w64-mingw32/include/debugapi.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/icmp.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/impl/address_v4.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/prefer.hpp:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vp2intersectvlintrin.h:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/prefer.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/impl/address_v4.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/impl/address_v6.ipp:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/body.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/common.h:
 
@@ -2536,19 +2676,19 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/this_cor
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/impl/network_v4.hpp:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/namespaceapi.h:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/impl/network_v4.ipp:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_function.h:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/impl/network_v4.ipp:
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/namespaceapi.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/impl/network_v6.hpp:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/range_access.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/impl/network_v6.ipp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/query_string.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/range_access.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/charconv.h:
 
@@ -2560,9 +2700,9 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/udp.h
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/ip/v6_only.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_vector.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/is_applicable_property.hpp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_vector.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/tmmintrin.h:
 
@@ -2570,29 +2710,27 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/is_conti
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vnniintrin.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512bf16vlintrin.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/is_executor.hpp:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/alloc_traits.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/is_write_buffered.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/local/basic_endpoint.hpp:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/alloc_traits.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/set:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/post.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/local/connect_pair.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/local/basic_endpoint.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vlintrin.h:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/local/connect_pair.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/local/detail/endpoint.hpp:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/rpcnsip.h:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/windows/overlapped_ptr.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/local/detail/impl/endpoint.ipp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/windows/overlapped_ptr.hpp:
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/rpcnsip.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/posix/basic_stream_descriptor.hpp:
 
@@ -2600,9 +2738,9 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/local/st
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/multiple_exceptions.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/fs_fwd.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/packaged_task.hpp:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/fs_fwd.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512fp16intrin.h:
 
@@ -2616,9 +2754,13 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/clocale:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/posix/descriptor.hpp:
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/redirect.h:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/socket_adaptors.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/vadefs.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/system.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/posix/descriptor_base.hpp:
 
@@ -2626,33 +2768,35 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/random_a
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/read.hpp:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/namedpipeapi.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/readable_pipe.hpp:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/namedpipeapi.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/ws2tcpip.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/x86intrin.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/recycling_allocator.hpp:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/sqlext.h:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/x86intrin.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/redirect_error.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/require.hpp:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_set.h:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/require_concept.hpp:
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/sqlext.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/require.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/app.h:
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/require_concept.hpp:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/signal_set_base.hpp:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/socket_base.hpp:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/string_conversions.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/uses_allocator.h:
-
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/socket_base.hpp:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/winsock2.h:
 
@@ -2670,21 +2814,21 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/system_c
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/system_error.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/utility.h:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/system_executor.hpp:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/sm3intrin.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/bessel_function.tcc:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/system_executor.hpp:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/thread.hpp:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/fstream:
-
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/thread.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/traits/equality_comparable.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/traits/prefer_free.hpp:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/accept_encoding.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cassert:
 
@@ -2696,29 +2840,97 @@ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/traits/s
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/traits/static_require_concept.hpp:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/processtopologyapi.h:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/use_awaitable.hpp:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/processtopologyapi.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/winsmcrd.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/use_future.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vbmiintrin.h:
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/util.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/wait_traits.hpp:
 
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/windows/object_handle.hpp:
-
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vp2intersectintrin.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/windows/object_handle.hpp:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/windows/stream_handle.hpp:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/vector:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/windows/overlapped_handle.hpp:
 
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/vector:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/multipart_view.h:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/asio/windows/random_access_handle.hpp:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/multiperform.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/filesystem:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/timeapi.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/async_wrapper.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/bearer.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/callback.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/cert_info.h:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/ole2.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/codecvt:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/reserve_size.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/connect_timeout.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/payload.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/cookies.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/shared_ptr_base.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/cprtypes.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/curl_container.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avxvnniint8intrin.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/codecvt.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/curlholder.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/file.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/interceptor.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/limit_rate.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/queue:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/local_port.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/local_port_range.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/resolve.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/multipart.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/smmintrin.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/logging.h:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/securityappcontainer.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/ssl_options.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/timeout.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/locale_conv.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/TinySHA1.hpp:
 
@@ -2728,39 +2940,101 @@ C:/mingw64/mingw64/x86_64-w64-mingw32/include/winver.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/compression.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/exception.h:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/algorithm:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/objidlbase.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/exceptions.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/http_connection.h:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/systemtopologyapi.h:
-
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/pthread.h:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/exception.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/http_parser_merged.h:
 
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/systemtopologyapi.h:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/parser.h:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/pthread.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/special_function_util.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/http_request.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/array:
-
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/json.h:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/securityappcontainer.h:
-
-C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/logging.h:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/array:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/middleware.h:
 
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/middleware_context.h:
 
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/mime_types.h:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/windows.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/multipart.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/mustache.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/returnable.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/utility.h:
+
 C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/version.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/string:
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/corecrt.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/curl.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/gamma.tcc:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/curlver.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/easy.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/header.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/backward/binders.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_list.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/clzerointrin.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/mprintf.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/multi.h:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/rpcsal.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/urlapi.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/modified_bessel_func.tcc:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/websockets.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/allocator.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/json.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/json_features.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/ptr_traits.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/value.h:
+
+C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/writer.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/adxintrin.h:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/rpc.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bit:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/ammintrin.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/string:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/amxcomplexintrin.h:
 
@@ -2768,7 +3042,11 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/amxfp16intrin.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx5124fmapsintrin.h:
 
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx5124vnniwintrin.h:
+
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512bf16intrin.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512bf16vlintrin.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512bitalgintrin.h:
 
@@ -2790,7 +3068,11 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512pfintrin.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vbmi2vlintrin.h:
 
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vbmiintrin.h:
+
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vbmivlintrin.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vlintrin.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h:
 
@@ -2798,25 +3080,19 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vpopcntdqintr
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vpopcntdqvlintrin.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/ios_base.h:
-
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avxifmaintrin.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/ios_base.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avxintrin.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avxneconvertintrin.h:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avxvnniint8intrin.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avxvnniintrin.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/bmi2intrin.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/bmiintrin.h:
-
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/objidlbase.h:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/algorithm:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/any:
 
@@ -2826,21 +3102,15 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/locale:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/backward/auto_ptr.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/clzerointrin.h:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_list.h:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/backward/binders.h:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/align.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/stralign.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/align.h:
-
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/allocator.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/sha512intrin.h:
-
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/atomic_base.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/sha512intrin.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/oleidl.h:
 
@@ -2854,19 +3124,17 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/basic_stri
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/basic_string.tcc:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/wchar.h:
-
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/char_traits.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/chrono.h:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/codecvt.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/handleapi.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/concept_check.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/ws2def.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/deque.tcc:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/shared_ptr.h:
 
@@ -2878,31 +3146,31 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/erase_if.h
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/exception_defines.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/alloc_traits.h:
-
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/exception_ptr.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/fmaintrin.h:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/alloc_traits.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_relops.h:
 
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/fmaintrin.h:
+
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/fs_dir.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/pstl/glue_numeric_defs.h:
-
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/fs_path.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/pstl/glue_numeric_defs.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/fstream.tcc:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/functional_hash.h:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/io.h:
-
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/hashtable_policy.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/invoke.h:
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/io.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/locale_conv.h:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_queue.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/invoke.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/locale_facets.h:
 
@@ -2924,21 +3192,19 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/new_alloca
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/node_handle.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/limits:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/ostream_insert.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/string_view.tcc:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/ostream_insert.h:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/limits:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/rpcnsi.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/mutex:
-
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/parse_numbers.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/postypes.h:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/mutex:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/ptr_traits.h:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/postypes.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/quoted_string.h:
 
@@ -2947,8 +3213,6 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/random.h:
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/random.tcc:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/requires_hosted.h:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/shared_ptr_base.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/specfun.h:
 
@@ -2962,11 +3226,15 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/popcntintrin.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_bvector.h:
 
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_deque.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/uses_allocator_args.h:
+
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_heap.h:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/sysinfoapi.h:
-
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_iterator.h:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/sysinfoapi.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/rpcasync.h:
 
@@ -2974,13 +3242,13 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_iterat
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_iterator_base_types.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/streambuf:
-
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_map.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/clflushoptintrin.h:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/streambuf:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_multimap.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/clflushoptintrin.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_numeric.h:
 
@@ -2988,13 +3256,15 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_pair.h
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/pshpack8.h:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/psdk_inc/_socket_types.h:
-
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_raw_storage_iter.h:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/objidl.h:
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/psdk_inc/_socket_types.h:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_stack.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_tempbuf.h:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/objidl.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_tree.h:
 
@@ -3020,8 +3290,6 @@ C:/mingw64/mingw64/x86_64-w64-mingw32/include/utilapiset.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/unordered_map.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/uses_allocator_args.h:
-
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/wow64apiset.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/version.h:
@@ -3030,33 +3298,29 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cerrno:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cfloat:
 
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/charconv:
+
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/chrono:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/climits:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cmath:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/ole2.h:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/codecvt:
-
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/compare:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/concepts:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/condition_variable:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h:
-
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cstdlib:
 
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h:
+
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cstring:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ctime:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/sql.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/type_traits:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ctime:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/stdarg.h:
 
@@ -3066,17 +3330,13 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/debug/assertion
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/debug/debug.h:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/pshpack1.h:
-
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/aligned_buffer.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/atomicity.h:
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/pshpack1.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/numeric_traits.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/type_traits.h:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/filesystem:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/initializer_list:
 
@@ -3094,6 +3354,10 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/list:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/new:
 
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/typeinfo:
+
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/optional:
+
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ostream:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h:
@@ -3104,11 +3368,9 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/tsxldtrkintrin.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/pstl/glue_memory_defs.h:
 
-C:/Users/natea/InventorySystem/src/books.h:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ratio:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/ktmtypes.h:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ratio:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/sstream:
 
@@ -3122,17 +3384,11 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/uintrintrin.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/exp_integral.tcc:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/gamma.tcc:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/modified_bessel_func.tcc:
-
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/poly_laguerre.tcc:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tr1/riemann_zeta.tcc:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/tuple:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/typeinfo:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/variant:
 
@@ -3168,10 +3424,6 @@ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/clwbintrin.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/cmpccxaddintrin.h:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/minwindef.h:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/emmintrin.h:
-
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/f16cintrin.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/float.h:
@@ -3202,19 +3454,17 @@ C:/mingw64/mingw64/x86_64-w64-mingw32/include/processenv.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/prfchwintrin.h:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/servprov.h:
-
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/raointintrin.h:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/servprov.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/serializeintrin.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/shaintrin.h:
 
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/smmintrin.h:
+C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/_bsd_types.h:
-
-C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h:
 
 C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/tbmintrin.h:
 
@@ -3242,15 +3492,13 @@ C:/mingw64/mingw64/x86_64-w64-mingw32/include/psdk_inc/intrin-impl.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/_timeval.h:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/sqlucode.h:
-
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/assert.h:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/sqlucode.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/bcrypt.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/concurrencysal.h:
-
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/corecrt.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h:
 
@@ -3276,8 +3524,6 @@ C:/mingw64/mingw64/x86_64-w64-mingw32/include/fibersapi.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/fileapi.h:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/float.h:
-
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/fltwinerror.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/interlockedapi.h:
@@ -3292,8 +3538,6 @@ C:/mingw64/mingw64/x86_64-w64-mingw32/include/mstcpip.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/oaidl.h:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/ws2ipdef.h:
-
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/objbase.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/oleauto.h:
@@ -3304,9 +3548,9 @@ C:/mingw64/mingw64/x86_64-w64-mingw32/include/propidl.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/psdk_inc/_fd_types.h:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/sys/timeb.h:
-
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/psdk_inc/_ws1_undef.h:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/sys/timeb.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/psdk_inc/_wsa_errnos.h:
 
@@ -3317,8 +3561,6 @@ C:/mingw64/mingw64/x86_64-w64-mingw32/include/pthread_compat.h:
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/pthread_signal.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/pthread_time.h:
-
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/threadpoollegacyapiset.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/qos.h:
 
@@ -3333,8 +3575,6 @@ C:/mingw64/mingw64/x86_64-w64-mingw32/include/rpcdcep.h:
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/rpcndr.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/rpcnterr.h:
-
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/rpcsal.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/sal.h:
 
@@ -3358,13 +3598,19 @@ C:/mingw64/mingw64/x86_64-w64-mingw32/include/sys/stat.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/threadpoolapiset.h:
 
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/threadpoollegacyapiset.h:
+
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/time.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/timezoneapi.h:
 
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/unknwn.h:
+
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/unknwnbase.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/virtdisk.h:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/wchar.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/wctype.h:
 
@@ -3374,9 +3620,13 @@ C:/mingw64/mingw64/x86_64-w64-mingw32/include/windef.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/winerror.h:
 
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/wingdi.h:
+
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/winnetwk.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/winnls.h:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/winnt.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/winreg.h:
 
@@ -3384,9 +3634,13 @@ C:/mingw64/mingw64/x86_64-w64-mingw32/include/winsvc.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/wnnc.h:
 
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/ws2ipdef.h:
+
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/wtypes.h:
 
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/cderr.h:
+C:/Users/natea/InventorySystem/src/books.h:
+
+C:/Users/natea/InventorySystem/src/user.cpp:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/commdlg.h:
 
@@ -3404,15 +3658,19 @@ C:/mingw64/mingw64/x86_64-w64-mingw32/include/mciapi.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/mmeapi.h:
 
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/mmiscapi2.h:
+
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/mmsyscom.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/mmsystem.h:
 
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/nb30.h:
+
+C:/mingw64/mingw64/x86_64-w64-mingw32/include/playsoundapi.h:
+
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/prsht.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/shellapi.h:
-
-C:/mingw64/mingw64/x86_64-w64-mingw32/include/timeapi.h:
 
 C:/mingw64/mingw64/x86_64-w64-mingw32/include/wincrypt.h:
 

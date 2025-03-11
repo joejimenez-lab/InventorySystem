@@ -1048,6 +1048,9 @@ CMakeFiles/Project.dir/src/main.cpp.obj: \
  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/http_response.h \
  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/mime_types.h \
  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/multipart.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/exceptions.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/multipart_view.h \
+ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/charconv \
  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/routing.h \
  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/middleware.h \
  C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/crow/middleware_context.h \
@@ -1092,4 +1095,94 @@ CMakeFiles/Project.dir/src/main.cpp.obj: \
  C:/mingw64/mingw64/x86_64-w64-mingw32/include/oleauto.h \
  C:/Users/natea/InventorySystem/phc-winner-argon2/include/argon2.h \
  C:\Users\natea\InventorySystem\src\books.h \
- C:\Users\natea\InventorySystem\src\admin.h
+ C:\Users\natea\InventorySystem\src\admin.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/cpr.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/api.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/async.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/async_wrapper.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/response.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/cert_info.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/cookies.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/curlholder.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/curl.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/curlver.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/system.h \
+ C:/mingw64/mingw64/x86_64-w64-mingw32/include/inttypes.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/easy.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/multi.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/curl.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/urlapi.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/options.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/header.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/websockets.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/mprintf.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/cprtypes.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/system.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/error.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/ssl_options.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/filesystem.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/util.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/callback.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/cprtypes.h \
+ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/optional \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/singleton.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/threadpool.h \
+ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/queue \
+ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/deque \
+ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_deque.h \
+ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/deque.tcc \
+ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_queue.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/async_wrapper.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/auth.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/bearer.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/curl/curlver.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/multipart.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/buffer.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/file.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/multiperform.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/curlmultiholder.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/session.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/accept_encoding.h \
+ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/unordered_set \
+ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/unordered_set.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/body.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/buffer.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/file.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/connect_timeout.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/timeout.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/http_version.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/interface.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/limit_rate.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/local_port.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/local_port_range.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/low_speed.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/parameters.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/curl_container.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/payload.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/proxies.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/proxyauth.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/range.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/redirect.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/reserve_size.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/resolve.h \
+ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/set \
+ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_set.h \
+ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_multiset.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/unix_socket.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/user_agent.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/verbose.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/cprver.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/interceptor.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/ssl_ctx.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/cpr/status_codes.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/json.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/config.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/allocator.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/version.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/json_features.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/forwards.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/reader.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/value.h \
+ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/stack \
+ C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_stack.h \
+ C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/include/json/writer.h

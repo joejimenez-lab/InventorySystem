@@ -113,6 +113,9 @@ Project.exe: CMakeFiles/Project.dir/src/main.cpp.obj
 Project.exe: CMakeFiles/Project.dir/src/user.cpp.obj
 Project.exe: CMakeFiles/Project.dir/build.make
 Project.exe: C:/Users/natea/InventorySystem/phc-winner-argon2/libargon2.a
+Project.exe: C:/Users/natea/InventorySystem/vcpkg/installed/x64-mingw-static/lib/libjsoncpp.a
+Project.exe: C:/Users/natea/InventorySystem/vcpkg/installed/x64-mingw-static/lib/libcpr.a
+Project.exe: C:/Users/natea/InventorySystem/vcpkg/installed/x64-windows/debug/lib/libcurl-d.lib
 Project.exe: CMakeFiles/Project.dir/linkLibs.rsp
 Project.exe: CMakeFiles/Project.dir/objects1.rsp
 Project.exe: CMakeFiles/Project.dir/link.txt
