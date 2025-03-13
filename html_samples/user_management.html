@@ -71,7 +71,7 @@
         .then(response => response.json())
         .then(data => {
           let tableBody = document.getElementById("userTableBody");
-          tableBody.innerHTML = ""; // Clear existing rows
+          tableBody.innerHTML = ""; 
 
           data.users.forEach(user => {
             let row = document.createElement("tr");
@@ -87,7 +87,7 @@
             tableBody.appendChild(row);
           });
 
-          searchUsers(); // Apply filtering if search already has input
+          searchUsers(); 
         })
         .catch(error => console.error("Error fetching users:", error));
     }
@@ -97,20 +97,20 @@
       let table = document.getElementById("userTable");
       let rows = table.getElementsByTagName("tr");
       
-      // Loop through all rows (skip the header row)
+      
       for (let i = 1; i < rows.length; i++) {
         let cols = rows[i].getElementsByTagName("td");
         
-        // Get the values from the columns: ID, Username, and Role
-        let id = cols[0].textContent.toLowerCase();  // First column is ID
-        let username = cols[1].textContent.toLowerCase();  // Second column is Username
-        let role = cols[2].textContent.toLowerCase();  // Third column is Role
+        
+        let id = cols[0].textContent.toLowerCase(); 
+        let username = cols[1].textContent.toLowerCase();  
+        let role = cols[2].textContent.toLowerCase();  
         
         // Check if any of the columns contain the search input
         if (id.includes(input) || username.includes(input) || role.includes(input)) {
-          rows[i].style.display = "";  // Show row
+          rows[i].style.display = "";  
         } else {
-          rows[i].style.display = "none";  // Hide row
+          rows[i].style.display = "none";  
         }
       }
     }
