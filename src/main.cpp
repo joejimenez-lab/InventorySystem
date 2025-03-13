@@ -145,16 +145,6 @@ std::string extractSessionID(const std::string& cookie) {
 
 
 int main() {
-    cpr::Response r = cpr::Get(cpr::Url{"https://jsonplaceholder.typicode.com/todos/1"});
-
-    // Check if the request was successful
-    if (r.status_code == 200) {
-        std::cout << "Response Code: " << r.status_code << std::endl;
-        std::cout << "Response Body:\n" << r.text << std::endl;
-    } else {
-        std::cerr << "Request failed with status code: " << r.status_code << std::endl;
-    }
-        
 
     SQLCHAR* datasource = (SQLCHAR*)"PostgreSQL30";  // DSN name
     SQLCHAR* user = (SQLCHAR*)"postgres";  // Database username
@@ -320,6 +310,27 @@ int main() {
         crow::mustache::context ctx;
         return crow::response(crow::mustache::load("user_profile.html").render(ctx));
     });
+    
+    CROW_ROUTE(app, "/api/users")
+    .methods("GET"_method)([]() {
+        crow::json::wvalue result;
+        std::string query = "SELECT id, username, user_role FROM users ORDER BY id;";
+        std::vector<std::vector<std::string>> allusers = executeQueryReturnRows(hDbc, query);
+        std::vector<crow::json::wvalue> user_list;
+        for (const auto& user : allusers) {
+            if (user.size() >= 3) {
+                user_list.push_back(crow::json::wvalue{
+                    {"id", user[0]},
+                    {"username", user[1]},
+                    {"role", user[2]}
+                });
+            }
+        }
+        result["users"] = std::move(user_list);
+        
+        return crow::response{result};
+    });
+
 
     CROW_ROUTE(app, "/user_management.html")([](){
         crow::mustache::context ctx;

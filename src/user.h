@@ -82,4 +82,6 @@ std::string getPassword(SQLHDBC hDbc, std::string username);
 
 bool changePassword(SQLHDBC hDbc, std::string username, std::string currpass, std::string newpass);
 
+std::vector<std::vector<std::string>> executeQueryReturnRows(SQLHDBC hDbc, std::string& query);
+
 #endif

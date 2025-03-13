@@ -49,7 +49,72 @@
       padding: 10px;
       text-align: left;
     }
+    .search-bar {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .search-bar input {
+      width: 97%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
   </style>
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+      fetchUsers();
+    });
+
+    function fetchUsers() {
+      fetch("/api/users")
+        .then(response => response.json())
+        .then(data => {
+          let tableBody = document.getElementById("userTableBody");
+          tableBody.innerHTML = ""; // Clear existing rows
+
+          data.users.forEach(user => {
+            let row = document.createElement("tr");
+            row.innerHTML = `
+              <td>${user.id}</td>
+              <td>${user.username}</td>
+              <td>${user.role}</td>
+              <td>
+                <a href="edit_user_role.html?id=${user.id}">Edit Role</a> | 
+                <a href="user_restrictions.html?id=${user.id}">Restrictions</a>
+              </td>
+            `;
+            tableBody.appendChild(row);
+          });
+
+          searchUsers(); // Apply filtering if search already has input
+        })
+        .catch(error => console.error("Error fetching users:", error));
+    }
+
+    function searchUsers() {
+      let input = document.getElementById("search").value.toLowerCase();
+      let table = document.getElementById("userTable");
+      let rows = table.getElementsByTagName("tr");
+      
+      // Loop through all rows (skip the header row)
+      for (let i = 1; i < rows.length; i++) {
+        let cols = rows[i].getElementsByTagName("td");
+        
+        // Get the values from the columns: ID, Username, and Role
+        let id = cols[0].textContent.toLowerCase();  // First column is ID
+        let username = cols[1].textContent.toLowerCase();  // Second column is Username
+        let role = cols[2].textContent.toLowerCase();  // Third column is Role
+        
+        // Check if any of the columns contain the search input
+        if (id.includes(input) || username.includes(input) || role.includes(input)) {
+          rows[i].style.display = "";  // Show row
+        } else {
+          rows[i].style.display = "none";  // Hide row
+        }
+      }
+    }
+  </script>
 </head>
 <body>
   <div class="header">
@@ -57,8 +122,12 @@
   </div>
   <div class="container">
     <p>Manage the registered users in the library system.</p>
-    <!-- Dummy table for user data -->
-    <table>
+    
+    <div class="search-bar">
+      <input type="text" id="search" onkeyup="searchUsers()" placeholder="Search by username or role...">
+    </div>
+    
+    <table id="userTable">
       <thead>
         <tr>
           <th>User ID</th>
@@ -67,27 +136,11 @@
           <th>Actions</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td>001</td>
-          <td>john_doe</td>
-          <td>User</td>
-          <td>
-            <a href="edit_user_role.html?id=001">Edit Role</a> | 
-            <a href="user_restrictions.html?id=001">Restrictions</a>
-          </td>
-        </tr>
-        <tr>
-          <td>002</td>
-          <td>jane_admin</td>
-          <td>Admin</td>
-          <td>
-            <a href="edit_user_role.html?id=002">Edit Role</a> | 
-            <a href="user_restrictions.html?id=002">Restrictions</a>
-          </td>
-        </tr>
+      <tbody id="userTableBody">
+
       </tbody>
     </table>
+    
     <div class="nav">
       <a href="admin_dashboard.html">Back to Dashboard</a>
     </div>

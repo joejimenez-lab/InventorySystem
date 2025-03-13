@@ -272,3 +272,41 @@ bool changePassword(SQLHDBC hDbc, std::string username, std::string currpass, st
     }
     return false;
 }
+
+std::vector<std::vector<std::string>> executeQueryReturnRows(SQLHDBC hDbc, std::string& query) {
+    SQLHSTMT stmt = NULL;
+    SQLRETURN retcode = SQLAllocHandle(SQL_HANDLE_STMT, hDbc, &stmt);
+    checkReturnCode(retcode, "SQL statement handle");
+
+    retcode = SQLExecDirect(stmt, (SQLCHAR*)query.c_str(), SQL_NTS);
+    checkReturnCode(retcode, "SQL query execution");
+
+    // Get column count
+    SQLSMALLINT numCols;
+    SQLNumResultCols(stmt, &numCols);
+
+    std::vector<std::vector<std::string>> results;
+
+    SQLCHAR colData[256];
+    SQLLEN colDataLen;
+
+    while (SQLFetch(stmt) == SQL_SUCCESS) {
+        std::vector<std::string> row;
+
+        for (SQLSMALLINT col = 1; col <= numCols; col++) {
+            retcode = SQLGetData(stmt, col, SQL_C_CHAR, colData, sizeof(colData), &colDataLen);
+            checkReturnCode(retcode, "Fetching column data");
+
+            if (colDataLen == SQL_NULL_DATA) {
+                row.emplace_back("NULL");  // Handle NULL values
+            } else {
+                row.emplace_back(std::string((char*)colData, colDataLen > 0 ? colDataLen : 0));
+            }
+        }
+
+        results.push_back(row);
+    }
+
+    SQLFreeHandle(SQL_HANDLE_STMT, stmt);
+    return results;
+}
