@@ -497,9 +497,9 @@ int main() {
         return crow::response(crow::mustache::load("forgot_password.html").render(ctx));
     });
 
-    CROW_ROUTE(app, "/genre.html")([](){
+    CROW_ROUTE(app, "/genre_preferences.html")([](){
         crow::mustache::context ctx;
-        return crow::response(crow::mustache::load("genre.html").render(ctx));
+        return crow::response(crow::mustache::load("genre_preferences.html").render(ctx));
     });
 
 

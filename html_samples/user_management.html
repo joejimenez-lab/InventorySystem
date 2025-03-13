@@ -80,8 +80,8 @@
               <td>${user.username}</td>
               <td>${user.role}</td>
               <td>
-                <a href="edit_user_role.html?id=${user.id}">Edit Role</a> | 
-                <a href="user_restrictions.html?id=${user.id}">Restrictions</a>
+                <a href="edit_user_role.html?id=${user.id}&user=${encodeURIComponent(user.username)}">Edit Role</a> | 
+                <a href="user_restrictions.html?id=${user.id}&user=${encodeURIComponent(user.username)}">Restrictions</a>
               </td>
             `;
             tableBody.appendChild(row);

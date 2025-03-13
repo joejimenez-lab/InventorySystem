@@ -65,12 +65,12 @@
   <div class="container">
     <form action="user_management.html" method="post">
       <label for="username">Username:</label>
-      <input type="text" id="username" name="username" value="john_doe" readonly>
+      <input type="text" id="username" name="username" value="Loading..." readonly>
       
       <label for="role">Select Role:</label>
       <select id="role" name="role" required>
         <option value="User">User</option>
-        <option value="Admin">Admin</option>
+        <option value="Librarian">Librarian</option>
       </select>
       
       <button type="submit">Update Role</button>
@@ -79,5 +79,18 @@
       <a href="user_management.html">Back to User Management</a>
     </div>
   </div>
+  <script>
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+  
+    document.addEventListener("DOMContentLoaded", function () {
+      const username = getQueryParam("user");
+      if (username) {
+        document.getElementById("username").value = decodeURIComponent(username);
+      }
+    });
+  </script>
 </body>
 </html>

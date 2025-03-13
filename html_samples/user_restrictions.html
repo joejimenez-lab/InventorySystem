@@ -63,7 +63,7 @@
   </div>
   <div class="container">
     <form action="user_management.html" method="post">
-      <p>User: john_doe</p>
+      <p>User: <span id="username">Loading...</span></p>
       <div class="checkbox-group">
         <label><input type="checkbox" name="restriction[]" value="borrow"> Restrict Book Borrowing</label>
         <label><input type="checkbox" name="restriction[]" value="reserve"> Restrict Book Reservations</label>
@@ -75,5 +75,18 @@
       <a href="user_management.html">Back to User Management</a>
     </div>
   </div>
+  <script>
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+  
+    document.addEventListener("DOMContentLoaded", function () {
+      const username = getQueryParam("user");
+      if (username) {
+        document.getElementById("username").textContent = decodeURIComponent(username);
+      }
+    });
+  </script>
 </body>
 </html>
