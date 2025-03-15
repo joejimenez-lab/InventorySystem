@@ -306,6 +306,54 @@ int main() {
         return crow::response(crow::mustache::load("user_restrictions.html").render(ctx));
     });
 
+    CROW_ROUTE(app, "/get_restrictions").methods("GET"_method)
+    ([](const crow::request& req) {
+        auto params = crow::query_string{req.url_params};
+        std::string user_id_str = params.get("user_id") ? params.get("user_id") : "";
+
+        if (user_id_str.empty()) {
+            return crow::response(400, "Missing user_id");
+        }
+
+        std::string query = "SELECT borrow, reservation, resource FROM users_restrictions WHERE user_id = " + user_id_str + ";";
+        std::vector<std::vector<std::string>> info = executeQueryReturnRows(hDbc, query);
+        if (info.empty()) {
+            return crow::response(404, "User not found");
+        }
+
+        crow::json::wvalue json_response;
+        json_response["borrow"] = (info[0][0] == "1");  // Convert "1"/"0" to boolean
+        json_response["reserve"] = (info[0][1] == "1");
+        json_response["access"] = (info[0][2] == "1");
+
+        return crow::response(json_response.dump());
+    });
+
+    CROW_ROUTE(app, "/update_restrictions").methods("POST"_method)
+    ([](const crow::request& req) {
+        auto body = crow::json::load(req.body);
+        if (!body) {
+            return crow::response(400, "Invalid JSON");
+        }
+    
+        std::string user_id = body["user_id"].s();
+        std::string borrow = body["borrow"].b() ? "true" : "false";  
+        std::string reserve = body["reserve"].b() ? "true" : "false";
+        std::string access = body["access"].b() ? "true" : "false";
+    
+        if (user_id.empty()) {
+            return crow::response(400, "Missing user_id");
+        }
+    
+        std::string query = "UPDATE users_restrictions SET borrow = " + borrow + ", reservation = " + reserve + ", resource = " + access + " WHERE user_id = " + user_id + ";";
+    
+        std::string success = executeQueryReturnString(hDbc, query);
+    
+        
+        return crow::response(200, "{\"status\":\"success\", \"message\":\"Restrictions updated successfully\"}");
+       
+    });
+
     CROW_ROUTE(app, "/user_profile.html")([](){
         crow::mustache::context ctx;
         return crow::response(crow::mustache::load("user_profile.html").render(ctx));
