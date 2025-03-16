@@ -1,57 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Library Management System - Due Date Reminders</title>
-  <style>
-    body { 
-      font-family: Arial, sans-serif; 
-      background: #f4f4f4; 
-      margin: 0; 
-      padding: 0;
-    }
-    .header {
-      background-color: #5cb85c;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-    .container {
-      max-width: 700px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .reminder {
-      border-bottom: 1px solid #ccc;
-      padding: 10px 0;
-    }
-    .reminder:last-child {
-      border-bottom: none;
-    }
-    a {
-      color: #5cb85c;
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Due Date Reminders</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Header */
+        .header {
+            width: 100%;
+            background: linear-gradient(135deg, #5cb85c, #3d8b3d);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Container */
+        .container {
+            max-width: 700px;
+            width: 100%;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+            text-align: center;
+            margin-top: 100px; /* Moves the box lower */
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* Reminder Styling */
+        .reminder {
+            background: #e9f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 5px solid #5cb85c;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .reminder:hover {
+            background: #d4ebd4;
+            transform: scale(1.02);
+        }
+
+        .reminder strong {
+            color: #3d8b3d;
+            font-size: 1.1rem;
+        }
+
+        /* Navigation Button */
+        .nav {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .nav a {
+            text-decoration: none;
+            background: #5cb85c;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            display: inline-block;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .nav a:hover {
+            background: #4cae4c;
+            transform: scale(1.05);
+        }
+
+        .nav i {
+            margin-right: 8px;
+        }
+    </style>
 </head>
 <body>
-  <div class="header">
-    <h1>Due Date Reminders</h1>
-  </div>
-  <div class="container">
-    <div class="reminder">
-      <p><strong>The Great Gatsby</strong> – Due in 3 days (Due: 2025-02-20)</p>
+
+    <div class="header">
+        <h1>Due Date Reminders</h1>
     </div>
-    <div class="reminder">
-      <p><strong>1984</strong> – Due tomorrow (Due: 2025-01-31)</p>
+
+    <div class="container">
+        <h2>Upcoming Due Dates</h2>
+
+        <div class="reminder">
+            <p><strong>The Great Gatsby</strong> – Due in <b>3 days</b> (Due: <b>2025-02-20</b>)</p>
+        </div>
+
+        <div class="reminder">
+            <p><strong>1984</strong> – <b>Due Tomorrow</b> (Due: <b>2025-01-31</b>)</p>
+        </div>
+
+        <div class="reminder">
+            <p><strong>To Kill a Mockingbird</strong> – Due in <b>5 days</b> (Due: <b>2025-02-04</b>)</p>
+        </div>
+
+        <div class="nav">
+            <a href="notifications_dashboard.html"><i class="fas fa-arrow-left"></i> Back to Notifications Dashboard</a>
+        </div>
     </div>
-    <div class="reminder">
-      <p><strong>To Kill a Mockingbird</strong> – Due in 5 days (Due: 2025-02-04)</p>
-    </div>
-    <p style="text-align: center; margin-top: 20px;"><a href="notifications_dashboard.html">Back to Notifications Dashboard</a></p>
-  </div>
+
 </body>
 </html>

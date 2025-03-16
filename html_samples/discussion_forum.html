@@ -1,80 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Library Management System - Discussion Forum</title>
-  <style>
-    body { 
-      font-family: Arial, sans-serif; 
-      background:#f4f4f4; 
-      margin:0; 
-      padding:0; 
-    }
-    .header {
-      background-color: #5cb85c;
-      color: white;
-      padding:15px;
-      text-align:center;
-    }
-    .container {
-      max-width: 800px;
-      margin:20px auto;
-      padding:20px;
-      background:#fff;
-      border-radius:8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .post {
-      border-bottom: 1px solid #ccc;
-      padding: 10px 0;
-    }
-    .post:last-child {
-      border-bottom: none;
-    }
-    textarea {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      margin-top: 10px;
-    }
-    button {
-      padding: 10px;
-      background-color: #5cb85c;
-      border: none;
-      color: white;
-      border-radius: 4px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    .nav {
-      margin-top: 20px;
-      text-align: center;
-    }
-    .nav a {
-      text-decoration: none;
-      color: #5cb85c;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Discussion Forum</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Header */
+        .header {
+            width: 100%;
+            background: linear-gradient(135deg, #5cb85c, #3d8b3d);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+            margin-top: 100px; /* Moves the box lower */
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* Posts */
+        .post {
+            background: #e9f5e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 5px solid #5cb85c;
+            transition: background 0.3s ease;
+        }
+
+        .post:hover {
+            background: #d4ebd4;
+        }
+
+        .post strong {
+            color: #3d8b3d;
+        }
+
+        /* Text Area */
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border 0.3s;
+            outline: none;
+            resize: none;
+        }
+
+        textarea:focus {
+            border-color: #5cb85c;
+            box-shadow: 0px 0px 5px rgba(92, 184, 92, 0.5);
+        }
+
+        /* Button */
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #5cb85c;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #4cae4c;
+            transform: scale(1.03);
+        }
+
+        /* Navigation */
+        .nav {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #5cb85c;
+            font-weight: bold;
+            padding: 10px 15px;
+            background: #e9f5e9;
+            border-radius: 6px;
+            display: inline-block;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .nav a:hover {
+            background: #d4ebd4;
+            color: #3d8b3d;
+        }
+
+        .nav i {
+            margin-right: 8px;
+        }
+    </style>
 </head>
 <body>
-  <div class="header">
-    <h1>Discussion Forum - "The Great Gatsby"</h1>
-  </div>
-  <div class="container">
-    <div class="post">
-      <p><strong>Emily:</strong> I love how the novel captures the essence of the Roaring Twenties!</p>
+
+    <div class="header">
+        <h1>Discussion Forum - "The Great Gatsby"</h1>
     </div>
-    <div class="post">
-      <p><strong>David:</strong> The symbolism and character development are really impressive.</p>
+
+    <div class="container">
+        <h2>Discussion Board</h2>
+
+        <div class="post">
+            <p><strong>Emily:</strong> I love how the novel captures the essence of the Roaring Twenties!</p>
+        </div>
+
+        <div class="post">
+            <p><strong>David:</strong> The symbolism and character development are really impressive.</p>
+        </div>
+
+        <form action="discussion_forum.html" method="post">
+            <textarea name="comment" rows="3" placeholder="Join the discussion..." required></textarea>
+            <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Post Comment</button>
+        </form>
+
+        <div class="nav">
+            <a href="group_forum_homepage.html"><i class="fas fa-arrow-left"></i> Back to Group Forum</a>
+        </div>
     </div>
-    <form action="discussion_forum.html" method="post">
-      <textarea name="comment" rows="3" placeholder="Join the discussion..." required></textarea>
-      <button type="submit">Post Comment</button>
-    </form>
-    <div class="nav">
-      <a href="group_forum_homepage.html">Back to Group Forum</a>
-    </div>
-  </div>
+
 </body>
 </html>

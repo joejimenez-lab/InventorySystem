@@ -1,149 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Library Management System - User Management</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-    .header {
-      background-color: #d9534f;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-    .container {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    a {
-      color: #d9534f;
-      text-decoration: none;
-    }
-    .nav {
-      margin-top: 15px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .nav a:hover {
-      text-decoration: underline;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-    table, th, td {
-      border: 1px solid #ccc;
-    }
-    th, td {
-      padding: 10px;
-      text-align: left;
-    }
-    .search-bar {
-      margin-bottom: 15px;
-      text-align: center;
-    }
-    .search-bar input {
-      width: 97%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-  </style>
-  <script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management - Library System</title>
 
-    document.addEventListener("DOMContentLoaded", function () {
-      fetchUsers();
-    });
+    <!-- Load Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    function fetchUsers() {
-      fetch("/api/users")
-        .then(response => response.json())
-        .then(data => {
-          let tableBody = document.getElementById("userTableBody");
-          tableBody.innerHTML = ""; 
-
-          data.users.forEach(user => {
-            let row = document.createElement("tr");
-            row.innerHTML = `
-              <td>${user.id}</td>
-              <td>${user.username}</td>
-              <td>${user.role}</td>
-              <td>
-                <a href="edit_user_role.html?id=${user.id}&user=${encodeURIComponent(user.username)}">Edit Role</a> | 
-                <a href="user_restrictions.html?id=${user.id}&user=${encodeURIComponent(user.username)}">Restrictions</a>
-              </td>
-            `;
-            tableBody.appendChild(row);
-          });
-
-          searchUsers(); 
-        })
-        .catch(error => console.error("Error fetching users:", error));
-    }
-
-    function searchUsers() {
-      let input = document.getElementById("search").value.toLowerCase();
-      let table = document.getElementById("userTable");
-      let rows = table.getElementsByTagName("tr");
-      
-      
-      for (let i = 1; i < rows.length; i++) {
-        let cols = rows[i].getElementsByTagName("td");
-        
-        
-        let id = cols[0].textContent.toLowerCase(); 
-        let username = cols[1].textContent.toLowerCase();  
-        let role = cols[2].textContent.toLowerCase();  
-        
-        // Check if any of the columns contain the search input
-        if (id.includes(input) || username.includes(input) || role.includes(input)) {
-          rows[i].style.display = "";  
-        } else {
-          rows[i].style.display = "none";  
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
         }
-      }
-    }
-  </script>
+
+        body {
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Page Title */
+        h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #d9534f;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-bar input:focus {
+            border-color: #d9534f;
+            box-shadow: 0 0 5px rgba(217, 83, 79, 0.5);
+        }
+
+        /* User Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background: #d9534f;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        /* Action Links */
+        .action-links a {
+            color: #d9534f;
+            font-weight: bold;
+            text-decoration: none;
+            margin: 0 5px;
+            transition: color 0.3s ease;
+        }
+
+        .action-links a:hover {
+            color: #c9302c;
+            text-decoration: underline;
+        }
+
+        /* Navigation */
+        .nav {
+            margin-top: 20px;
+        }
+
+        .nav a {
+            display: inline-block;
+            padding: 12px 20px;
+            background: #d9534f;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .nav a:hover {
+            background: #c9302c;
+            transform: scale(1.05);
+        }
+
+    </style>
 </head>
 <body>
-  <div class="header">
-    <h1>User Management</h1>
-  </div>
-  <div class="container">
-    <p>Manage the registered users in the library system.</p>
-    
-    <div class="search-bar">
-      <input type="text" id="search" onkeyup="searchUsers()" placeholder="Search by username or role...">
-    </div>
-    
-    <table id="userTable">
-      <thead>
-        <tr>
-          <th>User ID</th>
-          <th>Username</th>
-          <th>Role</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody id="userTableBody">
 
-      </tbody>
-    </table>
-    
-    <div class="nav">
-      <a href="admin_dashboard.html">Back to Dashboard</a>
+    <div class="container">
+        <h1>User Management</h1>
+        <p>Manage the registered users in the library system.</p>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" id="search" onkeyup="searchUsers()" placeholder="🔎 Search by username or role...">
+        </div>
+
+        <!-- User Table -->
+        <table id="userTable">
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Username</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="userTableBody">
+                <!-- Dynamic User Data Will Be Inserted Here -->
+            </tbody>
+        </table>
+
+        <!-- Navigation -->
+        <div class="nav">
+            <a href="admin_dashboard.html"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+        </div>
     </div>
-  </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetchUsers();
+        });
+
+        function fetchUsers() {
+            fetch("/api/users")
+                .then(response => response.json())
+                .then(data => {
+                    let tableBody = document.getElementById("userTableBody");
+                    tableBody.innerHTML = ""; 
+
+                    data.users.forEach(user => {
+                        let row = document.createElement("tr");
+                        row.innerHTML = `
+                            <td>${user.id}</td>
+                            <td>${user.username}</td>
+                            <td>${user.role}</td>
+                            <td class="action-links">
+                                <a href="edit_user_role.html?id=${user.id}&user=${encodeURIComponent(user.username)}">
+                                    <i class="fas fa-user-edit"></i> Edit Role
+                                </a> | 
+                                <a href="user_restrictions.html?id=${user.id}&user=${encodeURIComponent(user.username)}">
+                                    <i class="fas fa-ban"></i> Restrictions
+                                </a>
+                            </td>
+                        `;
+                        tableBody.appendChild(row);
+                    });
+
+                    searchUsers(); 
+                })
+                .catch(error => console.error("Error fetching users:", error));
+        }
+
+        function searchUsers() {
+            let input = document.getElementById("search").value.toLowerCase();
+            let table = document.getElementById("userTable");
+            let rows = table.getElementsByTagName("tr");
+
+            for (let i = 1; i < rows.length; i++) {
+                let cols = rows[i].getElementsByTagName("td");
+
+                let id = cols[0].textContent.toLowerCase(); 
+                let username = cols[1].textContent.toLowerCase();  
+                let role = cols[2].textContent.toLowerCase();  
+
+                if (id.includes(input) || username.includes(input) || role.includes(input)) {
+                    rows[i].style.display = "";  
+                } else {
+                    rows[i].style.display = "none";  
+                }
+            }
+        }
+    </script>
+
 </body>
 </html>

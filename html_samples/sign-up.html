@@ -1,159 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Library Management System - Sign Up</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
-  <style>
-    body { 
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-    .container { 
-      max-width: 400px; 
-      width: 90%;
-      margin: 20px;
-      padding: 30px; 
-      background: #fff; 
-      border-radius: 10px; 
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      animation: fadeInUp 1s ease-out;
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    h2 { 
-      text-align: center; 
-      color: #333; 
-      margin-bottom: 20px;
-      font-size: 2em;
-    }
-    form { 
-      display: flex; 
-      flex-direction: column; 
-    }
-    input[type="text"],
-    input[type="email"],
-    input[type="password"],
-    input[type="phone"]{ 
-      padding: 12px; 
-      margin: 10px 0; 
-      border: 1px solid #ccc; 
-      border-radius: 5px; 
-      font-size: 1em;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    input[type="password"]:focus,
-    input[type="phone"]:focus {
-      border-color: #5cb85c;
-      box-shadow: 0 0 5px rgba(92,184,92,0.5);
-      outline: none;
-    }
-    button { 
-      padding: 12px; 
-      margin-top: 15px; 
-      background-color: #5cb85c; 
-      border: none; 
-      color: white; 
-      border-radius: 5px; 
-      cursor: pointer; 
-      font-size: 1em;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-    button:hover { 
-      background-color: #4cae4c; 
-      transform: translateY(-2px);
-    }
-    .link { 
-      text-align: center; 
-      margin-top: 20px; 
-      font-size: 0.9em;
-    }
-    .link a { 
-      color: #5cb85c; 
-      text-decoration: none; 
-      transition: color 0.3s ease;
-    }
-    .link a:hover { 
-      color: #4cae4c;
-    }
-    .error {
-      color: #d9534f;
-      font-size: 0.9em;
-      margin-top: 5px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Library Management System</title>
+
+    <!-- Load Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 420px;
+            width: 100%;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Page Title */
+        h2 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #5cb85c;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .input-group {
+            position: relative;
+            width: 100%;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 12px 12px 40px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #5cb85c;
+            box-shadow: 0 0 5px rgba(92,184,92,0.5);
+            outline: none;
+        }
+
+        /* Button */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #5cb85c;
+            border: none;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+            transform: scale(1.03);
+        }
+
+        /* Error Message */
+        .error {
+            color: #d9534f;
+            font-size: 0.9rem;
+            text-align: left;
+            margin-top: 5px;
+        }
+
+        /* Navigation Link */
+        .link {
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .link a {
+            color: #5cb85c;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .link a:hover {
+            color: #4cae4c;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Sign Up</h2>
-    <p class="error">{{error}}</p>
-    <form id="signupForm" action="/registration" method="POST">
-      <input type="text" id="username" name="username" placeholder="Username" value="{{username}}" required>
-      <input type="email" id="email" name="email" placeholder="Email" value="{{email}}" required>
-      <input type="password" id="password" name="password" placeholder="Password" required>
-      <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
-      <input type="text" id="phone" name="phone" placeholder="Phone Number" value="{{phone}}" required>
-      <div id="errorMessages" class="error"></div>
-      <button type="submit">Sign Up</button>
-    </form>
-    
-    <div class="link">
-      Already have an account? <a href="login.html">Login</a>
+
+    <div class="container">
+        <h2>Sign Up</h2>
+
+        <form id="signupForm" action="/registration" method="POST">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="username" name="username" placeholder="Username" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-phone"></i>
+                <input type="text" id="phone" name="phone" placeholder="Phone Number" required>
+            </div>
+
+            <div id="errorMessages" class="error"></div>
+
+            <button type="submit"><i class="fas fa-user-plus"></i> Sign Up</button>
+        </form>
+
+        <div class="link">
+            Already have an account? <a href="login.html">Login</a>
+        </div>
     </div>
-  </div>
-  <script>
-    // Front-end validation for sign-up form
-    document.getElementById('signupForm').addEventListener('submit', function(e) {
-      // Clear previous error messages
-      const errorMessages = document.getElementById('errorMessages');
-      errorMessages.innerHTML = '';
 
-      // Retrieve form values
-      const username = document.getElementById('username').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const password = document.getElementById('password').value;
-      const confirmPassword = document.getElementById('confirmPassword').value;
-      const phone_number = document.getElementById('phone').value.trim();
-      let errors = [];
+    <script>
+        // Front-end validation for sign-up form
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            // Clear previous error messages
+            const errorMessages = document.getElementById('errorMessages');
+            errorMessages.innerHTML = '';
 
-      // Validate username length
-      if (username.length < 3) {
-        errors.push("Username must be at least 3 characters long.");
-      }
-      // Validate email format using regex
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        errors.push("Please enter a valid email address.");
-      }
-      // Validate password length
-      if (password.length < 6) {
-        errors.push("Password must be at least 6 characters long.");
-      }
-      // Check if passwords match
-      if (password !== confirmPassword) {
-        errors.push("Passwords do not match.");
-      }
-      const phoneRegex = /^\d{10}$/;
-      if (!phoneRegex.test(phone.trim())) {
-        errors.push("Please enter a valid 10-digit phone number.");
-      }
+            // Retrieve form values
+            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const phone = document.getElementById('phone').value.trim();
+            let errors = [];
 
-      // If there are errors, prevent form submission and display errors
-      if (errors.length > 0) {
-        e.preventDefault();
-        errorMessages.innerHTML = errors.join("<br>");
-      }
-    });
-  </script>
+            // Validate username length
+            if (username.length < 3) {
+                errors.push("Username must be at least 3 characters long.");
+            }
+
+            // Validate email format using regex
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                errors.push("Please enter a valid email address.");
+            }
+
+            // Validate password length
+            if (password.length < 6) {
+                errors.push("Password must be at least 6 characters long.");
+            }
+
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                errors.push("Passwords do not match.");
+            }
+
+            // Validate phone number (10-digit format)
+            const phoneRegex = /^\d{10}$/;
+            if (!phoneRegex.test(phone)) {
+                errors.push("Please enter a valid 10-digit phone number.");
+            }
+
+            // If there are errors, prevent form submission and display errors
+            if (errors.length > 0) {
+                e.preventDefault();
+                errorMessages.innerHTML = errors.join("<br>");
+            }
+        });
+    </script>
+
 </body>
 </html>

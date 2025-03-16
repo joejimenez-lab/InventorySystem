@@ -1,56 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Library Management System - Admin Dashboard</title>
-  <style>
-    body { 
-      font-family: Arial, sans-serif; 
-      background: #f4f4f4; 
-      margin: 0; 
-      padding: 0; 
-    }
-    .header { 
-      background-color: #d9534f; 
-      color: white; 
-      padding: 15px; 
-      text-align: center; 
-    }
-    .container { 
-      max-width: 800px; 
-      margin: 20px auto; 
-      padding: 20px; 
-      background: #fff; 
-      border-radius: 8px; 
-      box-shadow: 0 0 10px rgba(0,0,0,0.1); 
-    }
-    a { 
-      color: #d9534f; 
-      text-decoration: none; 
-    }
-    .nav { 
-      margin-top: 15px; 
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .nav a:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+         
+        }
+
+        /* Header */
+        .header {
+            width: 100%;
+            background: linear-gradient(135deg, #d9534f, #a94442);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Container */
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+            text-align: center;
+            margin-top: 100px; /* Moves the box lower */
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* Navigation */
+        .nav {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .nav a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            background: #d9534f;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .nav a:hover {
+            background: #c9302c;
+            transform: scale(1.05);
+        }
+
+        .nav i {
+            margin-right: 8px;
+        }
+    </style>
 </head>
 <body>
-  <div class="header">
-    <h1>Admin Dashboard</h1>
-  </div>
-  <div class="container">
-    <p>Welcome, Admin! Manage users and the library system using the links below.</p>
-    <div class="nav">
-      <a href="user_management.html">User Management</a>
-      <a href="library_database_management.html">Library Database Management</a>
-      <a href="data_visualization_dashboard.html">Data Visualization Dashboard</a>
-      <a href="login.html">Logout</a>
+
+    <div class="header">
+        <h1>Admin Dashboard</h1>
     </div>
-  </div>
+
+    <div class="container">
+        <p>Welcome, Admin! Manage users and the library system using the links below.</p>
+
+        <div class="nav">
+            <a href="user_management.html"><i class="fas fa-users"></i> User Management</a>
+            <a href="library_database_management.html"><i class="fas fa-book"></i> Library Database Management</a>
+            <a href="data_visualization_dashboard.html"><i class="fas fa-chart-bar"></i> Data Visualization Dashboard</a>
+            <a href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </div>
+
 </body>
 </html>

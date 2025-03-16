@@ -1,77 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Library Management System - Book Reservation</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-    .header {
-      background-color: #5cb85c;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-    .container {
-      max-width: 500px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-    label, input {
-      margin: 10px 0;
-    }
-    input[type="date"] {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      padding: 10px;
-      background-color: #5cb85c;
-      border: none;
-      color: white;
-      border-radius: 4px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    button:hover {
-      background-color: #4cae4c;
-    }
-    .nav {
-      margin-top: 15px;
-      text-align: center;
-    }
-    .nav a {
-      text-decoration: none;
-      color: #5cb85c;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Book Reservation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            
+        }
+
+        /* Header */
+        .header {
+            width: 100%;
+            background: linear-gradient(135deg, #5cb85c, #3d8b3d);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Container */
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+            text-align: center;
+            margin-top: 100px; /* Moves the box lower */
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        /* Form */
+        .form-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="date"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: 0.3s;
+            outline: none;
+        }
+
+        input[type="date"]:focus {
+            border-color: #5cb85c;
+            box-shadow: 0px 0px 5px rgba(92, 184, 92, 0.5);
+        }
+
+        /* Button */
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #5cb85c;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #4cae4c;
+        }
+
+        /* Navigation */
+        .nav {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .nav a {
+            color: #5cb85c;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: #3d8b3d;
+        }
+
+        .nav i {
+            margin-right: 8px;
+        }
+    </style>
 </head>
 <body>
-  <div class="header">
-    <h1>Book Reservation</h1>
-  </div>
-  <div class="container">
-    <h2>Reserve a Book</h2>
-    <form action="my_borrowed_books.html" method="post">
-      <label for="reservation_date">Select Reservation Date:</label>
-      <input type="date" id="reservation_date" name="reservation_date" required>
-      <button type="submit">Reserve Book</button>
-    </form>
-    <div class="nav">
-      <a href="user_library_interaction.html">Back to Interaction Page</a>
+
+    <div class="header">
+        <h1>Book Reservation</h1>
     </div>
-  </div>
+
+    <div class="container">
+        <h2>Reserve a Book</h2>
+        <form action="my_borrowed_books.html" method="post">
+            <div class="form-group">
+                <label for="reservation_date"><i class="fas fa-calendar-alt"></i> Select Reservation Date:</label>
+                <input type="date" id="reservation_date" name="reservation_date" required>
+            </div>
+            <button type="submit" class="btn"><i class="fas fa-bookmark"></i> Reserve Book</button>
+        </form>
+
+        <div class="nav">
+            <a href="user_library_interaction.html"><i class="fas fa-arrow-left"></i> Back to Interaction Page</a>
+        </div>
+    </div>
+
 </body>
 </html>

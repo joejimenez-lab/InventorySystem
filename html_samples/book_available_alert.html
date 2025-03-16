@@ -1,54 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Library Management System - Book Available Alerts</title>
-  <style>
-    body { 
-      font-family: Arial, sans-serif; 
-      background: #f4f4f4; 
-      margin: 0; 
-      padding: 0;
-    }
-    .header {
-      background-color: #5cb85c;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-    .container {
-      max-width: 700px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .alert {
-      border-bottom: 1px solid #ccc;
-      padding: 10px 0;
-    }
-    .alert:last-child {
-      border-bottom: none;
-    }
-    a {
-      color: #5cb85c;
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Book Available Alerts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+         
+        }
+
+        /* Header */
+        .header {
+            width: 100%;
+            background: linear-gradient(135deg, #5cb85c, #3d8b3d);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Container */
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+            text-align: center;
+            margin-top: 100px; /* Moves the box lower */
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        /* Alerts */
+        .alert {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #e6f8e6;
+            border: 1px solid #5cb85c;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .alert:hover {
+            background: #d4f5d4;
+        }
+
+        .alert i {
+            color: #5cb85c;
+            font-size: 1.2rem;
+        }
+
+        /* Navigation */
+        .nav {
+            margin-top: 20px;
+        }
+
+        .nav a {
+            color: #5cb85c;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: #3d8b3d;
+        }
+
+        .nav i {
+            margin-right: 8px;
+        }
+    </style>
 </head>
 <body>
-  <div class="header">
-    <h1>Book Available Alerts</h1>
-  </div>
-  <div class="container">
-    <div class="alert">
-      <p><strong>1984</strong> by George Orwell is now available for borrowing.</p>
+
+    <div class="header">
+        <h1>Book Available Alerts</h1>
     </div>
-    <div class="alert">
-      <p><strong>Moby Dick</strong> by Herman Melville is now available for borrowing.</p>
+
+    <div class="container">
+        <div class="alert">
+            <p><i class="fas fa-book"></i> <strong>1984</strong> by George Orwell is now available for borrowing.</p>
+        </div>
+        <div class="alert">
+            <p><i class="fas fa-book"></i> <strong>Moby Dick</strong> by Herman Melville is now available for borrowing.</p>
+        </div>
+
+        <div class="nav">
+            <a href="notifications_dashboard.html"><i class="fas fa-arrow-left"></i> Back to Notifications Dashboard</a>
+        </div>
     </div>
-    <p style="text-align: center; margin-top: 20px;"><a href="notifications_dashboard.html">Back to Notifications Dashboard</a></p>
-  </div>
+
 </body>
 </html>
