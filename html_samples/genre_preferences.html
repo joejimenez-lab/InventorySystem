@@ -128,25 +128,45 @@
         console.error('Error fetching genres:', error);
       });
 
-    document.getElementById('save-btn').addEventListener('click', () => {
-      const selectedGenres = Array.from(document.querySelectorAll('input[name="genres[]"]:checked')).map(input => input.value);
-      console.log('Selected genres:', selectedGenres);
+      document.getElementById('save-btn').addEventListener('click', (event) => {
+  event.preventDefault(); 
 
-      fetch('/save_genres', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ genres: selectedGenres })  
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Response from server:', data);
-      })
-      .catch(error => {
-        console.error('Error sending genres:', error);
-      });
-    });
+  const selectedGenres = Array.from(document.querySelectorAll('input[name="genres[]"]:checked')).map(input => input.value);
+  console.log('Selected genres:', selectedGenres);
+
+  fetch('/save_genres', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ genres: selectedGenres })  
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Response from server:', data);
+    if (data.status === "success") {
+     
+      const container = document.querySelector('.container');
+      container.innerHTML = `
+        <h2>Preferences Saved!</h2>
+        <p>Your genre preferences have been successfully updated.</p>
+        <p>Redirecting you back to the homepage...</p>
+      `;
+      container.style.textAlign = "center";
+
+      // Redirect after 2 seconds
+      setTimeout(() => {
+        window.location.href = "library_homepage.html";
+      }, 2000);
+    } else {
+      alert("Failed to save genres. Please try again.");
+    }
+  })
+  .catch(error => {
+    console.error('Error sending genres:', error);
+    alert("An error occurred. Please try again.");
+  });
+});
   </script>
 </body>
 </html>

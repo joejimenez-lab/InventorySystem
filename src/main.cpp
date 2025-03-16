@@ -25,7 +25,7 @@ SQLHDBC hDbc;
 SQLRETURN ret;
 
 std::unordered_map<std::string, std::string> sessions;
-std::unordered_map<std::string, std::unordered_map<std::string, std::string>> user_data;
+std::unordered_map<std::string, User> user_data;
 
 void signalHandler(int signal);
 
@@ -242,10 +242,12 @@ int main() {
         //wip
         std::string token = generateSessionToken();
         sessions[token] = login_username;
-        user_data[token]["username"] = login_username;
-
-        std::string role = getRole(hDbc, login_username);
-
+        std::string query = "SELECT * FROM users WHERE username = '" + login_username + "';";
+        std::vector<std::vector<std::string>> userinfo = executeQueryReturnRows(hDbc, query);
+        User user(userinfo[0][1], userinfo[0][2], login_password, userinfo[0][4], userinfo[0][7], userinfo[0][0]);
+        user_data[token] = user;
+        
+        std::string role = user.getRole();
         crow::response res_redirect;
         res_redirect.code = 302;
 
@@ -619,8 +621,11 @@ int main() {
             }
     
             //wip wip wip wip wip !!!!!
-            std::string username = sessions[token];
-            std::cout << username << std::endl;
+            User user = user_data[token];
+            std::cout << user.getId() << std::endl;
+            std::cout << combinedGenres << std::endl;
+            std::string query = "UPDATE userGenres SET genres = '" + combinedGenres + "' WHERE user_id = " + user.getId() + ";";
+            executeQuery(hDbc, query);
             
             
 

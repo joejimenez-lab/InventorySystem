@@ -25,10 +25,12 @@ class User {
         std::string password;
         std::string role;
         std::string phone_number;
-        int id;
+        std::string id;
     
     public:
-        User(std::string username, std::string email, std::string password, std::string role, std::string pnum, int id){
+        User() : username(""), email(""), password(""), role(""), phone_number(""), id("") {}
+
+        User(std::string username, std::string email, std::string password, std::string role, std::string pnum, std::string id){
             this->username = username;
             this->email = email;
             this->password = password;
@@ -43,7 +45,7 @@ class User {
         std::string getPassword() {return password;}
         std::string getRole() {return role;}
         std::string getPhoneNumber() {return phone_number;}
-        int getId() {return id;}
+        std::string getId() {return id;}
     
         //setters 
         void setUsername(std::string new_username) {username = new_username;}
@@ -51,7 +53,7 @@ class User {
         void setPasswrod(std::string new_Password) {password = new_Password;}
         void setRole(std::string new_Role) {role = new_Role;}
         void setPhoneNumber(std::string new_phone_number) {phone_number = new_phone_number;}
-        void setId(int new_id){ id = new_id;}
+        void setId(std::string new_id){ id = new_id;}
 };
 
 void checkReturnCode(SQLRETURN retcode, const std::string& message);
