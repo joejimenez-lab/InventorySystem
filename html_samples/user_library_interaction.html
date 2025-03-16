@@ -1,59 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Library Management System - User Interaction</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-    .header {
-      background-color: #5cb85c;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-    .container {
-      max-width: 600px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .nav {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      align-items: center;
-    }
-    .nav a {
-      text-decoration: none;
-      background: #e0e0e0;
-      color: #5cb85c;
-      padding: 10px 20px;
-      border-radius: 4px;
-    }
-    .nav a:hover {
-      background: #d4d4d4;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Interaction - Library Management System</title>
+
+    <!-- Load Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 500px;
+            width: 100%;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Page Title */
+        h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #5cb85c;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* Navigation Buttons */
+        .nav {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .nav a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 12px;
+            background: #5cb85c;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav a i {
+            margin-right: 8px;
+        }
+
+        .nav a:hover {
+            background: #4cae4c;
+            transform: scale(1.05);
+        }
+
+        /* Back to Home */
+        .home-link {
+            display: block;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #5cb85c;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .home-link:hover {
+            color: #3d8b3d;
+        }
+    </style>
 </head>
 <body>
-  <div class="header">
-    <h1>User Library Interaction</h1>
-  </div>
-  <div class="container">
-    <p>Select an action below:</p>
-    <div class="nav">
-      <a href="book_reservation.html">Reserve a Book</a>
-      <a href="my_borrowed_books.html">My Borrowed Books</a>
-      <a href="library_homepage.html" class="btn">Back to Home</a>
+
+    <div class="container">
+        <h1>User Library Interaction</h1>
+        <p>Select an action below:</p>
+        
+        <div class="nav">
+            <a href="book_reservation.html"><i class="fas fa-bookmark"></i> Reserve a Book</a>
+            <a href="my_borrowed_books.html"><i class="fas fa-book"></i> My Borrowed Books</a>
+        </div>
+
+        <a href="library_homepage.html" class="home-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
     </div>
-  </div>
+
 </body>
 </html>

@@ -1,60 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Library Management System - Notifications Dashboard</title>
-  <style>
-    body { 
-      font-family: Arial, sans-serif; 
-      background: #f4f4f4; 
-      margin: 0; 
-      padding: 0; 
-    }
-    .header {
-      background-color: #5cb85c;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-    .container {
-      max-width: 700px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .nav {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      text-align: center;
-    }
-    .nav a {
-      text-decoration: none;
-      background: #e0e0e0;
-      color: #5cb85c;
-      padding: 10px;
-      border-radius: 4px;
-    }
-    .nav a:hover {
-      background: #d4d4d4;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications Dashboard</title>
+
+    <!-- Load Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 700px;
+            width: 100%;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Page Title */
+        .page-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #5cb85c;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Navigation Buttons */
+        .nav {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            background: #5cb85c;
+            color: white;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .nav a:hover {
+            background: #4cae4c;
+            transform: scale(1.05);
+        }
+
+        .nav i {
+            font-size: 1.2rem;
+        }
+
+        /* Back to Home Button */
+        .back-home {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .back-home a {
+            text-decoration: none;
+            background: #5cb85c;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .back-home a:hover {
+            background: #4cae4c;
+            transform: scale(1.05);
+        }
+
+        .back-home i {
+            font-size: 1.2rem;
+        }
+    </style>
 </head>
 <body>
-  <div class="header">
-    <h1>Notifications Dashboard</h1>
-  </div>
-  <div class="container">
-    <p>Welcome to the Notifications Dashboard. Choose an alert type to view details:</p>
-    <div class="nav">
-      <a href="due_date_reminder.html">Due Date Reminders</a>
-      <a href="book_available_alert.html">Book Available Alerts</a>
-      <a href="librarian_stock_alert.html">Librarian Stock Alerts</a>
+
+    <div class="container">
+        <div class="page-title">
+            Notifications Dashboard
+        </div>
+
+        <p>Welcome to the Notifications Dashboard. Choose an alert type to view details:</p>
+
+        <div class="nav">
+            <a href="due_date_reminder.html"><i class="fas fa-calendar-alt"></i> Due Date Reminders</a>
+            <a href="book_available_alert.html"><i class="fas fa-book"></i> Book Available Alerts</a>
+            <a href="librarian_stock_alert.html"><i class="fas fa-exclamation-triangle"></i> Librarian Stock Alerts</a>
+        </div>
+
+        <div class="back-home">
+            <a href="library_homepage.html"><i class="fas fa-home"></i> Back to Homepage</a>
+        </div>
     </div>
-    <p style="text-align: center; margin-top: 20px;"><a href="library_homepage.html">Back to Homepage</a></p>
-  </div>
+
 </body>
 </html>

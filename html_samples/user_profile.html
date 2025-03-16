@@ -1,50 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Library Management System - User Profile</title>
-  <style>
-    body { 
-      font-family: Arial, sans-serif; 
-      background: #f4f4f4; 
-      margin: 0; 
-      padding: 0; 
-    }
-    .header { 
-      background-color: #5cb85c; 
-      color: white; 
-      padding: 15px; 
-      text-align: center; 
-    }
-    .container { 
-      max-width: 600px; 
-      margin: 20px auto; 
-      padding: 20px; 
-      background: #fff; 
-      border-radius: 8px; 
-      box-shadow: 0 0 10px rgba(0,0,0,0.1); 
-    }
-    a { 
-      color: #5cb85c; 
-      text-decoration: none; 
-    }
-    .nav { 
-      margin-top: 10px; 
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Library System</title>
+
+    <!-- Load Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 500px;
+            width: 100%;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Profile Header */
+        .header {
+            background: linear-gradient(135deg, #5cb85c, #3d8b3d);
+            color: white;
+            padding: 20px;
+            border-radius: 12px 12px 0 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Profile Info */
+        .profile-info {
+            text-align: left;
+            margin: 20px 0;
+            font-size: 1.1rem;
+        }
+
+        .profile-info p {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .profile-info i {
+            color: #5cb85c;
+            margin-right: 8px;
+        }
+
+        /* Button Styles */
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn.security {
+            background: #5cb85c;
+            color: white;
+        }
+
+        .btn.security:hover {
+            background: #4cae4c;
+            transform: scale(1.05);
+        }
+
+        .btn.home {
+            background: #e0e0e0;
+            color: #333;
+        }
+
+        .btn.home:hover {
+            background: #d4d4d4;
+            transform: scale(1.05);
+        }
+
+        .btn i {
+            margin-right: 10px;
+        }
+
+    </style>
 </head>
 <body>
-  <div class="header">
-    <h1>User Profile</h1>
-  </div>
-  <div class="container">
-    <p>Name: John Doe</p>
-    <p>Email: john@example.com</p>
-    <!-- More user details can be added here -->
-    <div class="nav">
-      <a href="account_security_settings.html">Account Security Settings</a> | 
-      <a href="library_homepage.html">Back to Homepage</a>
+
+    <div class="container">
+        <div class="header">
+            <i class="fas fa-user-circle"></i> User Profile
+        </div>
+
+        <div class="profile-info">
+            <p><i class="fas fa-user"></i> <strong>Name:</strong> John Doe</p>
+            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> john@example.com</p>
+        </div>
+
+        <div class="btn-group">
+            <a href="account_security_settings.html" class="btn security"><i class="fas fa-shield-alt"></i> Account Security Settings</a>
+            <a href="library_homepage.html" class="btn home"><i class="fas fa-home"></i> Back to Homepage</a>
+        </div>
     </div>
-  </div>
+
 </body>
 </html>

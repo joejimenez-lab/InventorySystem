@@ -1,84 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Library Management System - Library Database</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-    .header {
-      background-color: #5cb85c;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-    .container {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-    th, td {
-      padding: 10px;
-      border: 1px solid #ccc;
-      text-align: left;
-    }
-    a {
-      color: #5cb85c;
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Database</title>
+
+    <!-- Load Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Page Title */
+        .page-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #5cb85c;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #5cb85c;
+            color: white;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tbody tr:hover {
+            background: #d0f0d0;
+            transition: background 0.3s ease;
+        }
+
+        /* Navigation Button */
+        .nav {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .nav a {
+            text-decoration: none;
+            background: #5cb85c;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            display: inline-block;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .nav a:hover {
+            background: #4cae4c;
+            transform: scale(1.05);
+        }
+
+        .nav i {
+            margin-right: 8px;
+        }
+    </style>
 </head>
 <body>
-  <div class="header">
-    <h1>Library Database</h1>
-  </div>
-  <div class="container">
-    <p>Updated library inventory after the latest check-in:</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Book ID</th>
-          <th>Title</th>
-          <th>Author</th>
-          <th>Availability</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>B001</td>
-          <td>The Great Gatsby</td>
-          <td>F. Scott Fitzgerald</td>
-          <td>Available</td>
-        </tr>
-        <tr>
-          <td>B002</td>
-          <td>1984</td>
-          <td>George Orwell</td>
-          <td>Checked Out</td>
-        </tr>
-        <tr>
-          <td>B003</td>
-          <td>To Kill a Mockingbird</td>
-          <td>Harper Lee</td>
-          <td>Available</td>
-        </tr>
-      </tbody>
-    </table>
-    <p style="text-align: center; margin-top: 20px;">
-      <a href="barcode_scanner.html">Back to Scanner</a>
-    </p>
-  </div>
+
+    <div class="container">
+        <div class="page-title">
+            Library Database
+        </div>
+
+        <p>Updated library inventory after the latest check-in:</p>
+
+        <!-- Library Books Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Book ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Availability</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>B001</td>
+                    <td>The Great Gatsby</td>
+                    <td>F. Scott Fitzgerald</td>
+                    <td>Available</td>
+                </tr>
+                <tr>
+                    <td>B002</td>
+                    <td>1984</td>
+                    <td>George Orwell</td>
+                    <td>Checked Out</td>
+                </tr>
+                <tr>
+                    <td>B003</td>
+                    <td>To Kill a Mockingbird</td>
+                    <td>Harper Lee</td>
+                    <td>Available</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="nav">
+            <a href="barcode_scanner.html"><i class="fas fa-arrow-left"></i> Back to Scanner</a>
+        </div>
+    </div>
+
 </body>
 </html>

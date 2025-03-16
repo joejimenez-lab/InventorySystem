@@ -1,59 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Library Management System - Group Forum</title>
-  <style>
-    body { 
-      font-family: Arial, sans-serif; 
-      background: #f4f4f4; 
-      margin: 0; 
-      padding: 0; 
-    }
-    .header {
-      background-color: #5cb85c;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-    .container {
-      max-width: 700px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .nav {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-    .nav a {
-      text-decoration: none;
-      background: #e0e0e0;
-      color: #5cb85c;
-      padding: 10px 20px;
-      border-radius: 4px;
-    }
-    .nav a:hover {
-      background: #d4d4d4;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Group Forum</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            width: 100%;
+            background: linear-gradient(135deg, #5cb85c, #3d8b3d);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Container */
+        .container {
+            max-width: 600px;
+            width: 90%;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            color: #333;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Navigation Buttons */
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            background: #5cb85c;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.2s ease;
+            width: 220px;
+            text-align: center;
+        }
+
+        .nav a:hover {
+            background: #4cae4c;
+            transform: scale(1.05);
+        }
+
+        .nav i {
+            margin-right: 8px;
+        }
+
+        /* Back to Homepage */
+        .back-link {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .back-link a {
+            text-decoration: none;
+            color: #5cb85c;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link a:hover {
+            color: #3d8b3d;
+        }
+
+    </style>
 </head>
 <body>
-  <div class="header">
-    <h1>Group Forum Homepage</h1>
-  </div>
-  <div class="container">
-    <p>Welcome to the Group Forum! Choose an option below:</p>
-    <div class="nav">
-      <a href="discussion_forum.html">Discussion Forum</a>
-      <a href="reading_challenge.html">Reading Challenge</a>
+
+    <div class="header">
+        <h1>Group Forum Homepage</h1>
     </div>
-    <p style="margin-top: 20px;"><a href="library_homepage.html" style="color: #5cb85c; text-decoration: none;">Back to Homepage</a></p>
-  </div>
+
+    <div class="container">
+        <h2>Welcome to the Group Forum</h2>
+        <p>Choose an option below to engage with your fellow readers.</p>
+        
+        <div class="nav">
+            <a href="discussion_forum.html"><i class="fas fa-comments"></i> Discussion Forum</a>
+            <a href="reading_challenge.html"><i class="fas fa-book-reader"></i> Reading Challenge</a>
+        </div>
+
+        <div class="back-link">
+            <a href="library_homepage.html"><i class="fas fa-arrow-left"></i> Back to Homepage</a>
+        </div>
+    </div>
+
 </body>
 </html>

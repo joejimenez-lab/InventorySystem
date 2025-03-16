@@ -1,40 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Library Management System - Homepage</title>
-  <style>
-    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
-    .header { background-color: #5cb85c; color: white; padding: 15px; text-align: center; }
-    .container { max-width: 800px; margin: 20px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    .nav { margin-top: 15px; display: flex; flex-wrap: wrap; gap: 10px; }
-    .nav a { color: #5cb85c; text-decoration: none; background: #e0e0e0; padding: 8px 12px; border-radius: 4px; }
-    .search-bar { margin-top: 20px; }
-    .search-bar input[type="text"] { width: calc(100% - 100px); padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
-    .search-bar button { padding: 10px; background-color: #5cb85c; border: none; color: white; border-radius: 4px; cursor: pointer; }
-    .search-bar button:hover { background-color: #4cae4c; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Homepage</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+         
+        }
+
+        /* Header */
+        .header {
+            width: 100%;
+            background: linear-gradient(135deg, #5cb85c, #3d8b3d);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        .header h1 {
+            margin: 0;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .logout-btn {
+            background: #d9534f;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-decoration: none;
+        }
+
+        .logout-btn:hover {
+            background: #c9302c;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+            text-align: center;
+            margin-top: 100px; /* Moves the box lower */
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        /* Search Bar */
+        .search-bar {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .search-bar input {
+            width: calc(100% - 120px);
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            outline: none;
+            transition: border 0.3s;
+        }
+
+        .search-bar input:focus {
+            border-color: #5cb85c;
+            box-shadow: 0px 0px 5px rgba(92, 184, 92, 0.5);
+        }
+
+        .search-bar button {
+            padding: 12px;
+            background: #5cb85c;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .search-bar button:hover {
+            background: #4cae4c;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .nav a {
+            text-decoration: none;
+            background: #5cb85c;
+            color: white;
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .nav a:hover {
+            background: #4cae4c;
+            transform: scale(1.05);
+        }
+
+        .nav i {
+            margin-right: 8px;
+        }
+
+        /* Chatbot */
+        zapier-interfaces-chatbot-embed {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+    </style>
 </head>
 <body>
-  <div class="header">
-    <h1>Welcome to the Library</h1>
-  </div>
-  <div class="container">
-    <div class="search-bar">
-      <form action="/search_results" method="get">
-        <input type="text" name="query" placeholder="Search for books...">
-        <button type="submit">Search</button>
-      </form>
+
+    <div class="header">
+        <h1>Welcome to the Library</h1>
+        <a href="login.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
     </div>
-    <div class="nav">
-      <a href="search_results.html">Search Results</a>
-      <a href="book_details.html">Book Details</a>
-      <a href="recommendations.html">Recommendations</a>
-      <a href="my_borrowed_books.html">My Borrowed Books</a>
-     <a href="genre_preferences.html" class="btn">Set Your Genre Preferences</a>
+
+    <div class="container">
+        <div class="search-bar">
+            <form action="/search_results" method="get">
+                <input type="text" name="query" placeholder="Search for books...">
+                <button type="submit"><i class="fas fa-search"></i> Search</button>
+            </form>
+        </div>
+
+        <div class="nav">
+            <a href="search_results.html"><i class="fas fa-search"></i> Search Results</a>
+            <a href="book_details.html"><i class="fas fa-book"></i> Book Details</a>
+            <a href="recommendations.html"><i class="fas fa-star"></i> Recommendations</a>
+            <a href="my_borrowed_books.html"><i class="fas fa-book-reader"></i> My Borrowed Books</a>
+            <a href="genre_preferences.html"><i class="fas fa-list"></i> Set Your Genre Preferences</a>
+        </div>
     </div>
-  </div>
-  <script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
-<zapier-interfaces-chatbot-embed is-popup='true' chatbot-id='cm84wqm92000bnqx49egmozcg'></zapier-interfaces-chatbot-embed>
+
+    <!-- Zapier Chatbot -->
+    <script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
+    <zapier-interfaces-chatbot-embed is-popup='true' chatbot-id='cm84wqm92000bnqx49egmozcg'></zapier-interfaces-chatbot-embed>
+
 </body>
 </html>

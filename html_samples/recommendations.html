@@ -1,36 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Library Management System - Recommendations</title>
-  <style>
-    body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
-    .header { background-color: #5cb85c; color: white; padding: 15px; text-align: center; }
-    .container { max-width: 800px; margin: 20px auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    .book-list { margin-top: 20px; }
-    .book-list div { margin-bottom: 15px; }
-    .book-list a { color: #5cb85c; text-decoration: none; font-weight: bold; }
-    .book-list a:hover { text-decoration: underline; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendations</title>
+
+    <!-- Load Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Page Title */
+        .page-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #5cb85c;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Book List */
+        .book-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .book-item {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .book-item:hover {
+            background: #d0f0d0;
+            transform: scale(1.02);
+        }
+
+        .book-item a {
+            text-decoration: none;
+            color: #5cb85c;
+            font-weight: bold;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .book-item a:hover {
+            text-decoration: underline;
+        }
+
+        .book-item i {
+            font-size: 1.2rem;
+            color: #5cb85c;
+        }
+
+        /* Back Button */
+        .back-home {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .back-home a {
+            text-decoration: none;
+            background: #5cb85c;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .back-home a:hover {
+            background: #4cae4c;
+            transform: scale(1.05);
+        }
+
+        .back-home i {
+            font-size: 1.2rem;
+        }
+    </style>
 </head>
 <body>
-  <div class="header">
-    <h1>Recommended Books</h1>
-  </div>
-  <div class="container">
-    <p>Based on your reading history, you might enjoy the following books:</p>
-    <div class="book-list">
-      <div>
-        <a href="book_details.html?id=Gatsby">The Great Gatsby</a> by F. Scott Fitzgerald
-      </div>
-      <div>
-        <a href="book_details.html?id=Mockingbird">To Kill a Mockingbird</a> by Harper Lee
-      </div>
-      <div>
-        <a href="book_details.html?id=1984">1984</a> by George Orwell
-      </div>
+
+    <div class="container">
+        <div class="page-title">
+            Recommended Books
+        </div>
+
+        <p>Based on your reading history, you might enjoy the following books:</p>
+
+        <div class="book-list">
+            <div class="book-item">
+                <a href="book_details.html?id=Gatsby"><i class="fas fa-book"></i> The Great Gatsby</a>
+                <span>by F. Scott Fitzgerald</span>
+            </div>
+            <div class="book-item">
+                <a href="book_details.html?id=Mockingbird"><i class="fas fa-book"></i> To Kill a Mockingbird</a>
+                <span>by Harper Lee</span>
+            </div>
+            <div class="book-item">
+                <a href="book_details.html?id=1984"><i class="fas fa-book"></i> 1984</a>
+                <span>by George Orwell</span>
+            </div>
+        </div>
+
+        <div class="back-home">
+            <a href="library_homepage.html"><i class="fas fa-home"></i> Back to Homepage</a>
+        </div>
     </div>
-    <p><a href="library_homepage.html">Back to Homepage</a></p>
-  </div>
+
 </body>
 </html>

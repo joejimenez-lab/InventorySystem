@@ -1,80 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Library Management System - Stock Update</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-    .header {
-      background-color: #d9534f;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-    .container {
-      max-width: 500px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-    label, input {
-      margin: 10px 0;
-    }
-    input[type="text"],
-    input[type="number"] {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      padding: 10px;
-      background-color: #d9534f;
-      border: none;
-      color: white;
-      border-radius: 4px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    button:hover {
-      background-color: #c9302c;
-    }
-    .nav {
-      margin-top: 15px;
-      text-align: center;
-    }
-    .nav a {
-      text-decoration: none;
-      color: #d9534f;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Update - Library Management System</title>
+
+    <!-- Load Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 500px;
+            width: 100%;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Page Title */
+        h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #d9534f;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .input-group {
+            position: relative;
+            width: 100%;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 12px 12px 40px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #d9534f;
+            box-shadow: 0 0 5px rgba(217, 83, 79, 0.5);
+            outline: none;
+        }
+
+        /* Button */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #d9534f;
+            border: none;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #c9302c;
+            transform: scale(1.03);
+        }
+
+        /* Navigation */
+        .nav {
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #d9534f;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: #a72b2b;
+        }
+    </style>
 </head>
 <body>
-  <div class="header">
-    <h1>Stock Update (Admin)</h1>
-  </div>
-  <div class="container">
-    <h2>Update Library Database Stock</h2>
-    <form action="library_database_management.html" method="post">
-      <label for="book_id">Book ID:</label>
-      <input type="text" id="book_id" name="book_id" placeholder="Enter Book ID" required>
-      <label for="new_stock">New Stock Quantity:</label>
-      <input type="number" id="new_stock" name="new_stock" placeholder="Enter new stock quantity" required>
-      <button type="submit">Update Stock</button>
-    </form>
-    <div class="nav">
-      <a href="admin_dashboard.html">Back to Admin Dashboard</a>
+
+    <div class="container">
+        <h2>Stock Update (Admin)</h2>
+
+        <form action="library_database_management.html" method="post">
+            <div class="input-group">
+                <i class="fas fa-barcode"></i>
+                <input type="text" id="book_id" name="book_id" placeholder="Enter Book ID" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-boxes"></i>
+                <input type="number" id="new_stock" name="new_stock" placeholder="Enter New Stock Quantity" required>
+            </div>
+
+            <button type="submit"><i class="fas fa-sync"></i> Update Stock</button>
+        </form>
+
+        <div class="nav">
+            <a href="admin_dashboard.html"><i class="fas fa-arrow-left"></i> Back to Admin Dashboard</a>
+        </div>
     </div>
-  </div>
+
 </body>
 </html>

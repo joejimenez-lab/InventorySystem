@@ -1,80 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Library Management System - Book Reviews</title>
-  <style>
-    body { 
-      font-family: Arial, sans-serif; 
-      background: #f4f4f4; 
-      margin: 0; 
-      padding: 0; 
-    }
-    .header {
-      background-color: #5cb85c;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-    .container {
-      max-width: 700px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .review {
-      border-bottom: 1px solid #ccc;
-      padding: 10px 0;
-    }
-    .review:last-child {
-      border-bottom: none;
-    }
-    textarea {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      margin-top: 10px;
-    }
-    button {
-      padding: 10px;
-      background-color: #5cb85c;
-      border: none;
-      color: white;
-      border-radius: 4px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    .nav {
-      margin-top: 20px;
-      text-align: center;
-    }
-    .nav a {
-      text-decoration: none;
-      color: #5cb85c;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Reviews - Library Management System</title>
+
+    <!-- Load Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 700px;
+            width: 100%;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Page Title */
+        h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #5cb85c;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* Reviews Section */
+        .review {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            text-align: left;
+            position: relative;
+        }
+
+        .review strong {
+            color: #5cb85c;
+        }
+
+        /* Rating Stars */
+        .star-rating {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .star-rating i {
+            font-size: 1.5rem;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .star-rating i.active {
+            color: #ffcc00;
+        }
+
+        /* Review Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            resize: none;
+        }
+
+        textarea:focus {
+            border-color: #5cb85c;
+            box-shadow: 0 0 5px rgba(92,184,92,0.5);
+            outline: none;
+        }
+
+        /* Button */
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #5cb85c;
+            border: none;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+            transform: scale(1.03);
+        }
+
+        /* Navigation */
+        .nav {
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #5cb85c;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: #3d8b3d;
+        }
+    </style>
 </head>
 <body>
-  <div class="header">
-    <h1>Book Reviews for "The Great Gatsby"</h1>
-  </div>
-  <div class="container">
-    <div class="review">
-      <p><strong>Anna:</strong> A compelling narrative that captures the spirit of the Jazz Age!</p>
+
+    <div class="container">
+        <h1>Book Reviews for "The Great Gatsby"</h1>
+
+        <!-- Existing Reviews -->
+        <div class="review">
+            <p><strong>Anna:</strong> A compelling narrative that captures the spirit of the Jazz Age!</p>
+        </div>
+        <div class="review">
+            <p><strong>Mark:</strong> The characters are unforgettable and the story is timeless.</p>
+        </div>
+
+        <!-- Rating & Review Form -->
+        <form id="reviewForm" action="user_book_reviews.html" method="post">
+            <div class="star-rating">
+                <i class="fa fa-star" data-value="1"></i>
+                <i class="fa fa-star" data-value="2"></i>
+                <i class="fa fa-star" data-value="3"></i>
+                <i class="fa fa-star" data-value="4"></i>
+                <i class="fa fa-star" data-value="5"></i>
+            </div>
+            <input type="hidden" id="ratingValue" name="rating" value="0">
+            <textarea name="review" rows="4" placeholder="Share your thoughts..." required></textarea>
+            <button type="submit"><i class="fas fa-paper-plane"></i> Submit Review</button>
+        </form>
+
+        <!-- Navigation -->
+        <div class="nav">
+            <a href="book_details.html"><i class="fas fa-arrow-left"></i> Back to Book Details</a>
+        </div>
     </div>
-    <div class="review">
-      <p><strong>Mark:</strong> The characters are unforgettable and the story is timeless.</p>
-    </div>
-    <form action="user_book_reviews.html" method="post">
-      <textarea name="review" rows="4" placeholder="Share your thoughts..." required></textarea>
-      <button type="submit">Submit Review</button>
-    </form>
-    <div class="nav">
-      <a href="book_details.html">Back to Book Details</a>
-    </div>
-  </div>
+
+    <script>
+        // Handle Star Ratings
+        const stars = document.querySelectorAll('.star-rating i');
+        const ratingInput = document.getElementById('ratingValue');
+
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                const rating = this.getAttribute('data-value');
+                ratingInput.value = rating;
+                
+                stars.forEach(s => s.classList.remove('active'));
+                for (let i = 0; i < rating; i++) {
+                    stars[i].classList.add('active');
+                }
+            });
+
+            star.addEventListener('mouseover', function() {
+                const rating = this.getAttribute('data-value');
+                stars.forEach(s => s.classList.remove('active'));
+                for (let i = 0; i < rating; i++) {
+                    stars[i].classList.add('active');
+                }
+            });
+
+            star.addEventListener('mouseout', function() {
+                const selectedRating = ratingInput.value;
+                stars.forEach(s => s.classList.remove('active'));
+                for (let i = 0; i < selectedRating; i++) {
+                    stars[i].classList.add('active');
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>

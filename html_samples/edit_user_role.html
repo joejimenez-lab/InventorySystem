@@ -1,123 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Library Management System - Edit User Role</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-    .header {
-      background-color: #d9534f;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-    .container {
-      max-width: 500px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-    label {
-      margin: 10px 0 5px;
-    }
-    select, input[type="text"] {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    button {
-      padding: 10px;
-      margin-top: 15px;
-      background-color: #d9534f;
-      border: none;
-      color: white;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #c9302c;
-    }
-    .nav {
-      margin-top: 15px;
-      text-align: center;
-    }
-    .nav a {
-      color: #d9534f;
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Edit User Role</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Header */
+        .header {
+            width: 100%;
+            background: linear-gradient(135deg, #d9534f, #a94442);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Container */
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+            margin-top: 100px; /* Moves the box lower */
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* Form */
+        .form-group {
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        label {
+            font-size: 1rem;
+            font-weight: bold;
+            display: block;
+    
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            padding-left: 45px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: 0.3s;
+            outline: none;
+        }
+
+        input:focus, select:focus {
+            border-color: #d9534f;
+            box-shadow: 0px 0px 5px rgba(217, 83, 79, 0.5);
+        }
+
+        .form-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+            font-size: 1.2rem;
+        }
+
+        /* Button */
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #d9534f;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #c9302c;
+            transform: scale(1.03);
+        }
+
+        /* Navigation */
+        .nav {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .nav a {
+            text-decoration: none;
+            background: #d9534f;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            display: inline-block;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .nav a:hover {
+            background: #c9302c;
+            transform: scale(1.05);
+        }
+
+        .nav i {
+            margin-right: 8px;
+        }
+
+        /* Success/Error Message */
+        .message {
+            display: none;
+            padding: 10px;
+            margin-top: 15px;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .success {
+            background: #5cb85c;
+            color: white;
+        }
+
+        .error {
+            background: #d9534f;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-  <div class="header">
-    <h1>Edit User Role</h1>
-  </div>
-  <div class="container">
-    <form id="updateRoleForm">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" value="Loading..." readonly>
-      
-      <label for="role">Select Role:</label>
-      <select id="role" name="role" required>
-        <option value="User">User</option>
-        <option value="Librarian">Librarian</option>
-      </select>
-      
-      <button type="submit">Update Role</button>
-    </form>
-    <div class="nav">
-      <a href="user_management.html">Back to User Management</a>
+
+    <div class="header">
+        <h1>Edit User Role</h1>
     </div>
-  </div>
-  
-  <script>
-    function getQueryParam(param) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(param);
-    }
-  
-    document.addEventListener("DOMContentLoaded", function () {
-      const username = getQueryParam("user");
-      if (username) {
-        document.getElementById("username").value = decodeURIComponent(username);
-      }
-    });
-  
-    document.getElementById("updateRoleForm").addEventListener("submit", function (event) {
-      event.preventDefault(); 
-  
-      const username = document.getElementById("username").value;
-      const role = document.getElementById("role").value;
-  
-      const data = { username, role }; 
-  
-      fetch("/update_role", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data) 
-      })
-      .then(response => response.json()) 
-      .then(data => {
-        alert(data.message); 
-        if (data.status === "success") {
-          window.location.href = "user_management.html"; // Redirect on success
+
+    <div class="container">
+        <h2>Modify User Role</h2>
+
+        <form id="updateRoleForm">
+            <div class="form-group">
+                <label for="username"><i class="fas fa-user"></i> Username:</label>
+                <input type="text" id="username" name="username" value="Loading..." readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="role"><i class="fas fa-user-tag"></i> Select Role:</label>
+                <select id="role" name="role" required>
+                    <option value="User">User</option>
+                    <option value="Librarian">Librarian</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn"><i class="fas fa-save"></i> Update Role</button>
+        </form>
+
+        <div class="message" id="messageBox"></div>
+
+        <div class="nav">
+            <a href="user_management.html"><i class="fas fa-arrow-left"></i> Back to User Management</a>
+        </div>
+    </div>
+
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
         }
-      })
-      .catch(error => {
-        console.error("Error updating role:", error);
-        alert("Failed to update role.");
-      });
-    });
-  </script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const username = getQueryParam("user");
+            if (username) {
+                document.getElementById("username").value = decodeURIComponent(username);
+            }
+        });
+
+        document.getElementById("updateRoleForm").addEventListener("submit", function (event) {
+            event.preventDefault(); 
+
+            const username = document.getElementById("username").value;
+            const role = document.getElementById("role").value;
+            const messageBox = document.getElementById("messageBox");
+
+            fetch("/update_role", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username, role })
+            })
+            .then(response => response.json()) 
+            .then(data => {
+                messageBox.style.display = "block";
+                messageBox.textContent = data.message;
+
+                if (data.status === "success") {
+                    messageBox.classList.add("success");
+                    messageBox.classList.remove("error");
+
+                    setTimeout(() => {
+                        window.location.href = "user_management.html"; // Redirect on success
+                    }, 2000);
+                } else {
+                    messageBox.classList.add("error");
+                    messageBox.classList.remove("success");
+                }
+            })
+            .catch(error => {
+                console.error("Error updating role:", error);
+                messageBox.style.display = "block";
+                messageBox.textContent = "Failed to update role.";
+                messageBox.classList.add("error");
+                messageBox.classList.remove("success");
+            });
+        });
+    </script>
+
 </body>
 </html>

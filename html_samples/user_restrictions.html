@@ -2,95 +2,175 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Library Management System - User Restrictions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Restrictions - Library System</title>
+
+  <!-- Google Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      font-family: 'Poppins', sans-serif;
     }
-    .header {
-      background-color: #d9534f;
-      color: white;
-      padding: 15px;
-      text-align: center;
+
+    body {
+      background: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
     }
+
+    /* Container */
     .container {
       max-width: 500px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 100%;
+      padding: 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      animation: fadeInUp 0.8s ease-out;
     }
-    form {
-      display: flex;
-      flex-direction: column;
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    .checkbox-group {
-      margin: 10px 0;
-    }
-    .checkbox-group label {
-      display: block;
-      margin: 5px 0;
-    }
-    button {
-      padding: 10px;
-      margin-top: 15px;
-      background-color: #d9534f;
-      border: none;
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, #d9534f, #a8322c);
       color: white;
-      border-radius: 4px;
+      padding: 20px;
+      border-radius: 12px 12px 0 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    /* User Info */
+    .user-info {
+      font-size: 1.1rem;
+      margin: 20px 0;
+      color: #333;
+    }
+
+    .user-info i {
+      color: #d9534f;
+      margin-right: 8px;
+    }
+
+    /* Restriction Checkboxes */
+    .checkbox-group {
+      text-align: left;
+      margin: 20px 0;
+    }
+
+    .checkbox-group label {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: #f9f9f9;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .checkbox-group label:hover {
+      background: #f1f1f1;
+    }
+
+    .checkbox-group input {
+      margin-right: 10px;
       cursor: pointer;
     }
-    button:hover {
-      background-color: #c9302c;
+
+    /* Button */
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #d9534f;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
+
+    .btn:hover {
+      background: #c9302c;
+      transform: scale(1.05);
+    }
+
+    /* Navigation */
     .nav {
       margin-top: 15px;
-      text-align: center;
     }
+
     .nav a {
       color: #d9534f;
       text-decoration: none;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.3s ease;
+    }
+
+    .nav a:hover {
+      color: #a8322c;
+    }
+
+    .nav i {
+      margin-right: 8px;
     }
   </style>
 </head>
 <body>
-  <div class="header">
-    <h1>User Restrictions</h1>
-  </div>
+
   <div class="container">
-    <form action="user_management.html" method="post">
-      <p>User: <span id="username">Loading...</span></p>
+    <div class="header">
+      <i class="fas fa-user-lock"></i> User Restrictions
+    </div>
+
+    <div class="user-info">
+      <p><i class="fas fa-user"></i> <strong>User:</strong> <span id="username">Loading...</span></p>
+    </div>
+
+    <form id="restrictionForm">
       <div class="checkbox-group">
         <label><input type="checkbox" name="restriction[]" value="borrow"> Restrict Book Borrowing</label>
         <label><input type="checkbox" name="restriction[]" value="reserve"> Restrict Book Reservations</label>
         <label><input type="checkbox" name="restriction[]" value="access"> Restrict Access to Online Resources</label>
       </div>
-      <button type="submit">Update Restrictions</button>
+      <button type="submit" class="btn"><i class="fas fa-save"></i> Update Restrictions</button>
     </form>
+
     <div class="nav">
-      <a href="user_management.html">Back to User Management</a>
+      <a href="user_management.html"><i class="fas fa-arrow-left"></i> Back to User Management</a>
     </div>
   </div>
+
   <script>
     function getQueryParam(param) {
       const urlParams = new URLSearchParams(window.location.search);
       return urlParams.get(param);
     }
-  
+
     document.addEventListener("DOMContentLoaded", function () {
-      // Retrieve both 'id' and 'user' from the query string
       const user_id = getQueryParam("id"); 
       const username = getQueryParam("user");
-  
+
       if (user_id && username) {
-        // Display the username on the page
         document.getElementById("username").textContent = decodeURIComponent(username);
-  
-        // Fetch the user's restrictions based on 'id'
+
         fetch(`/get_restrictions?user_id=${user_id}`)
           .then(response => response.json())
           .then(data => {
@@ -98,18 +178,16 @@
               alert(data.error);
               return;
             }
-  
-            // Set restrictions based on data
+
             document.querySelector("input[value='borrow']").checked = data.borrow;
             document.querySelector("input[value='reserve']").checked = data.reserve;
             document.querySelector("input[value='access']").checked = data.access;
           })
-          .catch(error => console.error("Error fetching user info:", error));
-  
-        // Handle form submission to update restrictions
-        document.querySelector("form").addEventListener("submit", function (event) {
+          .catch(error => console.error("Error fetching user restrictions:", error));
+
+        document.getElementById("restrictionForm").addEventListener("submit", function (event) {
           event.preventDefault(); 
-  
+
           const formData = new FormData(event.target);
           const restrictions = {
             borrow: formData.getAll("restriction[]").includes("borrow"),
@@ -117,7 +195,7 @@
             access: formData.getAll("restriction[]").includes("access"),
             user_id: user_id
           };
-  
+
           fetch("/update_restrictions", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -125,7 +203,7 @@
           })
           .then(response => response.json()) 
           .then(data => {
-            alert(data.message); 
+            alert(data.message);
             window.location.href = "user_management.html"; 
           })
           .catch(error => console.error("Error updating restrictions:", error));
@@ -135,5 +213,6 @@
       }
     });
   </script>
+
 </body>
 </html>
