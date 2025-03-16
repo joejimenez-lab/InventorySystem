@@ -1,74 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Library Management System - Account Security Settings</title>
-  <style>
-    body { 
-      font-family: Arial, sans-serif; 
-      background: #f4f4f4; 
-      margin: 0; 
-      padding: 0; 
-    }
-    .header { 
-      background-color: #5cb85c; 
-      color: white; 
-      padding: 15px; 
-      text-align: center; 
-    }
-    .container { 
-      max-width: 600px; 
-      margin: 20px auto; 
-      padding: 20px; 
-      background: #fff; 
-      border-radius: 8px; 
-      box-shadow: 0 0 10px rgba(0,0,0,0.1); 
-    }
-    form { 
-      display: flex; 
-      flex-direction: column; 
-    }
-    input[type="password"] { 
-      padding: 10px; 
-      margin: 8px 0; 
-      border: 1px solid #ccc; 
-      border-radius: 4px; 
-    }
-    button { 
-      padding: 10px; 
-      margin-top: 10px; 
-      background-color: #5cb85c; 
-      border: none; 
-      color: white; 
-      border-radius: 4px; 
-      cursor: pointer; 
-    }
-    button:hover { 
-      background-color: #4cae4c; 
-    }
-    .nav {
-      margin-top: 15px;
-    }
-    .nav a {
-      color: #5cb85c;
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Account Security</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            width: 100%;
+            background: linear-gradient(135deg, #5cb85c, #3d8b3d);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Container */
+        .container {
+            max-width: 450px;
+            width: 100%;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            transition: transform 0.3s ease;
+            margin-top: 100px; /* Moves the box lower */
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        /* Form */
+        .form-group {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            padding-left: 40px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: 0.3s;
+            outline: none;
+        }
+
+        .form-group input:focus {
+            border-color: #5cb85c;
+            box-shadow: 0px 0px 5px rgba(92, 184, 92, 0.5);
+        }
+
+        .form-group i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+
+        /* Button */
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #5cb85c;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #4cae4c;
+        }
+
+        /* Navigation */
+        .nav {
+            margin-top: 15px;
+        }
+
+        .nav a {
+            color: #5cb85c;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: #3d8b3d;
+        }
+    </style>
 </head>
 <body>
-  <div class="header">
-    <h1>Account Security Settings</h1>
-  </div>
-  <div class="container">
-    <form action="user_profile.html" method="post">
-      <input type="password" name="current_password" placeholder="Current Password" required>
-      <input type="password" name="new_password" placeholder="New Password" required>
-      <input type="password" name="confirm_new_password" placeholder="Confirm New Password" required>
-      <button type="submit">Change Password</button>
-    </form>
-    <div class="nav">
-      <a href="user_profile.html">Back to Profile</a>
+
+    <div class="header">
+        <h1>Account Security Settings</h1>
     </div>
-  </div>
+
+    <div class="container">
+        <form action="user_profile.html" method="post">
+            <div class="form-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="current_password" placeholder="Current Password" required>
+            </div>
+            <div class="form-group">
+                <i class="fas fa-key"></i>
+                <input type="password" name="new_password" placeholder="New Password" required>
+            </div>
+            <div class="form-group">
+                <i class="fas fa-check-circle"></i>
+                <input type="password" name="confirm_new_password" placeholder="Confirm New Password" required>
+            </div>
+            <button type="submit" class="btn">Change Password</button>
+        </form>
+
+        <div class="nav">
+            <a href="user_profile.html"><i class="fas fa-arrow-left"></i> Back to Profile</a>
+        </div>
+    </div>
+
 </body>
 </html>
