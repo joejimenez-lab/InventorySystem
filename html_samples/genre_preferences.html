@@ -102,50 +102,51 @@
   <div class="container">
     <h2>Genre Preferences</h2>
     <p>Select your favorite genres to personalize your recommendations.</p>
-    <form action="library_homepage.html" method="post">
-      <div class="genre-group">
-        <label class="genre-item">
-          <input type="checkbox" name="genres[]" value="Fiction"> Fiction
-        </label>
-        <label class="genre-item">
-          <input type="checkbox" name="genres[]" value="Non-Fiction"> Non-Fiction
-        </label>
-        <label class="genre-item">
-          <input type="checkbox" name="genres[]" value="Mystery"> Mystery
-        </label>
-        <label class="genre-item">
-          <input type="checkbox" name="genres[]" value="Romance"> Romance
-        </label>
-        <label class="genre-item">
-          <input type="checkbox" name="genres[]" value="Science Fiction"> Science Fiction
-        </label>
-        <label class="genre-item">
-          <input type="checkbox" name="genres[]" value="Fantasy"> Fantasy
-        </label>
-        <label class="genre-item">
-          <input type="checkbox" name="genres[]" value="Thriller"> Thriller
-        </label>
-        <label class="genre-item">
-          <input type="checkbox" name="genres[]" value="Horror"> Horror
-        </label>
-        <label class="genre-item">
-          <input type="checkbox" name="genres[]" value="Biography"> Biography
-        </label>
-        <label class="genre-item">
-          <input type="checkbox" name="genres[]" value="History"> History
-        </label>
-        <label class="genre-item">
-          <input type="checkbox" name="genres[]" value="Self-Help"> Self-Help
-        </label>
-        <label class="genre-item">
-          <input type="checkbox" name="genres[]" value="Poetry"> Poetry
-        </label>
-      </div>
-      <button type="submit">Save Preferences</button>
-    </form>
+    <div id="genre-buttons" class="genre-group"></div>
+    <button id="save-btn">Save Preferences</button>
     <div class="link">
       <a href="library_homepage.html">Back to Home</a>
     </div>
   </div>
+  <script>
+    fetch('/get_genres')
+      .then(response => response.json())
+      .then(data => {
+        const genreButtonsContainer = document.getElementById('genre-buttons');
+        for (const genre in data) {
+          if (data.hasOwnProperty(genre)) {
+            const genreButton = document.createElement('label');
+            genreButton.classList.add('genre-item');
+            genreButton.innerHTML = `
+              <input type="checkbox" name="genres[]" value="${genre}"> ${genre} (${data[genre]} books)
+            `;
+            genreButtonsContainer.appendChild(genreButton);
+          }
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching genres:', error);
+      });
+
+    document.getElementById('save-btn').addEventListener('click', () => {
+      const selectedGenres = Array.from(document.querySelectorAll('input[name="genres[]"]:checked')).map(input => input.value);
+      console.log('Selected genres:', selectedGenres);
+
+      fetch('/save_genres', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ genres: selectedGenres })  
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Response from server:', data);
+      })
+      .catch(error => {
+        console.error('Error sending genres:', error);
+      });
+    });
+  </script>
 </body>
 </html>

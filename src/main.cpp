@@ -460,6 +460,22 @@ int main() {
         return crow::response(crow::mustache::load("edit_user_role.html").render(ctx));
     });
 
+    CROW_ROUTE(app, "/update_role").methods("POST"_method)([](const crow::request& req) {
+        // Parse the form data
+        auto body = crow::json::load(req.body);
+        if (!body) {
+            return crow::response(400, "Invalid JSON");
+        }
+        std::string username = body["username"].s();
+        std::string role = body["role"].s();
+        
+        std::string query = "UPDATE users SET user_role = '" + role + "' WHERE username = '" + username + "';";
+        executeQuery(hDbc, query);
+
+        return crow::response(200, "{\"status\":\"success\", \"message\":\"Role updated successfully\"}");
+    });
+
+
     CROW_ROUTE(app, "/edit_book_information.html")([](){
         crow::mustache::context ctx;
         return crow::response(crow::mustache::load("edit_book_information.html").render(ctx));
@@ -550,6 +566,71 @@ int main() {
         return crow::response(crow::mustache::load("genre_preferences.html").render(ctx));
     });
 
+    CROW_ROUTE(app, "/get_genres")
+    .methods("GET"_method)([]() {
+        crow::json::wvalue genres_json;
+        std::string query = "SELECT genre, COUNT(*) FROM books GROUP BY genre;";
+        std::vector<std::vector<std::string>> allGenres = executeQueryReturnRows(hDbc, query);
+        for(const auto& row : allGenres){
+            genres_json[row[0]] = row[1];
+        }
+        return crow::response{genres_json};
+    });
+
+    CROW_ROUTE(app, "/save_genres").methods("POST"_method)
+    ([](const crow::request& req) {
+            auto json_data = crow::json::load(req.body);
+
+            if (!json_data || !json_data.has("genres")) {
+                return crow::response(400, "Invalid JSON format or missing 'genres' field");
+            }
+
+            std::vector<std::string> selectedGenres;
+            auto genres_array = json_data["genres"]; 
+
+            std::string combinedGenres = "";
+
+            for (int i = 0; i < genres_array.size(); i++) {
+                selectedGenres.push_back(genres_array[i].s());
+            }
+
+            for (int i = 0; i < selectedGenres.size(); i++) {
+                combinedGenres += selectedGenres[i];
+                if(i < selectedGenres.size() - 1) {
+                    combinedGenres += ", ";
+                }
+            }
+            
+            //getting cookies
+            std::string token;
+            auto cookies = req.headers.find("Cookie");
+            if (cookies != req.headers.end()) {
+                std::string cookie_header = cookies->second;
+                size_t token_start = cookie_header.find("session_id=");
+                if (token_start != std::string::npos) {
+                    token_start += 11; 
+                    size_t token_end = cookie_header.find(";", token_start);
+                    token = cookie_header.substr(token_start, token_end - token_start);
+                }
+            }
+
+            if (token.empty() || sessions.find(token) == sessions.end()) {
+                return crow::response(401, "Invalid or expired session token");
+            }
+    
+            //wip wip wip wip wip !!!!!
+            std::string username = sessions[token];
+            std::cout << username << std::endl;
+            
+            
+
+
+            crow::json::wvalue response;
+            response["status"] = "success";
+            response["message"] = "Genres saved successfully";
+            return crow::response{response};
+       
+    });
 
     //homepages
     CROW_ROUTE(app, "/library_homepage.html")([](const crow::request& req){

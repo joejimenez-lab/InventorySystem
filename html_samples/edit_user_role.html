@@ -63,7 +63,7 @@
     <h1>Edit User Role</h1>
   </div>
   <div class="container">
-    <form action="user_management.html" method="post">
+    <form id="updateRoleForm">
       <label for="username">Username:</label>
       <input type="text" id="username" name="username" value="Loading..." readonly>
       
@@ -79,6 +79,7 @@
       <a href="user_management.html">Back to User Management</a>
     </div>
   </div>
+  
   <script>
     function getQueryParam(param) {
       const urlParams = new URLSearchParams(window.location.search);
@@ -90,6 +91,32 @@
       if (username) {
         document.getElementById("username").value = decodeURIComponent(username);
       }
+    });
+  
+    document.getElementById("updateRoleForm").addEventListener("submit", function (event) {
+      event.preventDefault(); 
+  
+      const username = document.getElementById("username").value;
+      const role = document.getElementById("role").value;
+  
+      const data = { username, role }; 
+  
+      fetch("/update_role", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data) 
+      })
+      .then(response => response.json()) 
+      .then(data => {
+        alert(data.message); 
+        if (data.status === "success") {
+          window.location.href = "user_management.html"; // Redirect on success
+        }
+      })
+      .catch(error => {
+        console.error("Error updating role:", error);
+        alert("Failed to update role.");
+      });
     });
   </script>
 </body>
