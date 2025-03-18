@@ -172,10 +172,11 @@
 
     <div class="container">
         <div class="search-bar">
-            <form action="/search_results" method="get">
-                <input type="text" name="query" placeholder="Search for books...">
+            <form onsubmit="redirectToResults(event)">
+                <input type="text" id="search-input" placeholder="Search for books..." required>
                 <button type="submit"><i class="fas fa-search"></i> Search</button>
             </form>
+            
         </div>
 
         <div class="nav">
@@ -188,8 +189,29 @@
     </div>
 
     <!-- Zapier Chatbot -->
-    <script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
+    <script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'>
+        
+    </script>
     <zapier-interfaces-chatbot-embed is-popup='true' chatbot-id='cm84wqm92000bnqx49egmozcg'></zapier-interfaces-chatbot-embed>
-
+    <script>
+        // Function to get URL query parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param) || "No search term provided";
+        }
+    
+        // Display search term dynamically
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchTerm = getQueryParam("query");
+            document.getElementById("search-term").textContent = searchTerm;
+        });
+        function redirectToResults(event) {
+        event.preventDefault(); // Prevent form from submitting the default way
+        const query = document.getElementById("search-input").value.trim();
+        if (query) {
+            window.location.href = `search_results.html?query=${encodeURIComponent(query)}`;
+        }
+    }
+    </script>
 </body>
 </html>
