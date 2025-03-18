@@ -59,6 +59,45 @@
             margin-bottom: 20px;
         }
 
+        /* Search Bar */
+        .search-bar {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .search-bar input {
+            width: calc(100% - 120px);
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            outline: none;
+            transition: border 0.3s;
+        }
+
+        .search-bar input:focus {
+            border-color: #d9534f;
+            box-shadow: 0px 0px 5px rgba(217, 83, 79, 0.5);
+        }
+
+        .search-bar button {
+            padding: 12px;
+            background: #d9534f;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .search-bar button:hover {
+            background: #b52b27;
+        }
+
         /* Table Styling */
         table {
             width: 100%;
@@ -154,6 +193,23 @@
             margin-right: 8px;
         }
     </style>
+
+    <script>
+        function searchBooks() {
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let rows = document.querySelectorAll("tbody tr");
+
+            rows.forEach(row => {
+                let title = row.cells[1].innerText.toLowerCase();
+                let author = row.cells[2].innerText.toLowerCase();
+                if (title.includes(input) || author.includes(input)) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        }
+    </script>
 </head>
 <body>
 
@@ -163,6 +219,12 @@
         </div>
 
         <p>Manage the library's collection and inventory.</p>
+
+        <!-- Search Bar (Top) -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search by title or author..." onkeyup="searchBooks()">
+            <button onclick="searchBooks()"><i class="fas fa-search"></i> Search</button>
+        </div>
 
         <!-- Library Books Table -->
         <table>
@@ -198,6 +260,12 @@
                 </tr>
             </tbody>
         </table>
+
+        <!-- Search Bar (Bottom) -->
+        <div class="search-bar">
+            <input type="text" id="searchInputBottom" placeholder="Search by title or author..." onkeyup="searchBooks()">
+            <button onclick="searchBooks()"><i class="fas fa-search"></i> Search</button>
+        </div>
 
         <div class="nav">
             <a href="admin_dashboard.html"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
