@@ -447,6 +447,37 @@ int main() {
         return crow::response(crow::mustache::load("library_database_management.html").render(ctx));
     });
 
+    
+    CROW_ROUTE(app, "/api/books")
+    .methods("GET"_method)([](const crow::request& req) {
+        crow::json::wvalue result;
+        int limit = 20;
+        int page = 1;
+        if (req.url_params.get("page")) {
+            page = std::stoi(req.url_params.get("page"));
+            if (page < 1) page = 1;
+        }
+
+        int offset = (page - 1) * limit;
+        std::string query = "SELECT book_id, title, author, copies_available FROM books ORDER BY book_id LIMIT " + std::to_string(limit) + " OFFSET " + std::to_string(offset) + ";";
+        std::vector<std::vector<std::string>> allbooks = executeQueryReturnRows(hDbc, query);
+        
+        std::vector<crow::json::wvalue> book_list;
+        for (const auto& book : allbooks) {
+            if (book.size() >= 4) {
+                book_list.push_back(crow::json::wvalue{
+                    {"id", book[0]},
+                    {"title", book[1]},
+                    {"author", book[2]},
+                    {"availability", book[3]}
+                });
+            }
+        }
+        result["books"] = std::move(book_list);
+        result["page"] = page;
+        return crow::response{result};
+    });
+
     CROW_ROUTE(app, "/librarian_stock_alert.html")([](){
         crow::mustache::context ctx;
         return crow::response(crow::mustache::load("librarian_stock_alert.html").render(ctx));
