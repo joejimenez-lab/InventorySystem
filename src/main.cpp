@@ -18,6 +18,7 @@
 #include "admin.h"
 #include <cpr/cpr.h>
 #include "json/json.h"
+#include <cctype>
 
 
 SQLHENV hEnv;
@@ -34,6 +35,25 @@ std::string load_html(const std::string& file_path) {
     std::stringstream buffer;
     buffer << html_file.rdbuf();
     return buffer.str();
+}
+
+
+std::string url_encode(const std::string &str) {
+    std::ostringstream encoded;
+    encoded.fill('0');
+    encoded << std::hex;
+
+    for (char ch : str) {
+        if (std::isalnum(ch) || ch == '-' || ch == '_' || ch == '.' || ch == '~') {
+            // Safe characters: alphanumeric, '-', '_', '.', '~'
+            encoded << ch;
+        } else {
+            // Unsafe characters: encode as %XX
+            encoded << '%' << std::setw(2) << static_cast<int>(static_cast<unsigned char>(ch));
+        }
+    }
+
+    return encoded.str();
 }
 
 std::string html_escape(const std::string& input) {
@@ -447,6 +467,37 @@ int main() {
         return crow::response(crow::mustache::load("library_database_management.html").render(ctx));
     });
 
+    
+    CROW_ROUTE(app, "/api/books")
+    .methods("GET"_method)([](const crow::request& req) {
+        crow::json::wvalue result;
+        int limit = 20;
+        int page = 1;
+        if (req.url_params.get("page")) {
+            page = std::stoi(req.url_params.get("page"));
+            if (page < 1) page = 1;
+        }
+
+        int offset = (page - 1) * limit;
+        std::string query = "SELECT book_id, title, author, copies_available FROM books ORDER BY book_id LIMIT " + std::to_string(limit) + " OFFSET " + std::to_string(offset) + ";";
+        std::vector<std::vector<std::string>> allbooks = executeQueryReturnRows(hDbc, query);
+        
+        std::vector<crow::json::wvalue> book_list;
+        for (const auto& book : allbooks) {
+            if (book.size() >= 4) {
+                book_list.push_back(crow::json::wvalue{
+                    {"id", book[0]},
+                    {"title", book[1]},
+                    {"author", book[2]},
+                    {"availability", book[3]}
+                });
+            }
+        }
+        result["books"] = std::move(book_list);
+        result["page"] = page;
+        return crow::response{result};
+    });
+
     CROW_ROUTE(app, "/librarian_stock_alert.html")([](){
         crow::mustache::context ctx;
         return crow::response(crow::mustache::load("librarian_stock_alert.html").render(ctx));
@@ -670,6 +721,87 @@ int main() {
         return crow::response{response_html.str()};
     });
 
+    CROW_ROUTE(app, "/talpaapiquery")
+    .methods("GET"_method)
+    ([](const crow::request& req) -> crow::response {  // Explicitly specify the return type as crow::response
+        std::string query = req.url_params.get("query");
+        if (query.empty()) {
+            return crow::response(400, "Query parameter is missing");  // Use crow::response constructor
+        }
+
+        std::cout << "Query: " << query << std::endl;
+
+        int limit = 10;
+        int page = 1;
+        std::string token = "cba9b74d9435ab0db4bb0f0169a85f54";
+        std::string talpaApiUrl = "https://www.librarything.com/api/talpa.php";
+        std::string encodedQuery = url_encode(query);
+
+        std::cout << "Encoded Query: " << encodedQuery << std::endl;
+        std::stringstream urlStream;
+        urlStream << talpaApiUrl
+                  << "?token=" << token
+                  << "&search=" << encodedQuery
+                  << "&page=" << page
+                  << "&limit=" << limit;
+
+        std::string finalUrl = urlStream.str();
+        std::cout << "Final URL: " << finalUrl << std::endl;
+
+        std::string json_data = execute_python_script(finalUrl);
+        std::cout << "Raw JSON Data: " << json_data << std::endl;
+
+        // Parse the JSON data using jsoncpp
+        Json::Value json_obj;
+        Json::CharReaderBuilder reader;
+        std::string errs;
+
+        std::istringstream json_stream(json_data);
+        if (!Json::parseFromStream(reader, json_stream, &json_obj, &errs)) {
+            std::cerr << "Error parsing JSON: " << errs << std::endl;
+            return crow::response(500, "Error: Failed to parse JSON data");  // Use crow::response constructor
+        }
+
+        // Debug: Print parsed JSON object
+        std::cout << "Parsed JSON Object: " << json_obj << std::endl;
+
+        // Extract titles from the nested JSON structure
+        Json::Value titles;
+        if (json_obj.isMember("response") && json_obj["response"].isMember("resultlist")) {
+            const Json::Value& resultlist = json_obj["response"]["resultlist"];
+            for (const auto& item : resultlist) {
+                if (item.isMember("title")) {
+                    std::cout << "Title: " << item["title"] << std::endl;  // Debug: Print each title
+                    titles.append(item["title"]);
+                } else {
+                    std::cout << "Title field missing in item: " << item << std::endl;  // Debug: Print items without title
+                }
+            }
+        } else {
+            std::cerr << "Error: 'response.resultlist' not found in JSON data" << std::endl;
+            return crow::response(500, "Error: Invalid JSON structure");  // Use crow::response constructor
+        }
+
+        // Convert JSON titles to a vector of strings
+        std::vector<std::string> titles_vector;
+        for (const auto& title : titles) {
+            titles_vector.push_back(title.asString());
+        }
+
+        // Debug: Print the vector of titles
+        std::cout << "Titles Vector: ";
+        for (const auto& title : titles_vector) {
+            std::cout << title << ", ";
+        }
+        std::cout << std::endl;
+
+        // Return the titles as an HTTP response
+        Json::StreamWriterBuilder writer;
+        std::string response_json = Json::writeString(writer, titles);
+        std::cout << "Response JSON: " << response_json << std::endl;  // Debug: Print final response JSON
+        return crow::response(response_json);  // Use crow::response constructor
+    });
+    
     CROW_ROUTE(app, "/admin_dashboard.html")([](const crow::request& req){
         std::string session_cookie = req.get_header_value("Cookie");
         std::string token = extractSessionID(session_cookie);

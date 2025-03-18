@@ -17,6 +17,9 @@
 #include <cstring>
 #include <random>
 #include <string>
+#include <cstdio>
+#include <sstream>
+#include <filesystem>
 
 #pragma comment(lib, "bcrypt.lib")
 //user table
@@ -309,4 +312,35 @@ std::vector<std::vector<std::string>> executeQueryReturnRows(SQLHDBC hDbc, std::
 
     SQLFreeHandle(SQL_HANDLE_STMT, stmt);
     return results;
+}
+
+std::string execute_python_script(const std::string& url) {
+    // Get the current working directory
+    std::filesystem::path current_path = std::filesystem::current_path();
+
+    // Construct the relative path to the Python script
+    std::filesystem::path script_path = current_path / ".." / "pythonScripts" / "talpaAPIJSONGrabber.py";
+
+    // Resolve the relative path to an absolute path
+    std::filesystem::path absolute_script_path = std::filesystem::canonical(script_path);
+
+    // Build the command to execute the Python script
+    std::string command = "python \"" + absolute_script_path.string() + "\" \"" + url + "\"";
+    char buffer[128];
+    std::string result = "";
+
+    // Open a pipe to execute the Python script
+    FILE* pipe = popen(command.c_str(), "r");
+    if (!pipe) {
+        return "Error: Failed to execute Python script";
+    }
+
+    // Read the output of the Python script
+    while (fgets(buffer, sizeof(buffer), pipe) != nullptr) {
+        result += buffer;
+    }
+
+    // Close the pipe
+    pclose(pipe);
+    return result;
 }
