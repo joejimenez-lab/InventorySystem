@@ -4,13 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Database Management</title>
-
-    <!-- Load Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
     <style>
-        /* Global Styles */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -27,7 +23,6 @@
             padding: 20px;
         }
 
-        /* Container */
         .container {
             max-width: 900px;
             width: 100%;
@@ -36,15 +31,26 @@
             border-radius: 10px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
             text-align: center;
-            animation: fadeInUp 0.8s ease-out;
+            position: relative;
         }
 
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
+        .admin-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #d9534f;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease;
         }
 
-        /* Page Title */
+        .admin-btn:hover {
+            background: #b52b27;
+        }
+
         .page-title {
             font-size: 1.8rem;
             font-weight: bold;
@@ -53,25 +59,42 @@
             text-transform: uppercase;
         }
 
-        p {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 20px;
+        .search-container {
+            margin-bottom: 15px;
         }
 
-        /* Table Styling */
+        .search-container input {
+            width: 80%;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .search-container button {
+            padding: 10px 15px;
+            font-size: 1rem;
+            background: #d9534f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search-container button:hover {
+            background: #b52b27;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        table, th, td {
-            border: 1px solid #ddd;
+            margin: 20px 0;
         }
 
         th, td {
             padding: 12px;
+            border: 1px solid #ddd;
             text-align: left;
         }
 
@@ -84,85 +107,47 @@
             background: #f9f9f9;
         }
 
-        tbody tr:hover {
-            background: #ffe5e5;
-            transition: background 0.3s ease;
-        }
-
-        /* Action Buttons */
-        .action-buttons {
+        .pagination {
             display: flex;
+            justify-content: center;
             gap: 10px;
+            margin: 10px 0;
         }
 
-        .action-buttons a {
-            text-decoration: none;
-            padding: 6px 12px;
+        .pagination button {
+            background: #d9534f;
+            color: white;
+            border: none;
+            padding: 10px 15px;
             border-radius: 5px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            transition: background 0.3s ease, transform 0.2s ease;
-        }
-
-        .edit-btn {
-            background: #5cb85c;
-            color: white;
-        }
-
-        .edit-btn:hover {
-            background: #4cae4c;
-            transform: scale(1.05);
-        }
-
-        .delete-btn {
-            background: #d9534f;
-            color: white;
-        }
-
-        .delete-btn:hover {
-            background: #b52b27;
-            transform: scale(1.05);
-        }
-
-        /* Navigation Button */
-        .nav {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .nav a {
-            text-decoration: none;
-            background: #d9534f;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 6px;
+            cursor: pointer;
             font-size: 1rem;
-            font-weight: bold;
-            display: inline-block;
-            transition: background 0.3s ease, transform 0.2s ease;
+            transition: background 0.3s;
         }
 
-        .nav a:hover {
+        .pagination button:hover {
             background: #b52b27;
-            transform: scale(1.05);
-        }
-
-        .nav i {
-            margin-right: 8px;
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <div class="page-title">
-            Library Database Management
+        <a href="admin_dashboard.html" class="admin-btn">Admin Dashboard</a>
+        <div class="page-title">Library Database Management</div>
+        <p>Manage the library's collection and inventory.</p>
+        
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search books by title...">
+            <button id="search-btn">Search</button>
         </div>
 
-        <p>Manage the library's collection and inventory.</p>
+        <!-- Pagination (Above Table) -->
+        <div class="pagination">
+            <button id="prev-btn">Previous</button>
+            <span id="page-number">Page 1</span>
+            <button id="next-btn">Next</button>
+        </div>
 
         <!-- Library Books Table -->
         <table>
@@ -175,27 +160,26 @@
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody>
-                
-            </tbody>
+            <tbody></tbody>
         </table>
 
-        <div class="nav">
-            <a href="admin_dashboard.html"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+        <!-- Pagination (Below Table) -->
+        <div class="pagination">
+            <button id="prev-btn-bottom">Previous</button>
+            <span id="page-number-bottom">Page 1</span>
+            <button id="next-btn-bottom">Next</button>
         </div>
     </div>
+
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             let currentPage = 1;
-            const limit = 20;
-        
-            function loadBooks(page) {
-                fetch(`/api/books?page=${page}`)
+            function loadBooks(page, query = "") {
+                fetch(`/api/books?page=${page}&search=${query}`)
                 .then(response => response.json())
                 .then(data => {
                     let tableBody = document.querySelector("tbody");
-                    tableBody.innerHTML = ""; 
-        
+                    tableBody.innerHTML = "";
                     data.books.forEach(book => {
                         let row = `
                             <tr>
@@ -203,46 +187,37 @@
                                 <td>${book.title}</td>
                                 <td>${book.author}</td>
                                 <td>${book.availability}</td>
-                                <td class="action-buttons">
-                                    <a href="#" class="edit-btn"><i class="fas fa-edit"></i> Edit</a>
-                                    <a href="#" class="delete-btn"><i class="fas fa-trash"></i> Remove</a>
-                                </td>
+                                <td><a href="#" class="edit-btn">Edit</a> <a href="#" class="delete-btn">Delete</a></td>
                             </tr>`;
                         tableBody.innerHTML += row;
                     });
-        
                     currentPage = data.page;
                     updatePagination();
                 })
                 .catch(error => console.error("Error loading books:", error));
             }
-        
             function updatePagination() {
                 document.getElementById("page-number").textContent = `Page ${currentPage}`;
-                document.getElementById("prev-btn").disabled = currentPage === 1;
+                document.getElementById("page-number-bottom").textContent = `Page ${currentPage}`;
             }
-        
             document.getElementById("prev-btn").addEventListener("click", () => {
-                if (currentPage > 1) {
-                    loadBooks(currentPage - 1);
-                }
+                if (currentPage > 1) loadBooks(currentPage - 1);
             });
-        
             document.getElementById("next-btn").addEventListener("click", () => {
                 loadBooks(currentPage + 1);
             });
-        
-            // Load first page on startup
+            document.getElementById("prev-btn-bottom").addEventListener("click", () => {
+                if (currentPage > 1) loadBooks(currentPage - 1);
+            });
+            document.getElementById("next-btn-bottom").addEventListener("click", () => {
+                loadBooks(currentPage + 1);
+            });
+            document.getElementById("search-btn").addEventListener("click", () => {
+                const query = document.getElementById("search-input").value;
+                loadBooks(1, query);
+            });
             loadBooks(1);
         });
-        </script>
-        
-        <!-- Pagination Controls -->
-        <div class="pagination">
-            <button id="prev-btn">Previous</button>
-            <span id="page-number">Page 1</span>
-            <button id="next-btn">Next</button>
-        </div>
-        
+    </script>
 </body>
 </html>
