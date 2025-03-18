@@ -97,34 +97,6 @@
             text-decoration: underline;
         }
 
-        /* Pagination */
-        .pagination {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .pagination button {
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            background: #5cb85c;
-            color: white;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .pagination button:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-        }
-
-        .pagination button:hover:not(:disabled) {
-            background: #4cae4c;
-        }
-
         /* Back Button */
         .back-home {
             margin-top: 20px;
@@ -162,100 +134,54 @@
             Search Results
         </div>
 
-        <p>Results for your query: <span id="query-text"></span></p>
+        <p>Results for your query:</p>
 
-        <table id="results-table">
+        <table>
             <thead>
                 <tr>
                     <th>Title</th>
                     <th>Author</th>
                     <th>Genre</th>
                     <th>Details</th>
+                    <th>Discussion</th> <!-- New column for discussion forum -->
                 </tr>
             </thead>
-            <tbody id="table-body">
-               
+            <tbody>
+                <tr>
+                    <td>The Great Gatsby</td>
+                    <td>F. Scott Fitzgerald</td>
+                    <td>Classic Fiction</td>
+                    <td><a href="book_details.html?id=Gatsby"><i class="fas fa-book-open"></i> View Details</a></td>
+                    <td><a href="discussion_forum.html?id=Gatsby"><i class="fas fa-comments"></i> Discuss</a></td> <!-- Discussion link -->
+                </tr>
+                <tr>
+                    <td>1984</td>
+                    <td>George Orwell</td>
+                    <td>Dystopian</td>
+                    <td><a href="book_details.html?id=1984"><i class="fas fa-book-open"></i> View Details</a></td>
+                    <td><a href="discussion_forum.html?id=1984"><i class="fas fa-comments"></i> Discuss</a></td> <!-- Discussion link -->
+                </tr>
+                <tr>
+                    <td>To Kill a Mockingbird</td>
+                    <td>Harper Lee</td>
+                    <td>Historical Fiction</td>
+                    <td><a href="book_details.html?id=Mockingbird"><i class="fas fa-book-open"></i> View Details</a></td>
+                    <td><a href="discussion_forum.html?id=Mockingbird"><i class="fas fa-comments"></i> Discuss</a></td> <!-- Discussion link -->
+                </tr>
+                <tr>
+                    <td>Pride and Prejudice</td>
+                    <td>Jane Austen</td>
+                    <td>Romance</td>
+                    <td><a href="book_details.html?id=PridePrejudice"><i class="fas fa-book-open"></i> View Details</a></td>
+                    <td><a href="discussion_forum.html?id=PridePrejudice"><i class="fas fa-comments"></i> Discuss</a></td> <!-- Discussion link -->
+                </tr>
             </tbody>
         </table>
-        <div class="pagination">
-            <button id="prev-btn" onclick="changePage(-1)" disabled>Previous</button>
-            <span id="page-info"></span>
-            <button id="next-btn" onclick="changePage(1)">Next</button>
-        </div>
 
         <div class="back-home">
             <a href="library_homepage.html"><i class="fas fa-home"></i> Back to Homepage</a>
         </div>
     </div>
-
-    <script>
-        const rowsPerPage = 20;
-        let currentPage = 1;
-        let books = [];
-
-        
-        for (let i = 1; i <= 100; i++) {
-            books.push({
-                title: `Book ${i}`,
-                author: `Author ${i}`,
-                genre: i % 2 === 0 ? "Fiction" : "Non-Fiction",
-                link: `book_details.html?id=Book${i}`
-            });
-        }
-
-        function displayTable() {
-            const tableBody = document.getElementById("table-body");
-            tableBody.innerHTML = "";
-
-            let start = (currentPage - 1) * rowsPerPage;
-            let end = start + rowsPerPage;
-            let paginatedBooks = books.slice(start, end);
-
-            paginatedBooks.forEach(book => {
-                let row = `<tr>
-                    <td>${book.title}</td>
-                    <td>${book.author}</td>
-                    <td>${book.genre}</td>
-                    <td><a href="${book.link}"><i class="fas fa-book-open"></i> View Details</a></td>
-                </tr>`;
-                tableBody.innerHTML += row;
-            });
-
-            updatePagination();
-        }
-
-        function updatePagination() {
-            document.getElementById("page-info").textContent = `Page ${currentPage} of ${Math.ceil(books.length / rowsPerPage)}`;
-            document.getElementById("prev-btn").disabled = currentPage === 1;
-            document.getElementById("next-btn").disabled = currentPage === Math.ceil(books.length / rowsPerPage);
-        }
-
-        function changePage(step) {
-            currentPage += step;
-            displayTable();
-        }
-
-        // Initial table display
-        displayTable();
-
-        document.addEventListener("DOMContentLoaded", () => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const query = urlParams.get("query");
-        
-        if (query) {
-            fetch(`/talpaapiquery?query=${encodeURIComponent(query)}`)
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data);  
-                })
-                .catch(error => console.error('Error fetching data:', error));
-            
-            document.getElementById("query-text").textContent = query;
-        } else {
-            document.getElementById("query-text").textContent = "No query provided";
-        }
-    });
-    </script>
 
 </body>
 </html>
