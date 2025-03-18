@@ -1114,6 +1114,7 @@ CMakeFiles/Project.dir/src/user.cpp.obj: C:/Users/natea/InventorySystem/src/user
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/backward/binders.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bit \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/alloc_traits.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/allocated_ptr.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/allocator.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/basic_ios.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/basic_ios.tcc \
@@ -1121,6 +1122,8 @@ CMakeFiles/Project.dir/src/user.cpp.obj: C:/Users/natea/InventorySystem/src/user
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/basic_string.tcc \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/char_traits.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/charconv.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/chrono.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/codecvt.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/concept_check.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/cpp_type_traits.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/cxxabi_forced.h \
@@ -1128,6 +1131,10 @@ CMakeFiles/Project.dir/src/user.cpp.obj: C:/Users/natea/InventorySystem/src/user
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/exception.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/exception_defines.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/exception_ptr.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/fs_dir.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/fs_fwd.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/fs_ops.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/fs_path.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/functexcept.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/functional_hash.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/hash_bytes.h \
@@ -1136,8 +1143,11 @@ CMakeFiles/Project.dir/src/user.cpp.obj: C:/Users/natea/InventorySystem/src/user
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/istream.tcc \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/locale_classes.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/locale_classes.tcc \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/locale_conv.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/locale_facets.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/locale_facets.tcc \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/locale_facets_nonio.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/locale_facets_nonio.tcc \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/localefwd.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/memory_resource.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/memoryfwd.h \
@@ -1146,15 +1156,20 @@ CMakeFiles/Project.dir/src/user.cpp.obj: C:/Users/natea/InventorySystem/src/user
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/new_allocator.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/ostream.tcc \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/ostream_insert.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/parse_numbers.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/postypes.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/predefined_ops.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/ptr_traits.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/quoted_string.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/random.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/random.tcc \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/range_access.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/refwrap.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/requires_hosted.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/shared_ptr.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/shared_ptr_base.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/specfun.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/sstream.tcc \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/std_abs.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_algobase.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stl_bvector.h \
@@ -1172,6 +1187,7 @@ CMakeFiles/Project.dir/src/user.cpp.obj: C:/Users/natea/InventorySystem/src/user
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/string_view.tcc \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/stringfwd.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/uniform_int_dist.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/unique_ptr.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/uses_allocator.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/uses_allocator_args.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/bits/utility.h \
@@ -1181,28 +1197,35 @@ CMakeFiles/Project.dir/src/user.cpp.obj: C:/Users/natea/InventorySystem/src/user
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cerrno \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/clocale \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cmath \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/codecvt \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/concepts \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cstddef \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cstdint \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cstdio \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cstdlib \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cstring \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ctime \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cwchar \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/cwctype \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/debug/assertions.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/debug/debug.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/exception \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/aligned_buffer.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/alloc_traits.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/atomicity.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/concurrence.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/numeric_traits.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/string_conversions.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ext/type_traits.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/filesystem \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/initializer_list \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/iomanip \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ios \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/iosfwd \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/iostream \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/istream \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/limits \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/locale \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/new \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/numeric \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ostream \
@@ -1210,6 +1233,8 @@ CMakeFiles/Project.dir/src/user.cpp.obj: C:/Users/natea/InventorySystem/src/user
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/pstl/glue_numeric_defs.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/pstl/pstl_config.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/random \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/ratio \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/sstream \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/stdexcept \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/stdlib.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/streambuf \
@@ -1242,8 +1267,10 @@ CMakeFiles/Project.dir/src/user.cpp.obj: C:/Users/natea/InventorySystem/src/user
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/error_constants.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/gthr-default.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/gthr.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/messages_members.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/opt_random.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
+  C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/c++/x86_64-w64-mingw32/bits/time_members.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/cetintrin.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/cldemoteintrin.h \
   C:/mingw64/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/clflushoptintrin.h \

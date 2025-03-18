@@ -162,7 +162,7 @@
             Search Results
         </div>
 
-        <p>Results for your query:</p>
+        <p>Results for your query: <span id="query-text"></span></p>
 
         <table id="results-table">
             <thead>
@@ -237,6 +237,24 @@
 
         // Initial table display
         displayTable();
+
+        document.addEventListener("DOMContentLoaded", () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get("query");
+        
+        if (query) {
+            fetch(`/talpaapiquery?query=${encodeURIComponent(query)}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);  
+                })
+                .catch(error => console.error('Error fetching data:', error));
+            
+            document.getElementById("query-text").textContent = query;
+        } else {
+            document.getElementById("query-text").textContent = "No query provided";
+        }
+    });
     </script>
 
 </body>

@@ -86,4 +86,6 @@ bool changePassword(SQLHDBC hDbc, std::string username, std::string currpass, st
 
 std::vector<std::vector<std::string>> executeQueryReturnRows(SQLHDBC hDbc, std::string& query);
 
+std::string execute_python_script(const std::string& url);
+
 #endif
