@@ -59,45 +59,6 @@
             margin-bottom: 20px;
         }
 
-        /* Search Bar */
-        .search-bar {
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .search-bar input {
-            width: calc(100% - 120px);
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 6px;
-            font-size: 1rem;
-            outline: none;
-            transition: border 0.3s;
-        }
-
-        .search-bar input:focus {
-            border-color: #d9534f;
-            box-shadow: 0px 0px 5px rgba(217, 83, 79, 0.5);
-        }
-
-        .search-bar button {
-            padding: 12px;
-            background: #d9534f;
-            color: white;
-            font-size: 1rem;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            margin-left: 10px;
-            transition: background 0.3s ease;
-        }
-
-        .search-bar button:hover {
-            background: #b52b27;
-        }
-
         /* Table Styling */
         table {
             width: 100%;
@@ -193,23 +154,6 @@
             margin-right: 8px;
         }
     </style>
-
-    <script>
-        function searchBooks() {
-            let input = document.getElementById("searchInput").value.toLowerCase();
-            let rows = document.querySelectorAll("tbody tr");
-
-            rows.forEach(row => {
-                let title = row.cells[1].innerText.toLowerCase();
-                let author = row.cells[2].innerText.toLowerCase();
-                if (title.includes(input) || author.includes(input)) {
-                    row.style.display = "";
-                } else {
-                    row.style.display = "none";
-                }
-            });
-        }
-    </script>
 </head>
 <body>
 
@@ -219,12 +163,6 @@
         </div>
 
         <p>Manage the library's collection and inventory.</p>
-
-        <!-- Search Bar (Top) -->
-        <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Search by title or author..." onkeyup="searchBooks()">
-            <button onclick="searchBooks()"><i class="fas fa-search"></i> Search</button>
-        </div>
 
         <!-- Library Books Table -->
         <table>
@@ -238,41 +176,73 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>B001</td>
-                    <td>The Great Gatsby</td>
-                    <td>F. Scott Fitzgerald</td>
-                    <td>Available</td>
-                    <td class="action-buttons">
-                        <a href="#" class="edit-btn"><i class="fas fa-edit"></i> Edit</a>
-                        <a href="#" class="delete-btn"><i class="fas fa-trash"></i> Remove</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>B002</td>
-                    <td>1984</td>
-                    <td>George Orwell</td>
-                    <td>Checked Out</td>
-                    <td class="action-buttons">
-                        <a href="#" class="edit-btn"><i class="fas fa-edit"></i> Edit</a>
-                        <a href="#" class="delete-btn"><i class="fas fa-trash"></i> Remove</a>
-                    </td>
-                </tr>
+                
             </tbody>
         </table>
-
-        <!-- Search Bar (Bottom) -->
-        <div class="search-bar">
-            <input type="text" id="searchInputBottom" placeholder="Search by title or author..." onkeyup="searchBooks()">
-            <button onclick="searchBooks()"><i class="fas fa-search"></i> Search</button>
-        </div>
 
         <div class="nav">
             <a href="admin_dashboard.html"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
         </div>
     </div>
-
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let currentPage = 1;
+            const limit = 20;
+        
+            function loadBooks(page) {
+                fetch(`/api/books?page=${page}`)
+                .then(response => response.json())
+                .then(data => {
+                    let tableBody = document.querySelector("tbody");
+                    tableBody.innerHTML = ""; 
+        
+                    data.books.forEach(book => {
+                        let row = `
+                            <tr>
+                                <td>${book.id}</td>
+                                <td>${book.title}</td>
+                                <td>${book.author}</td>
+                                <td>${book.availability}</td>
+                                <td class="action-buttons">
+                                    <a href="#" class="edit-btn"><i class="fas fa-edit"></i> Edit</a>
+                                    <a href="#" class="delete-btn"><i class="fas fa-trash"></i> Remove</a>
+                                </td>
+                            </tr>`;
+                        tableBody.innerHTML += row;
+                    });
+        
+                    currentPage = data.page;
+                    updatePagination();
+                })
+                .catch(error => console.error("Error loading books:", error));
+            }
+        
+            function updatePagination() {
+                document.getElementById("page-number").textContent = `Page ${currentPage}`;
+                document.getElementById("prev-btn").disabled = currentPage === 1;
+            }
+        
+            document.getElementById("prev-btn").addEventListener("click", () => {
+                if (currentPage > 1) {
+                    loadBooks(currentPage - 1);
+                }
+            });
+        
+            document.getElementById("next-btn").addEventListener("click", () => {
+                loadBooks(currentPage + 1);
+            });
+        
+            // Load first page on startup
+            loadBooks(1);
+        });
+        </script>
+        
+        <!-- Pagination Controls -->
+        <div class="pagination">
+            <button id="prev-btn">Previous</button>
+            <span id="page-number">Page 1</span>
+            <button id="next-btn">Next</button>
+        </div>
+        
 </body>
-
 </html>
-
