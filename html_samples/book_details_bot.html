@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Details Bot</title>
+  
+  <!-- Load Chatbot Script -->
+  <script async type='module' src='https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js'></script>
+
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    /* Buttons */
+    .button-container {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .btn {
+      padding: 10px 15px;
+      background: #5cb85c;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #4cae4c;
+      transform: scale(1.05);
+    }
+
+    .btn i {
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Book Details Assistant</h2>
+    <p id="book-title">Loading...</p>
+
+    <!-- Chatbot Embed -->
+    <zapier-interfaces-chatbot-embed 
+      is-popup="false" 
+      chatbot-id="cm882im7w002omwuf5eyoyb2i" 
+      height="600px" 
+      width="400px">
+    </zapier-interfaces-chatbot-embed>
+
+    <!-- Navigation Buttons -->
+    <div class="button-container">
+      <a href="search_results.html" class="btn"><i class="fas fa-arrow-left"></i> Back to Search Results</a>
+      <a href="library_homepage.html" class="btn"><i class="fas fa-home"></i> Back to Homepage</a>
+    </div>
+  </div>
+
+  <script>
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const bookTitle = getQueryParam("title");
+      if (bookTitle) {
+        document.getElementById("book-title").textContent = `Book Details for: ${decodeURIComponent(bookTitle)}`;
+
+        // Update chatbot instructions dynamically
+        document.querySelector("zapier-interfaces-chatbot-embed").setAttribute(
+          "data-instructions",
+          `Welcome! Here are the details for "${decodeURIComponent(bookTitle)}".\n\n
+           Name: ${decodeURIComponent(bookTitle)}\n
+           Author: [Fetching...]\n
+           Review:  based on user ratings.\n
+           Summary: A detailed summary of this book will be provided.\n\n
+           If this is not the book you were looking for, please search again!`
+        );
+      } else {
+        document.getElementById("book-title").textContent = "No book selected.";
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -176,9 +176,10 @@
                 </tr>
             </thead>
             <tbody id="table-body">
-               
+                <!-- Book Results Will Be Inserted Here -->
             </tbody>
         </table>
+
         <div class="pagination">
             <button id="prev-btn" onclick="changePage(-1)" disabled>Previous</button>
             <span id="page-info"></span>
@@ -191,87 +192,86 @@
     </div>
 
     <script>
-       const rowsPerPage = 20;
-let currentPage = 1;
-let books = [];
+        const rowsPerPage = 10;
+        let currentPage = 1;
+        let books = [];
 
-function displayTable() {
-    const tableBody = document.getElementById("table-body");
-    tableBody.innerHTML = "";
+        function displayTable() {
+            const tableBody = document.getElementById("table-body");
+            tableBody.innerHTML = "";
 
-    let start = (currentPage - 1) * rowsPerPage;
-    let end = start + rowsPerPage;
-    let paginatedBooks = books.slice(start, end);
+            let start = (currentPage - 1) * rowsPerPage;
+            let end = start + rowsPerPage;
+            let paginatedBooks = books.slice(start, end);
 
-    paginatedBooks.forEach(book => {
-        let row = `<tr>
-            <td>${book.title}</td>
-            <td>${book.author || "Unknown"}</td>
-            <td>${book.genre || "N/A"}</td>
-            <td><a href="${book.link}"><i class="fas fa-book-open"></i> View Details</a></td>
-            <td><a href="discussion_forum.html?book_id=${book.book_id}"><i class="fas fa-comments"></i> Forum</a></td>
-            <td><a href="book_reservation.html?book_id=${book.book_id}"><i class="fas fa-calendar-check"></i> Reserve</a></td>
-        </tr>`;
-        tableBody.innerHTML += row;
-    });
+            paginatedBooks.forEach(book => {
+                let encodedTitle = encodeURIComponent(book.title); 
 
-    updatePagination();
-}
+                let row = `<tr>
+                    <td>${book.title}</td>
+                    <td>${book.author || "Unknown"}</td>
+                    <td>${book.genre || "N/A"}</td>
+                    <td><a href="book_details_bot.html?title=${encodedTitle}" target="_blank"><i class="fas fa-book-open"></i> View Details</a></td>
+                    <td><a href="discussion_forum.html?book_id=${book.book_id}"><i class="fas fa-comments"></i> Forum</a></td>
+                    <td><a href="book_reservation.html?book_id=${book.book_id}"><i class="fas fa-calendar-check"></i> Reserve</a></td>
+                </tr>`;
+                tableBody.innerHTML += row;
+            });
 
-function updatePagination() {
-    document.getElementById("page-info").textContent = `Page ${currentPage} of ${Math.ceil(books.length / rowsPerPage)}`;
-    document.getElementById("prev-btn").disabled = currentPage === 1;
-    document.getElementById("next-btn").disabled = currentPage === Math.ceil(books.length / rowsPerPage);
-}
+            updatePagination();
+        }
 
-function changePage(step) {
-    currentPage += step;
-    displayTable();
-}
+        function updatePagination() {
+            document.getElementById("page-info").textContent = `Page ${currentPage} of ${Math.ceil(books.length / rowsPerPage)}`;
+            document.getElementById("prev-btn").disabled = currentPage === 1;
+            document.getElementById("next-btn").disabled = currentPage === Math.ceil(books.length / rowsPerPage);
+        }
 
-function fetchBookDetails(titles, query) {
-    books = []; // Reset books array
+        function changePage(step) {
+            currentPage += step;
+            displayTable();
+        }
 
-    // Send titles and query as a POST request to /getbooks
-    fetch('/getbooks', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            titles: titles,
-            query: query
-        })
-    })
-    .then(response => response.json())
-    .then(bookData => {
-        // Assuming the response contains a list of books
-        books = bookData;
-        displayTable();
-    })
-    .catch(error => {
-        console.error("Error fetching book details:", error);
-    });
-}
+        function fetchBookDetails(titles, query) {
+            books = []; 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const query = urlParams.get("query");
-
-    if (query) {
-        fetch(`/talpaapiquery?query=${encodeURIComponent(query)}`)
-            .then(response => response.json())
-            .then(titles => {
-                console.log("Received Titles:", titles);
-                fetchBookDetails(titles, query);  // Send the titles to /getbooks
+            fetch('/getbooks', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    titles: titles,
+                    query: query
+                })
             })
-            .catch(error => console.error("Error fetching data:", error));
+            .then(response => response.json())
+            .then(bookData => {
+                books = bookData;
+                displayTable();
+            })
+            .catch(error => {
+                console.error("Error fetching book details:", error);
+            });
+        }
 
-        document.getElementById("query-text").textContent = query;
-    } else {
-        document.getElementById("query-text").textContent = "No query provided";
-    }
-});
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const query = urlParams.get("query");
+
+            if (query) {
+                fetch(`/talpaapiquery?query=${encodeURIComponent(query)}`)
+                    .then(response => response.json())
+                    .then(titles => {
+                        fetchBookDetails(titles, query);
+                    })
+                    .catch(error => console.error("Error fetching data:", error));
+
+                document.getElementById("query-text").textContent = query;
+            } else {
+                document.getElementById("query-text").textContent = "No query provided";
+            }
+        });
     </script>
 
 </body>
