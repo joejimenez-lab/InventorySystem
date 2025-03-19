@@ -931,6 +931,10 @@ int main() {
         return crow::response(crow::mustache::load("admin_dashboard.html").render(ctx));
     });
 
+    CROW_ROUTE(app, "/book_details_bot.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("book_details_bot.html").render(ctx));
+    });
 
     //Error pages
     CROW_ROUTE(app, "/403.html")([](){
