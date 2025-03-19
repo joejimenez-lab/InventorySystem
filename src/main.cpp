@@ -56,6 +56,18 @@ std::string url_encode(const std::string &str) {
     return encoded.str();
 }
 
+std::string escapeApostrophes(const std::string& input) {
+    std::string escaped = "";
+    for (char c : input) {
+        if (c == '\'') {
+            escaped += "''";  // Escape apostrophe by adding two single quotes
+        } else {
+            escaped += c;
+        }
+    }
+    return escaped;
+}
+
 std::string html_escape(const std::string& input) {
     std::ostringstream escaped;
     for (char c : input) {
@@ -473,14 +485,27 @@ int main() {
         crow::json::wvalue result;
         int limit = 20;
         int page = 1;
+        std::string searchQuery = "";
         if (req.url_params.get("page")) {
             page = std::stoi(req.url_params.get("page"));
             if (page < 1) page = 1;
         }
 
+        if (req.url_params.get("search")) {
+            searchQuery = req.url_params.get("search");
+        }
+
         int offset = (page - 1) * limit;
-        std::string query = "SELECT book_id, title, author, copies_available FROM books ORDER BY book_id LIMIT " + std::to_string(limit) + " OFFSET " + std::to_string(offset) + ";";
-        std::vector<std::vector<std::string>> allbooks = executeQueryReturnRows(hDbc, query);
+        std::string query = "";
+        std::vector<std::vector<std::string>> allbooks;
+        if(searchQuery == ""){
+            query = "SELECT book_id, title, author, copies_available FROM books ORDER BY book_id LIMIT " + std::to_string(limit) + " OFFSET " + std::to_string(offset) + ";";
+            allbooks = executeQueryReturnRows(hDbc, query);
+        } else {
+            query = "SELECT book_id, title, author, copies_available FROM books WHERE book_id = " + searchQuery + " ORDER BY book_id LIMIT " + std::to_string(limit) + " OFFSET " + std::to_string(offset) + ";";
+            allbooks = executeQueryReturnRows(hDbc, query);
+        }
+        
         
         std::vector<crow::json::wvalue> book_list;
         for (const auto& book : allbooks) {
@@ -723,10 +748,10 @@ int main() {
 
     CROW_ROUTE(app, "/talpaapiquery")
     .methods("GET"_method)
-    ([](const crow::request& req) -> crow::response {  // Explicitly specify the return type as crow::response
+    ([](const crow::request& req) -> crow::response {
         std::string query = req.url_params.get("query");
         if (query.empty()) {
-            return crow::response(400, "Query parameter is missing");  // Use crow::response constructor
+            return crow::response(400, R"({"error": "Query parameter is missing"})");
         }
 
         std::cout << "Query: " << query << std::endl;
@@ -737,7 +762,6 @@ int main() {
         std::string talpaApiUrl = "https://www.librarything.com/api/talpa.php";
         std::string encodedQuery = url_encode(query);
 
-        std::cout << "Encoded Query: " << encodedQuery << std::endl;
         std::stringstream urlStream;
         urlStream << talpaApiUrl
                   << "?token=" << token
@@ -746,60 +770,113 @@ int main() {
                   << "&limit=" << limit;
 
         std::string finalUrl = urlStream.str();
-        std::cout << "Final URL: " << finalUrl << std::endl;
-
         std::string json_data = execute_python_script(finalUrl);
-        std::cout << "Raw JSON Data: " << json_data << std::endl;
 
-        // Parse the JSON data using jsoncpp
         Json::Value json_obj;
         Json::CharReaderBuilder reader;
         std::string errs;
-
         std::istringstream json_stream(json_data);
+
         if (!Json::parseFromStream(reader, json_stream, &json_obj, &errs)) {
             std::cerr << "Error parsing JSON: " << errs << std::endl;
-            return crow::response(500, "Error: Failed to parse JSON data");  // Use crow::response constructor
+            return crow::response(500, R"({"error": "Failed to parse JSON data"})");
         }
 
-        // Debug: Print parsed JSON object
-        std::cout << "Parsed JSON Object: " << json_obj << std::endl;
-
-        // Extract titles from the nested JSON structure
         Json::Value titles;
         if (json_obj.isMember("response") && json_obj["response"].isMember("resultlist")) {
             const Json::Value& resultlist = json_obj["response"]["resultlist"];
             for (const auto& item : resultlist) {
                 if (item.isMember("title")) {
-                    std::cout << "Title: " << item["title"] << std::endl;  // Debug: Print each title
                     titles.append(item["title"]);
-                } else {
-                    std::cout << "Title field missing in item: " << item << std::endl;  // Debug: Print items without title
                 }
             }
         } else {
-            std::cerr << "Error: 'response.resultlist' not found in JSON data" << std::endl;
-            return crow::response(500, "Error: Invalid JSON structure");  // Use crow::response constructor
+            return crow::response(500, R"({"error": "Invalid JSON structure"})");
         }
 
-        // Convert JSON titles to a vector of strings
-        std::vector<std::string> titles_vector;
-        for (const auto& title : titles) {
-            titles_vector.push_back(title.asString());
-        }
-
-        // Debug: Print the vector of titles
-        std::cout << "Titles Vector: ";
-        for (const auto& title : titles_vector) {
-            std::cout << title << ", ";
-        }
-        std::cout << std::endl;
-
-        // Return the titles as an HTTP response
         Json::StreamWriterBuilder writer;
         std::string response_json = Json::writeString(writer, titles);
-        std::cout << "Response JSON: " << response_json << std::endl;  // Debug: Print final response JSON
-        return crow::response(response_json);  // Use crow::response constructor
+
+        crow::response res(response_json);
+        res.set_header("Content-Type", "application/json");
+        return res;
+    });
+
+    CROW_ROUTE(app, "/getbooks")
+    .methods("POST"_method)
+    ([](const crow::request& req) -> crow::response {
+        Json::Value request_json;;
+        Json::CharReaderBuilder reader;
+        std::string errs;
+
+        std::istringstream json_stream(req.body);
+        if (!Json::parseFromStream(reader, json_stream, &request_json, &errs)) {
+            std::cerr << "Error parsing JSON: " << errs << std::endl;
+            return crow::response(400, R"({"error": "Invalid JSON data"})");
+        }
+        std::vector<std::string> titles;
+        std::string query;
+        if (request_json.isObject()) {
+            // Assuming query and titles are part of the JSON object
+            if (request_json.isMember("titles") && request_json["titles"].isArray()) {
+                for (const auto& title : request_json["titles"]) {
+                    if (title.isString()) {
+                        titles.push_back(title.asString());
+                    }
+                }
+            }
+            if (request_json.isMember("query") && request_json["query"].isString()) {
+                query = request_json["query"].asString();
+            }
+        } else {
+            return crow::response(400, R"({"error": "Invalid JSON structure, expecting an object with 'titles' and 'query' properties"})");
+        }
+        
+
+         //getting cookies
+         std::string token;
+         auto cookies = req.headers.find("Cookie");
+         if (cookies != req.headers.end()) {
+             std::string cookie_header = cookies->second;
+             size_t token_start = cookie_header.find("session_id=");
+             if (token_start != std::string::npos) {
+                 token_start += 11; 
+                 size_t token_end = cookie_header.find(";", token_start);
+                 token = cookie_header.substr(token_start, token_end - token_start);
+             }
+         }
+        User user = user_data[token];
+        std::string genreString = "SELECT genres FROM userGenres WHERE user_id = " + user.getId() + ";";
+        std::string usergenres = executeQueryReturnString(hDbc, genreString);
+        std::cout << usergenres << std::endl;
+        std::vector<std::vector<std::string>> bookInfo;
+        for(int i = 0; i < titles.size(); i++){
+            std::string escapedTitle = escapeApostrophes(titles[i]);
+            std::cout << escapedTitle << std::endl;
+            std::string queryTalpa = "SELECT book_id, title, author, genre FROM books WHERE title LIKE '%" + escapedTitle + "%'";
+            std::vector<std::vector<std::string>> row = executeQueryReturnRows(hDbc, queryTalpa);
+            if(!row.empty()){
+                for(int i = 0; i < row.size(); i++){
+                    bookInfo.push_back(row[i]);
+                }
+            }
+        }
+        
+        //WIP
+
+        Json::Value responseJson;
+        for (const auto& book : bookInfo) {
+            Json::Value bookData;
+            bookData["book_id"] = book[0];  // Assuming book_id is the first element
+            bookData["title"] = book[1];    // Title is the second element
+            bookData["author"] = book[2];   // Author is the third element
+            bookData["genre"] = book[3];    // Genre is the fourth element
+            responseJson.append(bookData);
+        }
+
+        
+
+        return crow::response(200, responseJson.toStyledString());
     });
     
     CROW_ROUTE(app, "/admin_dashboard.html")([](const crow::request& req){
