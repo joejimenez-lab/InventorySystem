@@ -569,6 +569,18 @@ int main() {
         return crow::response(crow::mustache::load("discussion_forum.html").render(ctx));
     });
 
+    CROW_ROUTE(app, "/getBookTitle")
+([](const crow::request& req) {
+    std::string book_id = req.url_params.get("book_id");
+
+    std::string query = "SELECT title FROM books WHERE book_id = " + book_id + ";";
+    std::string title = executeQueryReturnString(hDbc, query);
+    
+    crow::json::wvalue response;
+    response["title"] = title;
+    return response;
+});
+
     CROW_ROUTE(app, "/device_setup.html")([](){
         crow::mustache::context ctx;
         return crow::response(crow::mustache::load("device_setup.html").render(ctx));
@@ -583,6 +595,31 @@ int main() {
         crow::mustache::context ctx;
         return crow::response(crow::mustache::load("data_visualization_dashboard.html").render(ctx));
     });
+
+    CROW_ROUTE(app, "/generateimages")
+    .methods("GET"_method)
+    ([]
+    {
+        generateImages();
+        return crow::response(200, "Images generated successfully");
+    });
+
+    // Serve static files (e.g., images) from the 'static' folder
+    app.route_dynamic("/assets/<path>")
+    .methods("GET"_method)
+    ([](const crow::request& req, std::string path) {
+        std::ifstream file("assets/" + path, std::ios::binary);
+        if (!file.is_open()) {
+            return crow::response(404, "File not found");
+        }
+        std::ostringstream oss;
+        oss << file.rdbuf();
+        crow::response res(200);
+        res.set_header("Content-Type", "image/png");  
+        res.write(oss.str());
+        return res;
+    });
+
 
     CROW_ROUTE(app, "/check_out.html")([](){
         crow::mustache::context ctx;

@@ -42,6 +42,22 @@
       border-radius: 4px;
     }
   </style>
+  <script>
+    // Function to call /generateimages when the page loads
+    window.onload = function() {
+      fetch('/generateimages')
+        .then(response => {
+          if (response.ok) {
+            console.log('Images generated successfully');
+          } else {
+            console.error('Failed to generate images');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    };
+  </script>
 </head>
 <body>
   <div class="header">
@@ -49,14 +65,21 @@
   </div>
   <div class="container">
     <p>Visualize library usage statistics and other data.</p>
+    
+    <!-- Chart 1: Books Borrowed over Time -->
     <div class="chart">
-      <h3>Chart 1: Book Loans Over Time</h3>
-      <p>[Chart Placeholder]</p>
+      <h3>Chart 1: Books Borrowed Over Time</h3>
+      <img src="/assets/borrowed_books_per_day.png" alt="Books Borrowed per Day" style="max-width: 100%;"/>
+      <!-- Repeat for week, month, year charts if needed -->
     </div>
+
+    <!-- Chart 2: User Registrations -->
     <div class="chart">
       <h3>Chart 2: User Registrations</h3>
-      <p>[Chart Placeholder]</p>
+      <img src="/assets/user_registrations_per_day.png" alt="User Registrations per Day" style="max-width: 100%;"/>
+      <!-- Repeat for week, month, year charts if needed -->
     </div>
+    
     <div class="nav">
       <a href="admin_dashboard.html">Back to Dashboard</a>
     </div>

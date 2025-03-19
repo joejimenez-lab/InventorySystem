@@ -172,6 +172,7 @@
                     <th>Genre</th>
                     <th>Details</th>
                     <th>Forum</th>
+                    <th>Reservation</th>
                 </tr>
             </thead>
             <tbody id="table-body">
@@ -209,6 +210,7 @@ function displayTable() {
             <td>${book.genre || "N/A"}</td>
             <td><a href="${book.link}"><i class="fas fa-book-open"></i> View Details</a></td>
             <td><a href="discussion_forum.html?book_id=${book.book_id}"><i class="fas fa-comments"></i> Forum</a></td>
+            <td><a href="book_reservation.html?book_id=${book.book_id}"><i class="fas fa-calendar-check"></i> Reserve</a></td>
         </tr>`;
         tableBody.innerHTML += row;
     });

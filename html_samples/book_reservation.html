@@ -21,8 +21,6 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-
-            
         }
 
         /* Header */
@@ -136,7 +134,7 @@
     </div>
 
     <div class="container">
-        <h2>Reserve a Book</h2>
+        <h2 id="reserve-title">Reserve a Book</h2>
         <form action="my_borrowed_books.html" method="post">
             <div class="form-group">
                 <label for="reservation_date"><i class="fas fa-calendar-alt"></i> Select Reservation Date:</label>
@@ -150,5 +148,40 @@
         </div>
     </div>
 
+    <script>
+        // Function to get URL parameters
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Get the book_id from the URL
+        const bookId = getQueryParam('book_id');
+        
+        // Check if bookId is available
+        if (bookId) {
+            fetchBookTitle(bookId);  // Fetch the book title if bookId is present
+        } else {
+            // If bookId is missing, set the title to a default value
+            document.getElementById('reserve-title').innerText = 'Reserve a Book - Main Thread';
+        }
+
+        // Function to fetch the book title using the book_id
+        function fetchBookTitle(bookId) {
+            fetch(`/getBookTitle?book_id=${bookId}`)  // Replace with your backend endpoint
+                .then(response => response.json())
+                .then(data => {
+                    // Dynamically update the h2 element with the book title
+                    document.getElementById('reserve-title').innerText = `Reserve a Book - ${data.title}`;
+                })
+                .catch(error => console.error('Error fetching book title:', error));
+        }
+
+        // Set the date input field to the current date
+        window.onload = function() {
+            const currentDate = new Date().toISOString().split('T')[0];  // Get current date in YYYY-MM-DD format
+            document.getElementById('reservation_date').value = currentDate;  // Set it as the default value
+        };
+    </script>
 </body>
 </html>

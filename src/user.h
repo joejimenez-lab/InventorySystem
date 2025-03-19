@@ -88,4 +88,5 @@ std::vector<std::vector<std::string>> executeQueryReturnRows(SQLHDBC hDbc, std::
 
 std::string execute_python_script(const std::string& url);
 
+void generateImages();
 #endif

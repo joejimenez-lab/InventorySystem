@@ -344,3 +344,28 @@ std::string execute_python_script(const std::string& url) {
     pclose(pipe);
     return result;
 }
+
+void generateImages() {
+    // Get the current working directory
+    std::filesystem::path current_path = std::filesystem::current_path();
+
+    // Construct the relative path to the Python script
+    std::filesystem::path script_path = current_path / ".." / "pythonScripts" / "plotGenerator.py";
+
+    // Resolve the relative path to an absolute path
+    std::filesystem::path absolute_script_path = std::filesystem::canonical(script_path);
+
+    // Build the command to execute the Python script
+    std::string command = "python \"" + absolute_script_path.string() + "\"";
+
+    // Open a pipe to execute the Python script
+    FILE* pipe = popen(command.c_str(), "r");
+    if (!pipe) {
+        std::cerr << "Error: Failed to execute Python script" << std::endl;
+        return;
+    }
+
+    // Wait for the script to finish
+    pclose(pipe);
+    std::cout << "Python script executed successfully." << std::endl;
+}
