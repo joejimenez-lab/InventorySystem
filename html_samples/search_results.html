@@ -212,7 +212,7 @@
                     <td>${book.author || "Unknown"}</td>
                     <td>${book.genre || "N/A"}</td>
                     <td><a href="book_details_bot.html?title=${encodedTitle}" target="_blank"><i class="fas fa-book-open"></i> View Details</a></td>
-                    <td><a href="discussion_forum.html?book_id=${book.book_id}"><i class="fas fa-comments"></i> Forum</a></td>
+                    <td><a href="discussion_forum.html?book_id=${book.book_id}&page=1"><i class="fas fa-comments"></i> Forum</a></td>
                     <td><a href="book_reservation.html?book_id=${book.book_id}"><i class="fas fa-calendar-check"></i> Reserve</a></td>
                 </tr>`;
                 tableBody.innerHTML += row;

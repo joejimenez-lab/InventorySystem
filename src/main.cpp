@@ -570,16 +570,62 @@ int main() {
     });
 
     CROW_ROUTE(app, "/getBookTitle")
-([](const crow::request& req) {
-    std::string book_id = req.url_params.get("book_id");
+        ([](const crow::request& req) {
+        std::string book_id = req.url_params.get("book_id");
 
-    std::string query = "SELECT title FROM books WHERE book_id = " + book_id + ";";
-    std::string title = executeQueryReturnString(hDbc, query);
-    
-    crow::json::wvalue response;
-    response["title"] = title;
-    return response;
-});
+        std::string query = "SELECT title FROM books WHERE book_id = " + book_id + ";";
+        std::string title = executeQueryReturnString(hDbc, query);
+        
+        crow::json::wvalue response;
+        response["title"] = title;
+        return response;
+    });
+
+    CROW_ROUTE(app, "/getThreadId")
+    ([](const crow::request& req) {
+        std::string book_id = req.url_params.get("book_id");
+        std::string query = "SELECT thread_id FROM discussion_threads WHERE book_id = " + book_id + ";";
+        std::string thread_id = executeQueryReturnString(hDbc, query);
+        std::cout << thread_id << std::endl;
+        crow::json::wvalue response;
+        response["threadId"] = thread_id;
+        return response;
+    });
+
+    CROW_ROUTE(app, "/getComments")
+    ([](const crow::request& req) {
+        std::string thread_id = req.url_params.get("thread_id");
+        int page = req.url_params.get("page") ? std::stoi(req.url_params.get("page")) : 1;
+        int comments_per_page = 10;
+        int offset = (page - 1) * comments_per_page;
+
+        std::string query = "SELECT comment FROM comments WHERE thread_id = " + thread_id + 
+                            " ORDER BY created_at ASC LIMIT " + std::to_string(comments_per_page) + 
+                            " OFFSET " + std::to_string(offset) + ";";
+
+        std::vector<std::vector<std::string>> rows = executeQueryReturnRows(hDbc, query);
+        std::vector<std::string> comments;
+        for(const auto& row : rows) {
+            if(!row.empty()){
+                comments.push_back(row[0]);
+            }
+        }
+        std::cout << comments[0] << std::endl;
+        // Get total comment count
+        std::string countQuery = "SELECT COUNT(*) FROM comments WHERE thread_id = " + thread_id + ";";
+        std::string total_comments_str = executeQueryReturnString(hDbc, countQuery);
+        int total_pages = (std::stoi(total_comments_str) + comments_per_page - 1) / comments_per_page; // Ceiling division
+
+        int total_comments = 0;
+        if (!total_comments_str.empty()) {
+            total_comments = std::stoi(total_comments_str);
+        }
+
+        crow::json::wvalue response;
+        response["comments"] = comments;
+        response["total_pages"] = total_pages;
+        return response;
+    });
 
     CROW_ROUTE(app, "/device_setup.html")([](){
         crow::mustache::context ctx;

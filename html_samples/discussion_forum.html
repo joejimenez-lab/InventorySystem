@@ -137,6 +137,28 @@
         .nav i {
             margin-right: 8px;
         }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination button {
+            padding: 8px 15px;
+            border: 1px solid #5cb85c;
+            background-color: #e9f5e9;
+            color: #5cb85c;
+            border-radius: 6px;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .pagination button:hover {
+            background-color: #d4ebd4;
+        }
+
     </style>
 </head>
 <body>
@@ -147,52 +169,127 @@
 
     <div class="container">
         <h2>Discussion Board</h2>
-
-        <div class="post">
-            <p><strong>Emily:</strong> I love how the novel captures the essence of the Roaring Twenties!</p>
-        </div>
-
-        <div class="post">
-            <p><strong>David:</strong> The symbolism and character development are really impressive.</p>
-        </div>
-
+    
+        <div id="comments-container"></div> <!-- Comments section first -->
+    
+        <!-- Input Form Below Comments -->
         <form action="discussion_forum.html" method="post">
             <textarea name="comment" rows="3" placeholder="Join the discussion..." required></textarea>
             <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Post Comment</button>
         </form>
-
+    
+        <!-- Pagination -->
+        <div id="pagination" class="pagination"></div>
+    
         <div class="nav">
             <a href="group_forum_homepage.html"><i class="fas fa-arrow-left"></i> Back to Group Forum</a>
         </div>
     </div>
+    
+
     <script>
-        // Function to get URL parameters
         function getQueryParam(name) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(name);
         }
-    
-        // Get the book_id from the URL
+
+
         const bookId = getQueryParam('book_id');
-        
-        // Check if bookId is available
+        let currentPage = 1;
+        let threadId = null;  // Added to store the thread ID
+
         if (bookId) {
-            fetchBookTitle(bookId);  // Fetch the book title if bookId is present
+            fetchThreadId(bookId);  // Fetch thread ID first
         } else {
-            // If bookId is missing, set the title to "Main Thread"
             document.getElementById('forum-title').innerText = 'Discussion Forum - Main Thread';
         }
-    
-        // Function to fetch the book title using the book_id
-        function fetchBookTitle(bookId) {
-            fetch(`/getBookTitle?book_id=${bookId}`)  // Replace with your backend endpoint
+
+        function fetchThreadId(bookId) {
+            fetch(`/getThreadId?book_id=${bookId}`)
                 .then(response => response.json())
                 .then(data => {
-                    // Dynamically update the h1 element with the book title
-                    document.getElementById('forum-title').innerText = `Discussion Forum - ${data.title}`;
+                    if (data.threadId) {
+                        threadId = data.threadId;
+                        console.log('Thread ID:', threadId);  // Use this threadId for comments request
+                        fetchComments(threadId, currentPage);  // Fetch comments using the threadId
+                    } else {
+                        console.warn('No thread ID found for this book.');
+                    }
                 })
-                .catch(error => console.error('Error fetching book title:', error));
+                .catch(error => console.error('Error fetching thread ID:', error));
         }
+
+        function fetchComments(threadId, page = 1) {
+            fetch(`/getComments?thread_id=${threadId}&page=${page}`)  // Pass threadId here
+                .then(response => response.json())
+                .then(data => {
+                    const commentsContainer = document.getElementById('comments-container');
+                    commentsContainer.innerHTML = '';  // Clear previous comments
+
+                    if (data.comments && data.comments.length > 0) {
+                        data.comments.forEach(comment => {
+                            const postElement = document.createElement('div');
+                            postElement.classList.add('post');
+                            postElement.innerHTML = `<strong>Comment:</strong> ${comment}`;
+                            commentsContainer.appendChild(postElement);
+                        });
+                    }
+
+                    // Pagination setup
+                    const totalPages = data.total_pages || 1;
+                    createPagination(totalPages, page);  // Now use createPagination to handle pagination logic
+                })
+                .catch(error => console.error('Error fetching comments:', error));
+        }
+
+        function createPagination(totalPages, currentPage) {
+            let paginationHTML = '';
+
+            // Previous page button
+            if (currentPage > 1) {
+                paginationHTML += `<button id="prev-btn" onclick="navigatePage(${currentPage - 1})">Previous</button>`;
+            }
+
+            // Current page information
+            paginationHTML += ` Page ${currentPage} of ${totalPages} `;
+
+            // Next page button
+            if (currentPage < totalPages) {
+                paginationHTML += `<button id="next-btn" onclick="navigatePage(${currentPage + 1})">Next</button>`;
+            }
+
+            // Add pagination controls to the DOM
+            document.getElementById('pagination').innerHTML = paginationHTML;
+        }
+
+        function navigatePage(page) {
+            currentPage = page;
+            fetchComments(threadId, currentPage);  
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const bookId = urlParams.get('book_id');
+
+            if (bookId) {
+                fetch(`/getBookTitle?book_id=${bookId}`)
+                    .then(response => response.json())
+                    .then(data => {
+
+                        if (data.title) {
+                            document.getElementById('forum-title').innerText = `Discussion Forum - ${data.title}`;
+                        } else {
+                            console.error("No title found for this book_id.");
+                            document.getElementById('forum-title').innerText = 'Discussion Forum - Main Thread';
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error fetching book title:", error);
+                        document.getElementById('forum-title').innerText = 'Discussion Forum - Main Thread';
+                    });
+            } else {
+                document.getElementById('forum-title').innerText = 'Discussion Forum - Main Thread';
+            }
+        });
     </script>
 </body>
 </html>
