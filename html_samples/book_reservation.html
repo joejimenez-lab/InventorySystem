@@ -128,14 +128,16 @@
     </style>
 </head>
 <body>
-
     <div class="header">
         <h1>Book Reservation</h1>
     </div>
 
     <div class="container">
         <h2 id="reserve-title">Reserve a Book</h2>
-        <form action="my_borrowed_books.html" method="post">
+        <form onsubmit="reserveBook(event)">
+            <!-- Hidden input field for book_id -->
+            <input type="hidden" id="book_id" name="book_id" value="">
+            
             <div class="form-group">
                 <label for="reservation_date"><i class="fas fa-calendar-alt"></i> Select Reservation Date:</label>
                 <input type="date" id="reservation_date" name="reservation_date" required>
@@ -179,9 +181,47 @@
 
         // Set the date input field to the current date
         window.onload = function() {
-            const currentDate = new Date().toISOString().split('T')[0];  // Get current date in YYYY-MM-DD format
-            document.getElementById('reservation_date').value = currentDate;  // Set it as the default value
+            const currentDate = new Date().toISOString().split('T')[0];  
+            document.getElementById('reservation_date').value = currentDate;  
+
+            // Set the book_id value if it exists
+            const bookId = getQueryParam('book_id');
+            if (bookId) {
+                document.getElementById('book_id').value = bookId;
+            }
         };
+
+        async function reserveBook(event) {
+            event.preventDefault(); 
+
+            const bookId = document.getElementById("book_id").value;  
+            const reservationDate = document.getElementById("reservation_date").value;  
+
+            if (!bookId || !reservationDate) {
+                alert("Please ensure all fields are filled out.");
+                return;
+            }
+
+            const url = `/createReservation/book_id/${bookId}/date/${reservationDate}`;
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+
+                if (response.ok) {
+                    alert("Reservation successful!");
+                } else {
+                    alert("There was an issue with your reservation.");
+                }
+            } catch (error) {
+                console.error("Error making the reservation:", error);
+                alert("Error making the reservation.");
+            }
+        }
     </script>
 </body>
 </html>

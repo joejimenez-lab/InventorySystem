@@ -29,7 +29,7 @@
 
         /* Container */
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             width: 100%;
             padding: 30px;
             background: white;
@@ -59,46 +59,30 @@
             margin-bottom: 20px;
         }
 
-        /* Book List */
-        .book-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
         }
 
-        .book-item {
-            background: #f9f9f9;
-            padding: 15px;
-            border-radius: 8px;
+        th, td {
+            padding: 12px;
+            text-align: left;
             border: 1px solid #ddd;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background 0.3s ease, transform 0.2s ease;
         }
 
-        .book-item:hover {
-            background: #d0f0d0;
-            transform: scale(1.02);
-        }
-
-        .book-item a {
-            text-decoration: none;
+        th {
+            background-color: #f2f2f2;
             color: #5cb85c;
-            font-weight: bold;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
-        .book-item a:hover {
-            text-decoration: underline;
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
         }
 
-        .book-item i {
-            font-size: 1.2rem;
-            color: #5cb85c;
+        tr:hover {
+            background-color: #d0f0d0;
         }
 
         /* Back Button */
@@ -140,25 +124,73 @@
 
         <p>Based on your reading history, you might enjoy the following books:</p>
 
-        <div class="book-list">
-            <div class="book-item">
-                <a href="book_details.html?id=Gatsby"><i class="fas fa-book"></i> The Great Gatsby</a>
-                <span>by F. Scott Fitzgerald</span>
-            </div>
-            <div class="book-item">
-                <a href="book_details.html?id=Mockingbird"><i class="fas fa-book"></i> To Kill a Mockingbird</a>
-                <span>by Harper Lee</span>
-            </div>
-            <div class="book-item">
-                <a href="book_details.html?id=1984"><i class="fas fa-book"></i> 1984</a>
-                <span>by George Orwell</span>
-            </div>
-        </div>
+        <!-- Table of Books -->
+        <table id="bookTable">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Genre</th>
+                    <th>Details</th>
+                    <th>Forum</th>
+                    <th>Reservation</th>
+                </tr>
+            </thead>
+            <tbody>
 
+            </tbody>
+        </table>
+
+        <!-- Back to Homepage -->
         <div class="back-home">
             <a href="library_homepage.html"><i class="fas fa-home"></i> Back to Homepage</a>
         </div>
     </div>
+    <script>
+        // Function to fetch book data from the /randomRecs endpoint
+        function fetchBookRecommendations() {
+            fetch('/randomRecs')
+                .then(response => response.json())
+                .then(data => {
+                    // Access the 'books' key from the response
+                    const books = data.books; // books is now an array
+                    if (Array.isArray(books)) {
+                        generateTableRows(books); // Pass the books array to the table
+                    } else {
+                        console.error('Books data is not an array:', data);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching book recommendations:', error);
+                });
+        }
 
+// Call the function to fetch book recommendations when the page loads
+window.onload = fetchBookRecommendations;
+
+        // Function to generate table rows dynamically from book data
+        function generateTableRows(books) {
+            const tableBody = document.querySelector('#bookTable tbody');
+            tableBody.innerHTML = ''; // Clear existing rows if any
+
+            books.forEach(book => {
+                const encodedTitle = encodeURIComponent(book.title);
+
+                const row = `<tr>
+                    <td>${book.title}</td>
+                    <td>${book.author || "Unknown"}</td>
+                    <td>${book.genre || "N/A"}</td>
+                    <td><a href="book_details_bot.html?title=${encodedTitle}" target="_blank"><i class="fas fa-book-open"></i> View Details</a></td>
+                    <td><a href="discussion_forum.html?book_id=${book.book_id}&page=1"><i class="fas fa-comments"></i> Forum</a></td>
+                    <td><a href="book_reservation.html?book_id=${book.book_id}"><i class="fas fa-calendar-check"></i> Reserve</a></td>
+                </tr>`;
+
+                tableBody.insertAdjacentHTML('beforeend', row);
+            });
+        }
+
+        // Call the function to fetch book recommendations when the page loads
+        window.onload = fetchBookRecommendations;
+    </script>
 </body>
 </html>

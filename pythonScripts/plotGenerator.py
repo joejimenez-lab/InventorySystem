@@ -1,6 +1,9 @@
 import pyodbc
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
+
+os.makedirs('../assets', exist_ok=True)
 
 conn_str = (
     'DSN=PostgreSQL30;'
@@ -85,7 +88,7 @@ axes[1, 1].tick_params(axis='x', rotation=45)
 axes[1, 1].set_ylim(bottom=0)  # Set y-axis to start at 0
 
 plt.tight_layout()
-plt.savefig('assets/borrowed_books_per_day.png')
+plt.savefig('../assets/borrowed_books_per_day.png')
 plt.close()
 
 query_day_users = """
@@ -160,7 +163,7 @@ axes[1, 1].tick_params(axis='x', rotation=45)
 axes[1, 1].set_ylim(bottom=0)  # Set y-axis to start at 0
 
 plt.tight_layout()
-plt.savefig('assets/user_registrations_per_day.png')
+plt.savefig('../assets/user_registrations_per_day.png')
 plt.close()
 
 # Close the connection

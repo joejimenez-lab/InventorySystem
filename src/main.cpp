@@ -37,6 +37,28 @@ std::string load_html(const std::string& file_path) {
     return buffer.str();
 }
 
+std::string get_content_type(const std::string& path) {
+    static const std::unordered_map<std::string, std::string> mime_types = {
+        {".png", "image/png"},
+        {".jpg", "image/jpeg"},
+        {".jpeg", "image/jpeg"},
+        {".gif", "image/gif"},
+        {".css", "text/css"},
+        {".js", "application/javascript"},
+        {".html", "text/html"}
+    };
+
+    size_t dot_pos = path.rfind('.');
+    if (dot_pos != std::string::npos) {
+        std::string ext = path.substr(dot_pos);
+        auto it = mime_types.find(ext);
+        if (it != mime_types.end()) {
+            return it->second;
+        }
+    }
+    return "application/octet-stream"; // Default binary type
+}
+
 
 std::string url_encode(const std::string &str) {
     std::ostringstream encoded;
@@ -454,6 +476,50 @@ int main() {
         return crow::response(crow::mustache::load("recommendations.html").render(ctx));
     });
 
+    CROW_ROUTE(app, "/randomRecs")
+    .methods("GET"_method)([](const crow::request& req) {
+        
+
+        std::string token;
+        auto cookies = req.headers.find("Cookie");
+        if (cookies != req.headers.end()) {
+            std::string cookie_header = cookies->second;
+            size_t token_start = cookie_header.find("session_id=");
+            if (token_start != std::string::npos) {
+                token_start += 11; 
+                size_t token_end = cookie_header.find(";", token_start);
+                token = cookie_header.substr(token_start, token_end - token_start);
+            }
+        }
+
+        User user = user_data[token];
+        std::string user_id = user.getId();
+
+        
+        std::string query = "SELECT b.book_id, b.title, b.author, b.genre FROM books b JOIN userGenres ug ON ug.user_id = " + user_id + " WHERE ',' || ug.genres || ',' LIKE '%,' || b.genre || ',%' oRDER BY RANDOM() LIMIT 3;";
+        std::vector<std::vector<std::string>> rows = executeQueryReturnRows(hDbc, query);
+        std::cout << rows[0][0] << std::endl;
+        std::cout << user_id << std::endl;
+    
+        crow::json::wvalue response;
+        crow::json::wvalue::list books;
+
+        for (const auto& row : rows) {
+            crow::json::wvalue book;
+            book["title"] = row[1];   
+            book["author"] = row[2];  
+            book["genre"] = row[3];   
+            book["book_id"] = row[0];
+            books.push_back(book);
+        }
+
+        response["books"] = std::move(books);
+        return crow::response{response};
+
+    });
+
+
+
     CROW_ROUTE(app, "/reading_challenge.html")([](){
         crow::mustache::context ctx;
         return crow::response(crow::mustache::load("reading_challenge.html").render(ctx));
@@ -467,6 +533,42 @@ int main() {
     CROW_ROUTE(app, "/my_borrowed_books.html")([](){
         crow::mustache::context ctx;
         return crow::response(crow::mustache::load("my_borrowed_books.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/getBorrowedBooks")
+    ([](const crow::request& req) {
+        
+        std::string token;
+        auto cookies = req.headers.find("Cookie");
+        if (cookies != req.headers.end()) {
+            std::string cookie_header = cookies->second;
+            size_t token_start = cookie_header.find("session_id=");
+            if (token_start != std::string::npos) {
+                token_start += 11; 
+                size_t token_end = cookie_header.find(";", token_start);
+                token = cookie_header.substr(token_start, token_end - token_start);
+            }
+        }
+
+        User user = user_data[token];
+        std::cout << user.getId() << std::endl;
+        std::string query = "SELECT books.title, bb.borrow_date, bb.return_date FROM borrowed_books bb JOIN books ON bb.book_id = books.book_id WHERE bb.user_id = " + user.getId() + ";";
+        std::vector<std::vector<std::string>> borrowedBooks = executeQueryReturnRows(hDbc, query);
+
+
+        crow::json::wvalue response;
+        crow::json::wvalue::list books;
+
+        for (const auto& row : borrowedBooks) {
+            crow::json::wvalue book;
+            book["title"] = row[0];
+            book["borrow_date"] = row[1];
+            book["due_date"] = row[2];
+            books.push_back(book);
+        }
+
+        response["books"] = std::move(books);
+        return crow::response{response};
     });
     
     CROW_ROUTE(app, "/library_database.html")([](){
@@ -627,6 +729,25 @@ int main() {
         return response;
     });
 
+    CROW_ROUTE(app, "/storeComment").methods("POST"_method)([](const crow::request& req) {
+        auto json = crow::json::load(req.body);
+        if (!json) {
+            return crow::response(400, "Invalid JSON");
+        }
+
+        // Extract data from JSON
+        int thread_id = json["thread_id"].i();
+        std::string comment = json["comment"].s();
+
+        // Insert comment into the database
+        std::string insertSQL = "INSERT INTO comments (thread_id, comment) VALUES (" +
+                                std::to_string(thread_id) + ", '" + comment + "');";
+        executeQuery(hDbc, insertSQL);
+
+
+        return crow::response(200, "Comment stored successfully");
+    });
+
     CROW_ROUTE(app, "/device_setup.html")([](){
         crow::mustache::context ctx;
         return crow::response(crow::mustache::load("device_setup.html").render(ctx));
@@ -651,21 +772,32 @@ int main() {
     });
 
     // Serve static files (e.g., images) from the 'static' folder
-    app.route_dynamic("/assets/<path>")
-    .methods("GET"_method)
+    CROW_ROUTE(app, "/assets/<string>")
     ([](const crow::request& req, std::string path) {
-        std::ifstream file("assets/" + path, std::ios::binary);
+        // Prevent directory traversal attacks
+        if (path.find("..") != std::string::npos) {
+            return crow::response(403, "Forbidden");
+        }
+    
+        // Adjust the path to point to the assets folder in the project root
+        std::string file_path = "../assets/" + path;
+        std::cout << "Trying to open: " << file_path << std::endl; // Debugging line
+    
+        std::ifstream file(file_path, std::ios::binary);
         if (!file.is_open()) {
+            std::cout << "File not found: " << file_path << std::endl; // Debugging line
             return crow::response(404, "File not found");
         }
-        std::ostringstream oss;
-        oss << file.rdbuf();
+    
+        std::ostringstream buffer;
+        buffer << file.rdbuf();
+        std::string file_content = buffer.str();
+    
         crow::response res(200);
-        res.set_header("Content-Type", "image/png");  
-        res.write(oss.str());
+        res.set_header("Content-Type", get_content_type(path));
+        res.body = std::move(file_content);
         return res;
     });
-
 
     CROW_ROUTE(app, "/check_out.html")([](){
         crow::mustache::context ctx;
@@ -685,6 +817,33 @@ int main() {
     CROW_ROUTE(app, "/book_reservation.html")([](){
         crow::mustache::context ctx;
         return crow::response(crow::mustache::load("book_reservation.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/createReservation/book_id/<string>/date/<string>")
+    .methods("POST"_method)([](const crow::request& req, std::string book_id, const std::string& reservation_date){
+
+        std::cout << book_id << std::endl;
+        std::cout << reservation_date << std::endl;
+        
+        std::string token;
+            auto cookies = req.headers.find("Cookie");
+            if (cookies != req.headers.end()) {
+                std::string cookie_header = cookies->second;
+                size_t token_start = cookie_header.find("session_id=");
+                if (token_start != std::string::npos) {
+                    token_start += 11; 
+                    size_t token_end = cookie_header.find(";", token_start);
+                    token = cookie_header.substr(token_start, token_end - token_start);
+                }
+            }
+        User user = user_data[token];
+        std::string user_id = user.getId();
+        std::string query = "INSERT INTO reserved_books (book_id, user_id, reserve_date) VALUES (" + book_id + ", " + user_id + ", '" + reservation_date + "');";
+        executeQuery(hDbc, query);
+
+    
+        return crow::response(200, R"({"success": true})");
+        
     });
 
     CROW_ROUTE(app, "/book_details.html")([](){
@@ -722,10 +881,43 @@ int main() {
         return crow::response(crow::mustache::load("forgot_password.html").render(ctx));
     });
 
+    CROW_ROUTE(app, "/admin_CSV_dragndrop.html")([](){
+        crow::mustache::context ctx;
+        return crow::response(crow::mustache::load("admin_CSV_dragndrop.html").render(ctx));
+    });
+
+    CROW_ROUTE(app, "/barcode/<string>")
+    .methods("GET"_method)([](const crow::request& req, std::string book_id) {
+
+        std::cout << book_id << std::endl;
+        std::string barcode_path = "../barcodes/barcode_" + book_id + ".png";
+
+        if (!std::filesystem::exists(barcode_path)) {
+            generateBarcode(book_id);
+        }
+
+        crow::response res;
+        res.code = 200;
+        res.set_header("Content-Type", "image/png");
+
+        std::ifstream file(barcode_path, std::ios::binary);
+        if (!file) {
+            return crow::response(404, "Barcode not found.");
+        }
+
+        std::ostringstream ss;
+        ss << file.rdbuf();
+        res.body = ss.str();
+
+        return res;
+    });
+
     CROW_ROUTE(app, "/genre_preferences.html")([](){
         crow::mustache::context ctx;
         return crow::response(crow::mustache::load("genre_preferences.html").render(ctx));
     });
+
+
 
     CROW_ROUTE(app, "/get_genres")
     .methods("GET"_method)([]() {

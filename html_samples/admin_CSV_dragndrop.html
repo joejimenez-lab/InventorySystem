@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop CSV Upload</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f7f6;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 500px;
+            padding: 40px;
+            background: #fff;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .drag-area {
+            border: 2px dashed #007bff;
+            padding: 40px;
+            font-size: 1.2rem;
+            color: #555;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .drag-area.hover {
+            background-color: #f0f8ff;
+        }
+
+        .drag-area p {
+            margin-top: 10px;
+            color: #888;
+        }
+
+        .file-name {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Drag and Drop CSV File</h1>
+        <div class="drag-area" id="dragArea">
+            <p>Drag and drop a CSV file here, or click to select one</p>
+        </div>
+        <div class="file-name" id="fileName"></div>
+    </div>
+
+    <script>
+        const dragArea = document.getElementById('dragArea');
+        const fileNameDisplay = document.getElementById('fileName');
+
+        dragArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dragArea.classList.add('hover');
+        });
+
+        dragArea.addEventListener('dragleave', () => {
+            dragArea.classList.remove('hover');
+        });
+
+        dragArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dragArea.classList.remove('hover');
+            
+            const file = e.dataTransfer.files[0];
+            if (file && file.type === 'text/csv') {
+                fileNameDisplay.textContent = `File selected: ${file.name}`;
+            } else {
+                fileNameDisplay.textContent = 'Please drop a valid CSV file.';
+            }
+        });
+
+        dragArea.addEventListener('click', () => {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.csv';
+            input.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file && file.type === 'text/csv') {
+                    fileNameDisplay.textContent = `File selected: ${file.name}`;
+                } else {
+                    fileNameDisplay.textContent = 'Please select a valid CSV file.';
+                }
+            });
+            input.click();
+        });
+    </script>
+
+</body>
+</html>

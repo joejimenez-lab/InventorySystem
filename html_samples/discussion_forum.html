@@ -173,7 +173,7 @@
         <div id="comments-container"></div> <!-- Comments section first -->
     
         <!-- Input Form Below Comments -->
-        <form action="discussion_forum.html" method="post">
+        <form id="comment-form">
             <textarea name="comment" rows="3" placeholder="Join the discussion..." required></textarea>
             <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Post Comment</button>
         </form>
@@ -290,6 +290,32 @@
                 document.getElementById('forum-title').innerText = 'Discussion Forum - Main Thread';
             }
         });
+
+        document.getElementById('comment-form').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent form submission
+
+        const comment = document.querySelector('textarea[name="comment"]').value;
+        
+
+        // Send the comment to the server
+        fetch('/storeComment', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                thread_id: threadId,
+                comment: comment,
+            }),
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert(data); // Show success or error message
+            document.querySelector('textarea[name="comment"]').value = ''; // Clear the textarea
+            fetchComments(threadId, currentPage);
+        })
+        .catch(error => console.error('Error:', error));
+    });
     </script>
 </body>
 </html>

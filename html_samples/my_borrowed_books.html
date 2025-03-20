@@ -157,4 +157,39 @@
     </div>
 
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        fetchBorrowedBooks();
+    });
+
+    function fetchBorrowedBooks() {
+        fetch('/getBorrowedBooks')
+            .then(response => response.json())
+            .then(data => {
+                const tbody = document.querySelector("tbody");
+
+                // Clear existing rows (except the header)
+                tbody.innerHTML = "";
+
+                if (data.books && data.books.length > 0) {
+                    data.books.forEach(book => {
+                        const row = document.createElement("tr");
+                        row.innerHTML = `
+                            <td>${book.title}</td>
+                            <td>${book.borrow_date}</td>
+                            <td>${book.due_date}</td>
+                        `;
+                        tbody.appendChild(row);
+                    });
+                } else {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `<td colspan="3" style="text-align: center;">No borrowed books found.</td>`;
+                    tbody.appendChild(row);
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching borrowed books:", error);
+            });
+    }
+</script>
 </html>
