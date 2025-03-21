@@ -1173,6 +1173,43 @@ int main() {
         crow::mustache::context ctx;
         return crow::response(crow::mustache::load("book_details_bot.html").render(ctx));
     });
+    
+    CROW_ROUTE(app, "/deleteBook")
+    .methods("GET"_method, "DELETE"_method)
+    ([](const crow::request& req) {
+        std::string bookId = req.url_params.get("book_id");
+        std::cout << bookId << std::endl;
+
+        std::string query = "DELETE FROM books WHERE book_id = " + bookId + ";";
+        executeQuery(hDbc, query);
+
+        return crow::response(200, "Book deleted successfully");
+    });
+
+    app.route_dynamic("/upload_csv")
+    .methods("POST"_method)([](const crow::request& req) {
+        // Check if the request has a body
+        if (req.body.empty()) {
+            return crow::response(400, "No file uploaded.");
+        }
+
+        // Parse the body to extract the file data
+        // This is a simplified example; you may need to handle multipart/form-data parsing
+        std::string file_data = req.body;
+        std::cout << "Request body: " << req.body << std::endl;
+        // Save the uploaded file to the 'uploads' directory
+        std::string file_path = "..\\uploads\\uploaded_file.csv";
+        std::cout << "Saving file to: " << file_path << std::endl;
+        std::ofstream out(file_path, std::ios::binary);
+        out.write(file_data.data(), file_data.size());
+        out.close();
+        std::cout << file_path << std::endl;
+        // Call the Python script to process the uploaded CSV file
+        insertCSV(file_path);
+
+        return crow::response(200, "{\"message\": \"CSV data inserted successfully\"}");
+    });
+
 
     //Error pages
     CROW_ROUTE(app, "/403.html")([](){

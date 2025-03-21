@@ -91,4 +91,6 @@ std::string execute_python_script(const std::string& url);
 void generateImages();
 
 void generateBarcode(std::string book_id);
+
+void insertCSV( std::string file_path);
 #endif

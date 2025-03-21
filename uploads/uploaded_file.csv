@@ -1,0 +1,16 @@
+------WebKitFormBoundaryGDJJRld4PUU8Tx2j
+Content-Disposition: form-data; name="csv_file"; filename="test.csv"
+Content-Type: text/csv
+
+book_id,title,author,genre,publication_year,isbn
+1,To Kill a Mockingbird,Harper Lee,Fiction,1960,9780061120084
+2,1984,George Orwell,Dystopian,1949,9780451524935
+3,Pride and Prejudice,Jane Austen,Romance,1813,9781503290563
+4,The Great Gatsby,F. Scott Fitzgerald,Fiction,1925,9780743273565
+5,Moby-Dick,Herman Melville,Adventure,1851,9781503280786
+6,War and Peace,Leo Tolstoy,Historical,1869,9781400079988
+7,The Catcher in the Rye,J.D. Salinger,Fiction,1951,9780316769488
+8,The Hobbit,J.R.R. Tolkien,Fantasy,1937,9780547928227
+9,Brave New World,Aldous Huxley,Science Fiction,1932,9780060850524
+10,Crime and Punishment,Fyodor Dostoevsky,Philosophical,1866,9780143058144
+------WebKitFormBoundaryGDJJRld4PUU8Tx2j--

@@ -376,3 +376,28 @@ void generateBarcode(std::string book_id) {
     pclose(pipe);
     std::cout << "Python script executed successfully." << std::endl;
 }
+
+void insertCSV(std::string file_path) {
+    std::filesystem::path current_path = std::filesystem::current_path();
+    std::filesystem::path script_path = current_path / ".." / "pythonScripts" / "csvToBooks.py";
+    std::filesystem::path absolute_script_path = std::filesystem::canonical(script_path);
+    std::string command = "python \"" + absolute_script_path.string() + "\" " + file_path;
+    std::cout << "Executing command: " << command << std::endl;
+
+    // Capture the output of the Python script
+    FILE* pipe = popen(command.c_str(), "r");
+    if (!pipe) {
+        std::cerr << "Error: Failed to execute Python script" << std::endl;
+        return;
+    }
+
+    char buffer[128];
+    std::string result;
+    while (fgets(buffer, sizeof(buffer), pipe) != nullptr) {
+        result += buffer;
+    }
+    pclose(pipe);
+
+    std::cout << "Python script output:\n" << result << std::endl;
+    std::cout << "Python script executed successfully." << std::endl;
+}

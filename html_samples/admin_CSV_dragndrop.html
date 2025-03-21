@@ -55,6 +55,12 @@
             font-size: 1rem;
             color: #333;
         }
+
+        .message {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #333;
+        }
     </style>
 </head>
 <body>
@@ -65,33 +71,43 @@
             <p>Drag and drop a CSV file here, or click to select one</p>
         </div>
         <div class="file-name" id="fileName"></div>
+        <div class="message" id="message"></div>
     </div>
 
     <script>
         const dragArea = document.getElementById('dragArea');
         const fileNameDisplay = document.getElementById('fileName');
+        const messageDisplay = document.getElementById('message');
 
+        let selectedFile = null;
+
+        // Drag over event
         dragArea.addEventListener('dragover', (e) => {
             e.preventDefault();
             dragArea.classList.add('hover');
         });
 
+        // Drag leave event
         dragArea.addEventListener('dragleave', () => {
             dragArea.classList.remove('hover');
         });
 
+        // Drop event
         dragArea.addEventListener('drop', (e) => {
             e.preventDefault();
             dragArea.classList.remove('hover');
             
             const file = e.dataTransfer.files[0];
             if (file && file.type === 'text/csv') {
+                selectedFile = file;
                 fileNameDisplay.textContent = `File selected: ${file.name}`;
+                uploadFile(file);
             } else {
                 fileNameDisplay.textContent = 'Please drop a valid CSV file.';
             }
         });
 
+        // Click event to open file input dialog
         dragArea.addEventListener('click', () => {
             const input = document.createElement('input');
             input.type = 'file';
@@ -99,13 +115,35 @@
             input.addEventListener('change', (e) => {
                 const file = e.target.files[0];
                 if (file && file.type === 'text/csv') {
+                    selectedFile = file;
                     fileNameDisplay.textContent = `File selected: ${file.name}`;
+                    uploadFile(file);
                 } else {
                     fileNameDisplay.textContent = 'Please select a valid CSV file.';
                 }
             });
             input.click();
         });
+
+        // Function to upload the file to the server
+        function uploadFile(file) {
+            const formData = new FormData();
+            formData.append('csv_file', file);
+
+            messageDisplay.textContent = 'Uploading...';
+
+            fetch('/upload_csv', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                messageDisplay.textContent = data.message || 'Upload successful!';
+            })
+            .catch(error => {
+                messageDisplay.textContent = 'Error during upload: ' + error;
+            });
+        }
     </script>
 
 </body>
