@@ -3,7 +3,7 @@ import pandas as pd
 
 def get_book_metadata(title, author):
     query = f"{title} {author}"
-    url = f"https://www.googleapis.com/books/v1/volumes?q={query}&key=AIzaSyAQytIQrXZqLMv69IH-hE8GHipZ5iJx_eM"
+    url = f"https://www.googleapis.com/books/v1/volumes?q={query}&key="
     response = requests.get(url)
     data = response.json()
 

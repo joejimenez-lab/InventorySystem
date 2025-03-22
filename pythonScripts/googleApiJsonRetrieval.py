@@ -17,7 +17,7 @@ def get_book_json(title, api_key=None):
 
 # Example usage
 book_title = "The Great Gatsby"
-api_key = "AIzaSyAQytIQrXZqLMv69IH-hE8GHipZ5iJx_eM"
+api_key = 
 book_json = get_book_json(book_title, api_key)
 
 # Print the full JSON response formatted nicely

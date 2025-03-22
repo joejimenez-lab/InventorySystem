@@ -1022,7 +1022,7 @@ int main() {
 
         int limit = 10;
         int page = 1;
-        std::string token = "cba9b74d9435ab0db4bb0f0169a85f54";
+        std::string token = 
         std::string talpaApiUrl = "https://www.librarything.com/api/talpa.php";
         std::string encodedQuery = url_encode(query);
 
