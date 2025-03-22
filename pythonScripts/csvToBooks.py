@@ -6,10 +6,10 @@ import itertools
 csv_file = sys.argv[1]
 print(f"Received file path: {sys.argv[1]}")
 # ODBC connection parameters
-dsn = 'PostgreSQL30'  # or leave blank and use DRIVER, SERVER, etc.
-user = 'postgres'
-password = 'Project'
-database = '178Project'
+dsn = 
+user = 
+password = 
+database = 
 
 try:
     conn = pyodbc.connect(
@@ -23,7 +23,7 @@ try:
         for row in reader:
             print(row)
             if row['book_id'] == '------WebKitFormBoundaryVjQZ4BxZxQiPICXS--' or None in row.values():
-                continue  # Skip invalid rows
+                continue  
             cursor.execute("""
                 INSERT INTO books (title, author, genre, publication_year, isbn)
                 VALUES (?, ?, ?, ?, ?)

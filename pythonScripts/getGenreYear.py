@@ -9,7 +9,7 @@ def get_book_metadata(title, author):
 
     if "items" in data:
         book = data["items"][0]["volumeInfo"]
-        pub_year = book.get("publishedDate", "Unknown")[:4]  # Extracts the year
+        pub_year = book.get("publishedDate", "Unknown")[:4]  
         genre = book.get("categories", ["Unknown"])[0]
         return pub_year, genre
     return "Unknown", "Unknown"

@@ -56,7 +56,7 @@ std::string get_content_type(const std::string& path) {
             return it->second;
         }
     }
-    return "application/octet-stream"; // Default binary type
+    return "application/octet-stream"; 
 }
 
 
@@ -67,10 +67,9 @@ std::string url_encode(const std::string &str) {
 
     for (char ch : str) {
         if (std::isalnum(ch) || ch == '-' || ch == '_' || ch == '.' || ch == '~') {
-            // Safe characters: alphanumeric, '-', '_', '.', '~'
             encoded << ch;
         } else {
-            // Unsafe characters: encode as %XX
+        
             encoded << '%' << std::setw(2) << static_cast<int>(static_cast<unsigned char>(ch));
         }
     }
@@ -82,7 +81,7 @@ std::string escapeApostrophes(const std::string& input) {
     std::string escaped = "";
     for (char c : input) {
         if (c == '\'') {
-            escaped += "''";  // Escape apostrophe by adding two single quotes
+            escaped += "''";  
         } else {
             escaped += c;
         }
@@ -200,9 +199,8 @@ std::string extractSessionID(const std::string& cookie) {
 
 int main() {
 
-    SQLCHAR* datasource = (SQLCHAR*)"PostgreSQL30";  // DSN name
-    SQLCHAR* user = (SQLCHAR*)"postgres";  // Database username
-    SQLCHAR* pass = (SQLCHAR*)"Project";  // Database password
+    SQLCHAR* datasource = (SQLCHAR*);  // DSN name
+    SQLCHAR* user = (SQLCHAR*);  // Database password
     
     //connect to db
     ret = SQLAllocHandle(SQL_HANDLE_ENV, SQL_NULL_HANDLE, &hEnv);
@@ -211,14 +209,12 @@ int main() {
         return 1;
     }
 
-    // Set the ODBC version environment attribute
     ret = SQLSetEnvAttr(hEnv, SQL_ATTR_ODBC_VERSION, (SQLPOINTER)SQL_OV_ODBC3, 0);
     if (ret != SQL_SUCCESS && ret != SQL_SUCCESS_WITH_INFO) {
         std::cerr << "Failed to set ODBC version." << std::endl;
         return 1;
     }
 
-    // Allocate connection handle
     ret = SQLAllocHandle(SQL_HANDLE_DBC, hEnv, &hDbc);
     if (ret != SQL_SUCCESS && ret != SQL_SUCCESS_WITH_INFO) {
         std::cerr << "Failed to allocate connection handle." << std::endl;
@@ -337,14 +333,13 @@ int main() {
         }
     
         std::cout << "Adding into Database" << std::endl;
-    
-        // Check registration result
+ 
         if (registration(hDbc, registration_info[0], registration_info[1], registration_info[2], registration_info[3]) != "Registration Success") {
             crow::mustache::context ctx;
             ctx["error"] = "Invalid Username or Email Taken";
-            ctx["username"] = registration_info[0];  // Preserve username
-            ctx["email"] = registration_info[2];     // Preserve email
-            ctx["phone"] = registration_info[3];     // Preserve phone
+            ctx["username"] = registration_info[0];  
+            ctx["email"] = registration_info[2];     
+            ctx["phone"] = registration_info[3];    
     
             return crow::response(crow::mustache::load("sign-up.html").render(ctx));
         }
@@ -378,7 +373,7 @@ int main() {
         }
 
         crow::json::wvalue json_response;
-        json_response["borrow"] = (info[0][0] == "1");  // Convert "1"/"0" to boolean
+        json_response["borrow"] = (info[0][0] == "1");  
         json_response["reserve"] = (info[0][1] == "1");
         json_response["access"] = (info[0][2] == "1");
 
@@ -713,10 +708,9 @@ int main() {
             }
         }
         std::cout << comments[0] << std::endl;
-        // Get total comment count
         std::string countQuery = "SELECT COUNT(*) FROM comments WHERE thread_id = " + thread_id + ";";
         std::string total_comments_str = executeQueryReturnString(hDbc, countQuery);
-        int total_pages = (std::stoi(total_comments_str) + comments_per_page - 1) / comments_per_page; // Ceiling division
+        int total_pages = (std::stoi(total_comments_str) + comments_per_page - 1) / comments_per_page; 
 
         int total_comments = 0;
         if (!total_comments_str.empty()) {
@@ -735,11 +729,9 @@ int main() {
             return crow::response(400, "Invalid JSON");
         }
 
-        // Extract data from JSON
         int thread_id = json["thread_id"].i();
         std::string comment = json["comment"].s();
 
-        // Insert comment into the database
         std::string insertSQL = "INSERT INTO comments (thread_id, comment) VALUES (" +
                                 std::to_string(thread_id) + ", '" + comment + "');";
         executeQuery(hDbc, insertSQL);
@@ -771,21 +763,18 @@ int main() {
         return crow::response(200, "Images generated successfully");
     });
 
-    // Serve static files (e.g., images) from the 'static' folder
     CROW_ROUTE(app, "/assets/<string>")
     ([](const crow::request& req, std::string path) {
-        // Prevent directory traversal attacks
         if (path.find("..") != std::string::npos) {
             return crow::response(403, "Forbidden");
         }
     
-        // Adjust the path to point to the assets folder in the project root
         std::string file_path = "../assets/" + path;
-        std::cout << "Trying to open: " << file_path << std::endl; // Debugging line
+        std::cout << "Trying to open: " << file_path << std::endl; 
     
         std::ifstream file(file_path, std::ios::binary);
         if (!file.is_open()) {
-            std::cout << "File not found: " << file_path << std::endl; // Debugging line
+            std::cout << "File not found: " << file_path << std::endl; 
             return crow::response(404, "File not found");
         }
     
@@ -1005,7 +994,7 @@ int main() {
     });
 
     CROW_ROUTE(app, "/search_results")([](const crow::request& req) {
-        auto query = req.url_params.get("query"); // Get search query
+        auto query = req.url_params.get("query"); 
 
         if (!query) {
             return crow::response(400, "No query provided.");
@@ -1092,7 +1081,6 @@ int main() {
         std::vector<std::string> titles;
         std::string query;
         if (request_json.isObject()) {
-            // Assuming query and titles are part of the JSON object
             if (request_json.isMember("titles") && request_json["titles"].isArray()) {
                 for (const auto& title : request_json["titles"]) {
                     if (title.isString()) {
@@ -1142,10 +1130,10 @@ int main() {
         Json::Value responseJson;
         for (const auto& book : bookInfo) {
             Json::Value bookData;
-            bookData["book_id"] = book[0];  // Assuming book_id is the first element
-            bookData["title"] = book[1];    // Title is the second element
-            bookData["author"] = book[2];   // Author is the third element
-            bookData["genre"] = book[3];    // Genre is the fourth element
+            bookData["book_id"] = book[0]; 
+            bookData["title"] = book[1];   
+            bookData["author"] = book[2];   
+            bookData["genre"] = book[3];   
             responseJson.append(bookData);
         }
 
@@ -1188,23 +1176,19 @@ int main() {
 
     app.route_dynamic("/upload_csv")
     .methods("POST"_method)([](const crow::request& req) {
-        // Check if the request has a body
         if (req.body.empty()) {
             return crow::response(400, "No file uploaded.");
         }
 
-        // Parse the body to extract the file data
-        // This is a simplified example; you may need to handle multipart/form-data parsing
+
         std::string file_data = req.body;
         std::cout << "Request body: " << req.body << std::endl;
-        // Save the uploaded file to the 'uploads' directory
         std::string file_path = "..\\uploads\\uploaded_file.csv";
         std::cout << "Saving file to: " << file_path << std::endl;
         std::ofstream out(file_path, std::ios::binary);
         out.write(file_data.data(), file_data.size());
         out.close();
         std::cout << file_path << std::endl;
-        // Call the Python script to process the uploaded CSV file
         insertCSV(file_path);
 
         return crow::response(200, "{\"message\": \"CSV data inserted successfully\"}");

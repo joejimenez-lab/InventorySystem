@@ -10,7 +10,7 @@ def fetch_json(url):
         return None
 
 if __name__ == "__main__":
-    url = sys.argv[1]  # Get the URL from command-line arguments
+    url = sys.argv[1] 
     json_data = fetch_json(url)
     if json_data:
         print(json_data)

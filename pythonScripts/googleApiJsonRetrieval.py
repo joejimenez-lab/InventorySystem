@@ -11,7 +11,7 @@ def get_book_json(title, api_key=None):
     response = requests.get(base_url, params=params)
 
     if response.status_code == 200:
-        return response.json()  # Return the full JSON response
+        return response.json() 
     else:
         return {"error": f"Failed to fetch data (Status Code: {response.status_code})"}
 

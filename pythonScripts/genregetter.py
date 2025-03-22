@@ -3,7 +3,7 @@ import pandas as pd
 import time
 
 # Load your dataset
-file_path = "goodreads_cleaned.csv"  # Adjust the path if needed
+file_path = "goodreads_cleaned.csv" 
 df = pd.read_csv(file_path)
 
 # Function to fetch book details from Open Library API
@@ -18,7 +18,7 @@ def get_book_details(title, author):
             book_data = data["docs"][0]
             publication_date = book_data.get("first_publish_year", "Unknown")
             genres = book_data.get("subject", [])
-            genres = ", ".join(genres[:3]) if genres else "Unknown"  # Limit to top 3 genres
+            genres = ", ".join(genres[:3]) if genres else "Unknown" 
             return publication_date, genres
     return "Unknown", "Unknown"
 
@@ -31,7 +31,7 @@ for idx, row in df.iterrows():
     pub_date, genre = get_book_details(title, author)
     df.at[idx, "publication_date"] = pub_date
     df.at[idx, "genres"] = genre
-    time.sleep(1)  # To avoid rate limiting
+    time.sleep(1)  
 
 # Save the updated dataset
 df.to_csv("goodreads_updated.csv", index=False)

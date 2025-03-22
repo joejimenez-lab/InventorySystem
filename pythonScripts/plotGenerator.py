@@ -6,10 +6,7 @@ import os
 os.makedirs('../assets', exist_ok=True)
 
 conn_str = (
-    'DSN=PostgreSQL30;'
-    'UID=postgres;'     # Provide your username here
-    'PWD=Project;'     # Provide your password here
-    'DATABASE=178Project;'  # Provide your database name here (optional if included in DSN)
+
 )
 
 # Connect to the PostgreSQL database using the DSN-based connection string
